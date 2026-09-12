@@ -1,0 +1,13 @@
+# local tooling / editor
+.claude/
+
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# робоча тека з оригіналами фото (у репозиторій ідуть стиснені з assets/img)
+photos/
+
+# оригінали відео — GitHub відхиляє файли >100МБ
+/video/

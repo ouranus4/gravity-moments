@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gravity Moments — організація подій з відкритим кошторисом</title>
+<meta name="description" content="Організація весіль, корпоративів, днів народження та відкриттів. Відкритий кошторис: ви бачите кожну гривню і платите підрядникам їхню ціну. Зберіть бюджет своєї події за дві хвилини.">
+<link rel="canonical" href="https://gravity-moments.com.ua/">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<meta name="theme-color" content="#0B0B11">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Gravity Moments — події, які притягують">
+<meta property="og:description" content="Весілля, корпоративи, дні народження, відкриття. Відкритий кошторис замість «ціну скажемо після брифу».">
+<meta property="og:image" content="https://gravity-moments.com.ua/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gravity Moments — організація подій">
+<meta property="og:url" content="https://gravity-moments.com.ua/">
+<meta property="og:site_name" content="Gravity Moments">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gravity Moments — події, які притягують">
+<meta name="twitter:description" content="Відкритий кошторис замість «ціну скажемо після брифу». Зберіть бюджет своєї події за дві хвилини.">
+<meta name="twitter:image" content="https://gravity-moments.com.ua/assets/img/og-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css?v=20260912a">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://gravity-moments.com.ua/#org",
+      "name":"Gravity Moments",
+      "description":"Організація подій: весілля, корпоративи, дні народження, відкриття. Робота з відкритим кошторисом.",
+      "url":"https://gravity-moments.com.ua/",
+      "areaServed":{"@type":"Country","name":"Україна"},
+      "founder":{"@type":"Person","name":"Марина Філіпенко"},
+      "telephone":"+380674097350",
+      "sameAs":["https://t.me/marina_philipenko"]
+    },
+    {
+      "@type":"Service",
+      "name":"Організація подій під ключ",
+      "serviceType":"Event planning",
+      "provider":{"@id":"https://gravity-moments.com.ua/#org"},
+      "areaServed":{"@type":"Country","name":"Україна"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Скільки коштує ваша робота?",
+         "acceptedAnswer":{"@type":"Answer","text":"15% від кошторису події, мінімум 30 000 ₴. Це єдине, що ми заробляємо: підрядників ви оплачуєте за їхньою ціною, без нашої націнки."}},
+        {"@type":"Question","name":"Що означає «відкритий кошторис»?",
+         "acceptedAnswer":{"@type":"Answer","text":"Ви бачите кошторис по рядках: скільки коштує локація, кейтеринг, декор, техніка, кожен артист. Бачите рахунки підрядників і знаєте, за що платите."}},
+        {"@type":"Question","name":"Хто платить підрядникам?",
+         "acceptedAnswer":{"@type":"Answer","text":"Ви — напряму або через нас, як вам зручніше. Ми не беремо гроші підрядників на себе, щоб не було потреби вам довіряти на слово."}},
+        {"@type":"Question","name":"Яка передоплата?",
+         "acceptedAnswer":{"@type":"Answer","text":"30% нашої винагороди після підписання договору, решта — за три дні до події. Підрядники мають власні умови, вони прописані в кошторисі."}},
+        {"@type":"Question","name":"Чи можна свою локацію або своїх підрядників?",
+         "acceptedAnswer":{"@type":"Answer","text":"Так. Ми працюємо з вашими підрядниками і не беремо за це доплату. Якщо бачимо ризик, скажемо прямо, але вибір за вами."}},
+        {"@type":"Question","name":"А якщо буде дощ?",
+         "acceptedAnswer":{"@type":"Answer","text":"Для будь-якої події просто неба в кошторисі закладений план Б — шатро або резервна локація. Він узгоджується заздалегідь, а не в день події."}},
+        {"@type":"Question","name":"За скільки часу треба починати?",
+         "acceptedAnswer":{"@type":"Answer","text":"Весілля — від 4 місяців, корпоратив — від 6 тижнів, приватна вечірка — від 2 тижнів. Взяти подію швидше можемо, але вибір локацій і артистів буде вужчим."}},
+        {"@type":"Question","name":"Ви справді можете запросити зірку?",
+         "acceptedAnswer":{"@type":"Answer","text":"Так, у нас прямі контакти з артистами й менеджментом. Гонорар ви платите артисту, без посередницької націнки — ми лише домовляємось і закриваємо райдер."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- смужка прогресу прокрутки -->
+<div class="scroll-prog" aria-hidden="true"><i id="scrollBar"></i></div>
+
+<!-- ============ ICON SPRITE ============
+     Тонколінійні 24×24 глифи. Колір і розмір задає .ic у CSS,
+     тож тут ніде не прошито жодного кольору.
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- дві обручки -->
+    <symbol id="i-rings" viewBox="0 0 24 24">
+      <circle cx="9.5" cy="14" r="6"/><circle cx="16" cy="11" r="5"/>
+      <path d="M14 5.5l2-2 2 2-2 1.5z"/>
+    </symbol>
+    <!-- келих -->
+    <symbol id="i-glass" viewBox="0 0 24 24">
+      <path d="M7 3h10l-1.2 6a4 4 0 0 1-7.6 0z"/><path d="M12 15v6"/><path d="M8.5 21h7"/>
+    </symbol>
+    <!-- торт -->
+    <symbol id="i-cake" viewBox="0 0 24 24">
+      <path d="M4 20h16v-6a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3z"/>
+      <path d="M4 15.5c1.6 1.4 3 1.4 4.6 0s3-1.4 4.6 0 3 1.4 4.6 0"/>
+      <path d="M12 8V5"/><path d="M12 3.5c.9.7.9 1.3 0 1.5-.9-.2-.9-.8 0-1.5z"/>
+    </symbol>
+    <!-- шатро -->
+    <symbol id="i-tent" viewBox="0 0 24 24">
+      <path d="M12 3L3 19h18z"/><path d="M12 3v16"/><path d="M8 19l4-7 4 7"/>
+    </symbol>
+    <!-- мікрофон -->
+    <symbol id="i-mic" viewBox="0 0 24 24">
+      <rect x="9" y="2.5" width="6" height="11" rx="3"/>
+      <path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/>
+    </symbol>
+    <!-- зірка -->
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="M12 3l2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17.1 6.4 20l1.2-6.2L3 9.5l6.3-.8z"/>
+    </symbol>
+    <!-- світло / прожектор -->
+    <symbol id="i-light" viewBox="0 0 24 24">
+      <path d="M12 3v3"/><path d="M5.5 5.5l2 2"/><path d="M18.5 5.5l-2 2"/>
+      <circle cx="12" cy="11.5" r="3.5"/><path d="M9 21l3-6 3 6z"/>
+    </symbol>
+    <!-- стрічка / відкриття -->
+    <symbol id="i-ribbon" viewBox="0 0 24 24">
+      <path d="M3 12h18"/><circle cx="12" cy="12" r="2.5"/>
+      <path d="M9.5 12L5 7"/><path d="M14.5 12L19 7"/>
+    </symbol>
+    <!-- документ / кошторис -->
+    <symbol id="i-doc" viewBox="0 0 24 24">
+      <path d="M6 2.5h8l4 4V21H6z"/><path d="M14 2.5V7h4"/>
+      <path d="M9 12h6"/><path d="M9 15.5h6"/><path d="M9 19h3"/>
+    </symbol>
+    <!-- годинник -->
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/>
+    </symbol>
+    <!-- щит -->
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 2.8l7 2.8v5.6c0 4.4-2.9 8.2-7 9.8-4.1-1.6-7-5.4-7-9.8V5.6z"/>
+      <path d="M8.8 12l2.3 2.3 4.1-4.4"/>
+    </symbol>
+    <!-- квітка -->
+    <symbol id="i-flower" viewBox="0 0 24 24">
+      <circle cx="12" cy="9" r="2.2"/>
+      <path d="M12 6.8c0-2 1-3.3 2.6-3.3S17 5 15.5 7"/>
+      <path d="M12 6.8c0-2-1-3.3-2.6-3.3S7 5 8.5 7"/>
+      <path d="M14.2 9c2 0 3.3 1 3.3 2.6S15.5 14 14 12.5"/>
+      <path d="M9.8 9c-2 0-3.3 1-3.3 2.6S8.5 14 10 12.5"/>
+      <path d="M12 11.2V21"/><path d="M12 16c1.8 0 3-1 3.5-2.6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#top" aria-label="Gravity Moments — на початок">
+    <span class="wm-orb" aria-hidden="true"></span>
+    <span class="wm"><b>Gravity</b><span>Moments</span></span>
+  </a>
+  <nav class="nav-links" id="navLinks" aria-label="Основна навігація">
+    <a href="#top" class="active">Головна</a>
+    <a href="#how">Як працюємо</a>
+    <a href="#constructor">Кошторис</a>
+    <a href="#formats">Формати</a>
+    <a href="#artists">Артисти</a>
+    <a href="#marina">Про Марину</a>
+    <a href="#faq">Питання</a>
+  </nav>
+  <div class="nav-cta">
+    <a class="btn btn-accent" href="#constructor">Зібрати кошторис</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Меню">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#how">Як ми працюємо</a>
+  <a href="#constructor">Зібрати кошторис</a>
+  <a href="#formats">Формати подій</a>
+  <a href="#artists">Артисти та зірки</a>
+  <a href="#marina">Про Марину</a>
+  <a href="#faq">Питання</a>
+  <a href="#contacts">Контакти</a>
+  <a class="btn btn-accent" href="#apply">Залишити заявку</a>
+</div>
+
+<main>
+
+<!-- ============ 1. HERO ============
+     Шар 0 — градієнт у CSS (::before), видний завжди.
+     Шар 1 — шейдер на canvas, прогресивне покращення.
+-->
+<section class="hero" id="top">
+  <canvas class="hero-field" id="heroField" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-inner">
+      <p class="capsule">
+        <span class="dot" aria-hidden="true"></span>
+        Gravity Moments · організація подій
+      </p>
+      <h1>Події, які <span class="mute">притягують</span></h1>
+      <p class="lead">
+        Весілля, корпоративи, дні народження, відкриття. Повний цикл — від першої ідеї
+        до останнього гостя. І <span class="mark">відкритий кошторис</span>: ви бачите,
+        куди йде кожна гривня.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-accent btn-lg" href="#constructor">Зібрати кошторис за 2 хвилини</a>
+        <a class="btn btn-ghost btn-lg" href="#apply">Написати Марині</a>
+      </div>
+      <ul class="hero-facts">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Кошторис по рядках</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Прямі контакти з артистами</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Без націнки на підрядників</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. МАНІФЕСТ ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Чесно про ринок</p>
+      <h2 class="rv d1">Три речі, через які <span class="mute">свято дорожчає на третину</span></h2>
+      <p class="lead rv d2">
+        Ми говоримо це вголос, бо саме на цьому будуємо свою роботу.
+      </p>
+    </div>
+
+    <div class="mf-grid">
+      <div class="mf rv d1">
+        <div class="mf-n">01</div>
+        <h3>«Ціну скажемо після брифу»</h3>
+        <p>
+          На практиці це означає інше: спершу дізнаємось ваш бюджет, а потім підженемо
+          кошторис під нього. Ви ніколи не побачите, скільки подія коштує насправді.
+        </p>
+      </div>
+      <div class="mf rv d2">
+        <div class="mf-n">02</div>
+        <h3>Націнка, якої немає в кошторисі</h3>
+        <p>
+          Агентство бере декоратора за 30 тисяч, а в кошторисі у вас стоїть 45.
+          Різниця нікуди не зникає — вона у вашому чеку, просто без назви.
+        </p>
+      </div>
+      <div class="mf rv d3">
+        <div class="mf-n">03</div>
+        <h3>Підрядники через третіх осіб</h3>
+        <p>
+          Чим довший ланцюг, тим дорожче і тим важче щось змінити за три дні до події.
+          Кожна ланка хоче свою частку — і має на це право.
+        </p>
+      </div>
+    </div>
+
+    <div class="mf-answer rv d2">
+      <p>
+        Тому ми працюємо навпаки. Ви бачите кошторис по рядках і платите підрядникам
+        їхню ціну. Нам — <span class="mark">15% за організацію</span>, мінімум 30 000 ₴.
+        Це єдине, що ми заробляємо, і ми називаємо цю цифру до початку роботи, а не після.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. ЯК ПРАЦЮЄМО + КОШТОРИС ============ -->
+<section id="how" class="light">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Як ми працюємо</p>
+      <h2 class="rv d1">Чотири кроки <span class="mute">і жодної схованої суми</span></h2>
+    </div>
+
+    <div class="bento-4 steps">
+      <div class="step rv d1">
+        <h3>Бриф</h3>
+        <p>45 хвилин розмови: повід, дата, кількість гостей, що обов'язково має бути і чого бути не повинно.</p>
+      </div>
+      <div class="step rv d2">
+        <h3>Кошторис по рядках</h3>
+        <p>Протягом трьох днів ви отримуєте таблицю з реальними цінами підрядників і нашими 15% окремим рядком.</p>
+      </div>
+      <div class="step rv d3">
+        <h3>Підрядники й договори</h3>
+        <p>Ми домовляємось, тримаємо дати й закриваємо райдери. Ви бачите кожен рахунок і кожну умову.</p>
+      </div>
+      <div class="step rv d4">
+        <h3>День події</h3>
+        <p>Координація на місці від монтажу до вивозу. Ваша задача цього дня — бути гостем на власному святі.</p>
+      </div>
+    </div>
+
+    <!-- Реальний приклад кошторису. Ця ж таблиця служить запасним
+         варіантом для конструктора, якщо JavaScript вимкнений. -->
+    <div class="smeta-wrap rv d2">
+      <table class="smeta">
+        <caption>
+          <b>Весілля на 80 гостей, Київ, ресторан</b><br>
+          Приклад повного кошторису — рівно в такому вигляді ви його й отримуєте
+        </caption>
+        <thead>
+          <tr><th scope="col">Стаття</th><th scope="col">Сума, ₴</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Локація та оренда<span class="t-sub">оренда зали, посадка, персонал</span></td><td>53 000</td></tr>
+          <tr><td>Кейтеринг і бар<span class="t-sub">80 гостей × 1 400 ₴</span></td><td>112 000</td></tr>
+          <tr><td>Декор і флористика<span class="t-sub">президіум, центри столів, арка</span></td><td>38 000</td></tr>
+          <tr><td>Світло, звук, екран<span class="t-sub">комплект, монтаж, оператор</span></td><td>44 600</td></tr>
+          <tr><td>Ведучий</td><td>25 000</td></tr>
+          <tr><td>Кавер-гурт<span class="t-sub">три сети по 40 хвилин</span></td><td>55 000</td></tr>
+          <tr><td>Робота організатора<span class="t-sub">15% від кошторису</span></td><td>49 140</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>Разом</td><td>376 740</td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="smeta-note rv d3">
+      Це приклад, а не прайс: суми залежать від дати, локації та складу програми.
+      Щоб побачити вилку під вашу подію — <a href="#constructor">зберіть її в конструкторі</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 4. КОНСТРУКТОР ПОДІЇ ============ -->
+<section id="constructor" class="light">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Конструктор</p>
+      <h2 class="rv d1">Зберіть свою подію <span class="mute">— і побачте бюджет</span></h2>
+      <p class="lead rv d2">
+        П'ять кроків. На виході — вилка бюджету й розкладка по статтях: скільки піде
+        на локацію, скільки на їжу, скільки артистам.
+      </p>
+    </div>
+
+    <div class="gm-split">
+      <div>
+        <form class="gm gm-shell" id="gmCalc" novalidate>
+          <ol class="gm-steps" id="gmSteps" aria-hidden="true">
+            <li class="now"><i></i>Привід</li>
+            <li><i></i>Гості</li>
+            <li><i></i>Локація</li>
+            <li><i></i>Рівень</li>
+            <li><i></i>Програма</li>
+          </ol>
+
+          <!-- крок 1 -->
+          <fieldset class="gm-step" data-step="1">
+            <legend tabindex="-1">Що святкуємо?</legend>
+            <span class="gm-count">Крок 1 з 5</span>
+            <div class="gm-opts">
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="wedding" checked>
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-rings"/></svg>Весілля</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="birthday">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-cake"/></svg>День народження</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="corporate">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-glass"/></svg>Корпоратив</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="jubilee">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Ювілей</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="opening">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-ribbon"/></svg>Відкриття бутика</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="private">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg>Приватна вечірка</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- крок 2 -->
+          <fieldset class="gm-step" data-step="2" hidden>
+            <legend tabindex="-1">Скільки буде гостей?</legend>
+            <span class="gm-count">Крок 2 з 5</span>
+            <p class="gm-hint" id="gmGuestsHint">
+              Орієнтовно — цифру завжди можна змінити. Від кількості гостей найбільше
+              залежить кейтеринг і розмір локації.
+            </p>
+            <div class="gm-guests">
+              <div class="gm-range">
+                <input type="range" id="gmRange" name="g"
+                       min="10" max="600" step="5" value="90"
+                       aria-label="Кількість гостей" aria-describedby="gmGuestsHint">
+              </div>
+              <div class="gm-num">
+                <input type="number" id="gmNum" min="10" max="600" step="1" value="90"
+                       inputmode="numeric" aria-label="Кількість гостей, точне число">
+                <span>гостей</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- крок 3 -->
+          <fieldset class="gm-step" data-step="3" hidden>
+            <legend tabindex="-1">Де святкуємо?</legend>
+            <span class="gm-count">Крок 3 з 5</span>
+            <p class="gm-hint">Місто впливає на ціни підрядників, тип локації — на оренду й техніку.</p>
+            <div class="gm-opts">
+              <label class="gm-opt"><input type="radio" name="city" value="kyiv" checked><span class="gm-opt-in">Київ</span></label>
+              <label class="gm-opt"><input type="radio" name="city" value="lviv"><span class="gm-opt-in">Львів</span></label>
+              <label class="gm-opt"><input type="radio" name="city" value="odesa"><span class="gm-opt-in">Одеса</span></label>
+              <label class="gm-opt"><input type="radio" name="city" value="dnipro"><span class="gm-opt-in">Дніпро</span></label>
+              <label class="gm-opt"><input type="radio" name="city" value="other"><span class="gm-opt-in">Інше місто</span></label>
+            </div>
+            <p class="gm-hint" style="margin-top:18px">Тип локації</p>
+            <div class="gm-opts">
+              <label class="gm-opt"><input type="radio" name="loc" value="restaurant" checked><span class="gm-opt-in">Ресторан</span></label>
+              <label class="gm-opt"><input type="radio" name="loc" value="loft"><span class="gm-opt-in">Лофт</span></label>
+              <label class="gm-opt"><input type="radio" name="loc" value="outdoor"><span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-tent"/></svg>Просто неба</span></label>
+              <label class="gm-opt"><input type="radio" name="loc" value="estate"><span class="gm-opt-in">Садиба</span></label>
+              <label class="gm-opt"><input type="radio" name="loc" value="hotel"><span class="gm-opt-in">Готель</span></label>
+            </div>
+          </fieldset>
+
+          <!-- крок 4 -->
+          <fieldset class="gm-step" data-step="4" hidden>
+            <legend tabindex="-1">Який рівень?</legend>
+            <span class="gm-count">Крок 4 з 5</span>
+            <div class="gm-opts two">
+              <label class="gm-opt">
+                <input type="radio" name="lvl" value="intimate">
+                <span class="gm-opt-in"><span>Камерно<span class="gm-opt-sub">Тісне коло, акцент на їжі та атмосфері</span></span></span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="lvl" value="full" checked>
+                <span class="gm-opt-in"><span>Повноцінно<span class="gm-opt-sub">Ведучий, музика, декор, техніка</span></span></span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="lvl" value="premium">
+                <span class="gm-opt-in"><span>Преміум<span class="gm-opt-sub">Авторський декор, сильна техніка, запрошені артисти</span></span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- крок 5 -->
+          <fieldset class="gm-step" data-step="5" hidden>
+            <legend tabindex="-1">Програма</legend>
+            <span class="gm-count">Крок 5 з 5</span>
+            <p class="gm-hint">Позначте те, що потрібне. Суми одразу підуть у статтю «Артисти та програма».</p>
+            <div class="gm-opts two">
+              <label class="gm-opt">
+                <input type="checkbox" name="opt" value="host" checked>
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg>Ведучий<span class="gm-opt-price">18–45 тис.</span></span>
+              </label>
+              <label class="gm-opt">
+                <input type="checkbox" name="opt" value="music" checked>
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Жива музика<span class="gm-opt-price">25–90 тис.</span></span>
+              </label>
+              <label class="gm-opt">
+                <input type="checkbox" name="opt" value="dj">
+                <span class="gm-opt-in">DJ<span class="gm-opt-price">12–30 тис.</span></span>
+              </label>
+              <label class="gm-opt">
+                <input type="checkbox" name="opt" value="show">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-light"/></svg>Шоу-програма<span class="gm-opt-price">15–60 тис.</span></span>
+              </label>
+              <label class="gm-opt">
+                <input type="checkbox" name="opt" value="headliner">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Зірка-хедлайнер<span class="gm-opt-price">від 150 тис.</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="gm-nav">
+            <button class="gm-back" type="button" id="gmBack" hidden>Назад</button>
+            <button class="btn btn-accent" type="button" id="gmNext">Далі</button>
+          </div>
+
+          <noscript>
+            <p class="gm-ns">
+              Щоб порахувати бюджет автоматично, потрібен JavaScript. Орієнтовні суми є
+              в таблиці вище, а точний розрахунок під вашу подію зробимо вручну —
+              <a href="#apply">залиште заявку</a>.
+            </p>
+          </noscript>
+        </form>
+      </div>
+
+      <!-- панель результату -->
+      <div class="gm gm-result" id="gmResult">
+        <div class="gm-total" id="gmTotal"></div>
+        <div class="gm-bar" id="gmBar" aria-hidden="true"></div>
+        <ul class="gm-items" id="gmItems"></ul>
+        <p class="gm-note" id="gmNote" hidden></p>
+        <p class="gm-disclaimer">
+          Розрахунок орієнтовний і не є публічною офертою. Точний кошторис —
+          після брифу. Прайс оновлено 11.09.2026.
+        </p>
+        <p class="sr-only" id="gmLive" role="status" aria-live="polite"></p>
+
+        <div class="gm-up">
+          <p class="gm-up-h">Що можна додати</p>
+          <div class="gm-up-grid" id="gmUpGrid"></div>
+        </div>
+
+        <div class="gm-actions">
+          <button class="gm-copy" type="button" id="gmCopy">Скопіювати посилання на розрахунок</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ФОРМАТИ ПОДІЙ ============ -->
+<section id="formats">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Формати</p>
+      <h2 class="rv d1">Що ми робимо</h2>
+      <p class="lead rv d2">Натисніть на формат — конструктор відкриється вже налаштованим під нього.</p>
+    </div>
+
+    <div class="bento-3">
+      <a class="card rv d1" href="?ev=wedding&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-rings"/></svg></span>
+          <span class="card-tag">від 4 місяців</span>
+        </div>
+        <div class="card-body">
+          <h3>Весілля</h3>
+          <p>Повний цикл: локація, церемонія, банкет, програма. Координація дня від монтажу до вивозу декору.</p>
+          <p class="card-from">від 280 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d2" href="?ev=corporate&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-glass"/></svg></span>
+          <span class="card-tag">від 6 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Корпоратив</h3>
+          <p>Від новорічної вечірки до конференції з фуршетом. Закритий звіт по витратах для бухгалтерії.</p>
+          <p class="card-from">від 320 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d3" href="?ev=birthday&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-cake"/></svg></span>
+          <span class="card-tag">від 3 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>День народження</h3>
+          <p>Камерна вечеря на 20 осіб або свято на 150 з хедлайнером. Однаково уважно до деталей.</p>
+          <p class="card-from">від 140 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d1" href="?ev=opening&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-ribbon"/></svg></span>
+          <span class="card-tag">від 3 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Відкриття бутика</h3>
+          <p>Подія, яку знімають і переказують: гості, преса, фотозона, привід потрапити в сторіс.</p>
+          <p class="card-from">від 180 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d2" href="?ev=jubilee&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+          <span class="card-tag">від 2 місяців</span>
+        </div>
+        <div class="card-body">
+          <h3>Ювілей</h3>
+          <p>Сценарій, у якому головний герой справді головний: відеозвернення, живі історії, правильний тайминг.</p>
+          <p class="card-from">від 200 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d3" href="?ev=private&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg></span>
+          <span class="card-tag">від 2 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Приватна вечірка</h3>
+          <p>Закритий формат без зайвих очей: локація, бар, DJ, і ніяких слідів у соцмережах, якщо так треба.</p>
+          <p class="card-from">від 90 000 ₴</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. АРТИСТИ ТА ЗІРКИ ============ -->
+<section id="artists">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Артисти та зірки</p>
+      <h2 class="rv d1">Скільки коштує <span class="mute">запросити артиста</span></h2>
+      <p class="lead rv d2">
+        Ці цифри зазвичай не пишуть на сайтах. Ми пишемо: гонорар ви платите артисту,
+        без нашої націнки. Наша частина — домовитись і закрити райдер.
+      </p>
+    </div>
+
+    <div class="fees rv d1" id="fees"></div>
+
+    <!-- ІМЕНА АРТИСТІВ
+         Тут мають стояти реальні імена тих, із ким уже працювали.
+         Щоб блок з'явився на сайті, заберіть слово hidden у рядку нижче
+         і впишіть імена замість прикладів. Порожнім його не публікуємо:
+         обіцянка «у нас є зірки» без жодного імені працює проти нас.
+    -->
+    <div class="rv d2" hidden id="feeNames">
+      <p class="gm-up-h" style="margin-top:clamp(26px,3vw,36px)">З ким уже працювали</p>
+      <div class="fee-names">
+        <span>Імʼя артиста</span>
+        <span>Імʼя артиста</span>
+        <span>Імʼя артиста</span>
+      </div>
+    </div>
+
+    <div class="sec-cta rv d3">
+      <a class="btn btn-accent" href="#apply">Запитати про конкретного артиста</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. КЕЙСИ ============
+     Розмітка готова, але секція не показується, поки немає реальних
+     історій. Щоб увімкнути: заберіть hidden нижче і замініть текст
+     трьома справжніми кейсами. Фото кладіть у assets/img/cases/ з
+     іменами з data-photo — картки підхоплять їх самі.
+     Вигаданих відгуків тут бути не повинно.
+-->
+<section id="cases" class="light" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Кейси</p>
+      <h2 class="rv d1">Три події <span class="mute">і їхні кошториси</span></h2>
+    </div>
+    <div class="cases">
+      <article class="case rv d1">
+        <div class="case-media" data-photo="assets/img/cases/case-1.jpg" data-alt="">
+          <span class="case-mark" aria-hidden="true">GM</span>
+        </div>
+        <div class="case-body">
+          <h3>Назва події</h3>
+          <p class="case-meta"><span>Формат</span><span>N гостей</span><span>Бюджет</span></p>
+          <p><b>Завдання.</b> Що просив клієнт.</p>
+          <p><b>Що зробили.</b> Рішення й чому саме таке.</p>
+          <p><b>Результат.</b> Чим закінчилось.</p>
+        </div>
+      </article>
+      <article class="case rv d2">
+        <div class="case-media" data-photo="assets/img/cases/case-2.jpg" data-alt="">
+          <span class="case-mark" aria-hidden="true">GM</span>
+        </div>
+        <div class="case-body">
+          <h3>Назва події</h3>
+          <p class="case-meta"><span>Формат</span><span>N гостей</span><span>Бюджет</span></p>
+          <p><b>Завдання.</b> Що просив клієнт.</p>
+          <p><b>Що зробили.</b> Рішення й чому саме таке.</p>
+          <p><b>Результат.</b> Чим закінчилось.</p>
+        </div>
+      </article>
+      <article class="case rv d3">
+        <div class="case-media" data-photo="assets/img/cases/case-3.jpg" data-alt="">
+          <span class="case-mark" aria-hidden="true">GM</span>
+        </div>
+        <div class="case-body">
+          <h3>Назва події</h3>
+          <p class="case-meta"><span>Формат</span><span>N гостей</span><span>Бюджет</span></p>
+          <p><b>Завдання.</b> Що просив клієнт.</p>
+          <p><b>Що зробили.</b> Рішення й чому саме таке.</p>
+          <p><b>Результат.</b> Чим закінчилось.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ПРО МАРИНУ ============ -->
+<section id="marina" class="light">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait rv" data-portrait="assets/img/marina.jpg">
+        <span class="monogram" aria-hidden="true">МФ</span>
+      </div>
+      <div>
+        <p class="eyebrow rv">Хто організовує</p>
+        <h2 class="rv d1">Марина Філіпенко</h2>
+        <p class="lead rv d2">
+          Засновниця премії MedOrion Awards і бізнес-проєкту Business GRAVITY,
+          організаторка закритих клубів для підприємців. Gravity Moments — про
+          ті самі події, але вже для вас, а не для індустрії.
+        </p>
+        <p class="rv d3" style="margin-top:20px">
+          За роки роботи з преміями й закритими клубами зібралась база людей, без якої
+          подію не зробити: локації, кейтеринг, декоратори, техніка, артисти та їхній
+          менеджмент. Це і є відповідь на питання, чому в нас виходить дешевше
+          при тому ж результаті — ми домовляємось напряму.
+        </p>
+        <p class="rv d4" style="margin-top:16px">
+          І чому кошторис відкритий: коли ти плануєш повернутись до цих підрядників
+          наступного року, ховати їхні ціни немає жодного сенсу.
+        </p>
+        <div class="about-sign rv d5">
+          <b>Марина Філіпенко</b> · засновниця Gravity Moments<br>
+          <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Питання</p>
+      <h2 class="rv d1">Те, що питають <span class="mute">до підписання договору</span></h2>
+    </div>
+
+    <div class="faq rv d1">
+      <details>
+        <summary>Скільки коштує ваша робота?</summary>
+        <p class="faq-a">
+          15% від кошторису події, мінімум 30 000 ₴. Це єдине, що ми заробляємо.
+          Підрядників ви оплачуєте за їхньою ціною — націнки від нас там немає.
+        </p>
+      </details>
+      <details>
+        <summary>Що означає «відкритий кошторис»?</summary>
+        <p class="faq-a">
+          Ви отримуєте таблицю по рядках: локація, кейтеринг, декор, техніка, кожен
+          артист окремо, наші 15% окремим рядком. Бачите рахунки підрядників і знаєте,
+          за що саме платите. Нічого не сходиться в одну загадкову суму «програма — 180 000».
+        </p>
+      </details>
+      <details>
+        <summary>Хто платить підрядникам?</summary>
+        <p class="faq-a">
+          Ви — напряму або через нас, як вам зручніше. Ми не наполягаємо проводити
+          всі гроші через себе: так вам не потрібно вірити нам на слово.
+        </p>
+      </details>
+      <details>
+        <summary>Яка передоплата?</summary>
+        <p class="faq-a">
+          30% нашої винагороди після підписання договору, решта — за три дні до події.
+          У підрядників свої умови: вони прописані в кошторисі окремо, щоб ви бачили
+          графік платежів цілком.
+        </p>
+      </details>
+      <details>
+        <summary>Чи можна свою локацію або своїх підрядників?</summary>
+        <p class="faq-a">
+          Так, і доплати за це немає. Якщо бачимо ризик — скажемо прямо та обґрунтуємо,
+          але рішення за вами.
+        </p>
+      </details>
+      <details>
+        <summary>А якщо буде дощ?</summary>
+        <p class="faq-a">
+          Для події просто неба в кошторисі завжди закладений план Б — шатро або резервна
+          локація. Він узгоджується заздалегідь, а не в день події по телефону.
+        </p>
+      </details>
+      <details>
+        <summary>За скільки часу треба починати?</summary>
+        <p class="faq-a">
+          Весілля — від 4 місяців, корпоратив — від 6 тижнів, приватна вечірка —
+          від 2 тижнів. Швидше теж беремо, але вибір локацій і артистів буде вужчим,
+          і це вплине на ціну.
+        </p>
+      </details>
+      <details>
+        <summary>Ви справді можете запросити зірку?</summary>
+        <p class="faq-a">
+          Так, у нас прямі контакти з артистами та їхнім менеджментом. Гонорар ви платите
+          артисту без посередницької націнки, ми домовляємось і закриваємо райдер.
+          Напишіть, про кого саме йдеться, — скажемо суму й чи вільна дата.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. ФОРМА ============ -->
+<section id="apply">
+  <div class="wrap">
+    <div class="form-shell">
+
+      <div class="form-aside">
+        <p class="eyebrow rv">Заявка</p>
+        <h2 class="rv d1">Розкажіть про подію <span class="mute">— і ми порахуємо</span></h2>
+        <p class="lead rv d2">
+          Марина відповість у Telegram або подзвонить. Спершу — коротка розмова,
+          далі кошторис по рядках протягом трьох днів.
+        </p>
+        <p class="rv d3" style="margin-top:22px">
+          <span class="capsule">
+            <span class="dot" aria-hidden="true"></span>
+            Відповідаємо того ж дня
+          </span>
+        </p>
+      </div>
+
+      <form class="form-card rv d1" id="applyForm" novalidate>
+
+        <!-- зведення розрахунку, якщо людина прийшла з конструктора -->
+        <div class="apply-calc" id="applyCalc">
+          <div class="apply-calc-h">
+            Ваш розрахунок
+            <a href="#constructor">змінити</a>
+          </div>
+          <p id="applyCalcText"></p>
+        </div>
+
+        <div class="fgrid">
+          <div class="field">
+            <label for="f-name">Імʼя <span class="req">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Як до вас звертатися" required>
+            <span class="err">Вкажіть, будь ласка, вашe імʼя</span>
+          </div>
+
+          <div class="field">
+            <label for="f-contact">Телефон <span class="req">*</span></label>
+            <input id="f-contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required>
+            <span class="err">Вкажіть номер, до якого привʼязаний месенджер</span>
+          </div>
+
+          <div class="field">
+            <label for="f-messenger">Де зручніше спілкуватись</label>
+            <div class="sel">
+              <select id="f-messenger" name="messenger">
+                <option>Telegram</option>
+                <option>WhatsApp</option>
+                <option>Viber</option>
+                <option>Дзвінок</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-date">Дата події</label>
+            <!-- навмисно text, а не date: «серпень 2026, точної дати ще немає»
+                 має проходити так само легко, як конкретне число -->
+            <input id="f-date" name="date" type="text" placeholder="17.05.2026 або «літо 2026»">
+          </div>
+
+          <div class="field full">
+            <label for="f-comment">Коротко про подію</label>
+            <textarea id="f-comment" name="comment" placeholder="Повід, приблизна кількість гостей, що обов'язково має бути"></textarea>
+          </div>
+
+          <!-- Пастка для ботів: людина цього поля не бачить і не заповнює.
+               Заповнене — заявка тихо відкидається. -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-company">Не заповнюйте це поле</label>
+            <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- повна конфігурація конструктора, якщо вона є -->
+          <input type="hidden" id="f-calc" name="calc">
+        </div>
+
+        <div class="form-error" id="formError" role="alert"></div>
+
+        <div class="form-foot">
+          <button class="btn btn-accent" type="submit" id="submitBtn">Надіслати заявку</button>
+          <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
+        </div>
+
+        <p class="form-direct">
+          Не хочете форму? Напишіть напряму:
+          <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a>
+          або <a href="tel:+380674097350">+38 (067) 409-73-50</a>.
+        </p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ ФУТЕР ============ -->
+<footer class="footer" id="contacts">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-logo">
+        <span class="wm"><b>Gravity</b><span>Moments</span></span>
+        <p>
+          Організація подій під ключ: весілля, корпоративи, дні народження, відкриття.
+          Київ і вся Україна. Працюємо з відкритим кошторисом.
+        </p>
+      </div>
+
+      <div>
+        <div class="foot-h">Контакти</div>
+        <div class="foot-list">
+          <a href="tel:+380674097350">+38 (067) 409-73-50</a>
+          <span>Марина Філіпенко — організаторка</span>
+          <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-h">Сторінка</div>
+        <div class="foot-list">
+          <a href="#constructor">Зібрати кошторис</a>
+          <a href="#artists">Гонорари артистів</a>
+          <a href="#faq">Питання та відповіді</a>
+          <a href="#apply">Залишити заявку</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Gravity Moments</span>
+      <span>Ціни на сторінці орієнтовні й не є публічною офертою</span>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky CTA, тільки телефони -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-accent" href="#constructor">Зібрати кошторис</a>
+</div>
+
+<!-- модалка успіху -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" type="button" id="modalClose" aria-label="Закрити">&times;</button>
+    <div class="modal-mark" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+    </div>
+    <h3 id="modalTitle">Заявку отримано</h3>
+    <p>Дякуємо. Марина звʼяжеться з вами найближчим часом — у Telegram або дзвінком.</p>
+    <a class="btn btn-white" href="https://t.me/marina_philipenko" target="_blank" rel="noopener">Написати в Telegram</a>
+  </div>
+</div>
+
+<script src="assets/js/prices.js?v=20260912a"></script>
+<script src="assets/js/constructor.js?v=20260912a"></script>
+<script src="assets/js/main.js?v=20260912a"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Розгортання приймача заявок.
+#
+#   npx wrangler secret put BOT_TOKEN    — токен від @BotFather
+#   npx wrangler deploy
+#
+# Код у git = код у проді. Саме розсинхрон між копіпастом у дашборді
+# й репозиторієм зламав форму на попередньому проєкті.
+
+name = "gravity-form"
+main = "worker.js"
+compatibility_date = "2026-09-12"
+
+# CHAT_ID не секрет — це просто номер групи. BOT_TOKEN секрет,
+# він ставиться командою wrangler secret put і сюди не пишеться.
+[vars]
+# CHAT_ID = "-100..."
