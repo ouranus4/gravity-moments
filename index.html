@@ -21,7 +21,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
-<meta property="og:title" content="Gravity Moments — події, які притягують">
+<meta property="og:title" content="Gravity Moments — створюємо моменти, які памʼятають">
 <meta property="og:description" content="Весілля, корпоративи, дні народження, відкриття. Прямі контакти з артистами й площадками — і зрозумілий бюджет ще до першої зустрічі.">
 <meta property="og:image" content="https://ouranus4.github.io/gravity-moments/assets/img/og-cover.jpg">
 <meta property="og:image:width" content="1200">
@@ -30,14 +30,14 @@
 <meta property="og:url" content="https://ouranus4.github.io/gravity-moments/">
 <meta property="og:site_name" content="Gravity Moments">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gravity Moments — події, які притягують">
+<meta name="twitter:title" content="Gravity Moments — створюємо моменти, які памʼятають">
 <meta name="twitter:description" content="Прямі контакти з артистами й площадками. Зберіть бюджет своєї події за дві хвилини.">
 <meta name="twitter:image" content="https://ouranus4.github.io/gravity-moments/assets/img/og-cover.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20260912b">
+<link rel="stylesheet" href="assets/css/main.css?v=20260912c">
 
 <script type="application/ld+json">
 {
@@ -149,6 +149,20 @@
       <path d="M12 2.8l7 2.8v5.6c0 4.4-2.9 8.2-7 9.8-4.1-1.6-7-5.4-7-9.8V5.6z"/>
       <path d="M8.8 12l2.3 2.3 4.1-4.4"/>
     </symbol>
+    <!-- серце: заручини -->
+    <symbol id="i-heart" viewBox="0 0 24 24">
+      <path d="M12 20.5C6.5 16.8 3.5 13.8 3.5 10.2A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 8.5 2.2c0 3.6-3 6.6-8.5 10.3z"/>
+    </symbol>
+    <!-- два келихи: парубочий вечір -->
+    <symbol id="i-cheers" viewBox="0 0 24 24">
+      <path d="M3.5 3.5h6l-1 5a2 2 0 0 1-4 0z"/><path d="M6.5 10.5v8"/><path d="M4 18.5h5"/>
+      <path d="M14.5 3.5h6l-1 5a2 2 0 0 1-4 0z"/><path d="M17.5 10.5v8"/><path d="M15 18.5h5"/>
+    </symbol>
+    <!-- кулька: гендер-паті -->
+    <symbol id="i-balloon" viewBox="0 0 24 24">
+      <path d="M12 2.8c3.3 0 5.5 2.6 5.5 6 0 3.6-2.7 6.6-5.5 7.6-2.8-1-5.5-4-5.5-7.6 0-3.4 2.2-6 5.5-6z"/>
+      <path d="M12 16.4v1.6"/><path d="M10.8 21c0-1.5 2.4-1.5 2.4-3"/>
+    </symbol>
     <!-- квітка -->
     <symbol id="i-flower" viewBox="0 0 24 24">
       <circle cx="12" cy="9" r="2.2"/>
@@ -209,7 +223,7 @@
         <span class="dot" aria-hidden="true"></span>
         Gravity Moments · організація подій
       </p>
-      <h1>Події, які <span class="mute">притягують</span></h1>
+      <h1>Створюємо моменти, <span class="mute">які памʼятають</span></h1>
       <p class="lead">
         Весілля, корпоративи, дні народження, відкриття. Повний цикл — від першої ідеї
         до останнього гостя. <span class="mark">Прямі контакти</span> з артистами,
@@ -369,6 +383,22 @@
                 <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-rings"/></svg>Весілля</span>
               </label>
               <label class="gm-opt">
+                <input type="radio" name="ev" value="engagement">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Заручини</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="hen">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg>Дівич-вечір</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="stag">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-cheers"/></svg>Парубочий вечір</span>
+              </label>
+              <label class="gm-opt">
+                <input type="radio" name="ev" value="gender">
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-balloon"/></svg>Гендер-паті</span>
+              </label>
+              <label class="gm-opt">
                 <input type="radio" name="ev" value="birthday">
                 <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-cake"/></svg>День народження</span>
               </label>
@@ -386,7 +416,7 @@
               </label>
               <label class="gm-opt">
                 <input type="radio" name="ev" value="private">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg>Приватна вечірка</span>
+                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-light"/></svg>Приватна вечірка</span>
               </label>
             </div>
           </fieldset>
@@ -542,7 +572,55 @@
         <div class="card-body">
           <h3>Весілля</h3>
           <p>Повний цикл: локація, церемонія, банкет, програма. Координація дня від монтажу до вивозу декору.</p>
-          <p class="card-from">від 280 000 ₴</p>
+          <p class="card-from">від 250 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d2" href="?ev=engagement&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <span class="card-tag">від 3 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Заручини</h3>
+          <p>Вечеря, на якій має прозвучати одне питання. Локація, фотограф і сценарій, зведений до однієї хвилини.</p>
+          <p class="card-from">від 75 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d3" href="?ev=hen&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg></span>
+          <span class="card-tag">від 2 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Дівич-вечір</h3>
+          <p>Формат, де головне не програма, а компанія. Локація, стіл, декор, фотограф — і жодної незручної анімації.</p>
+          <p class="card-from">від 45 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d1" href="?ev=stag&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-cheers"/></svg></span>
+          <span class="card-tag">від 2 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Парубочий вечір</h3>
+          <p>Від спокійної вечері до виїзду за місто. Беремо на себе логістику — щоб наступного дня всі були на місці.</p>
+          <p class="card-from">від 45 000 ₴</p>
+        </div>
+      </a>
+
+      <a class="card rv d2" href="?ev=gender&amp;step=2#constructor">
+        <div class="card-top">
+          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-balloon"/></svg></span>
+          <span class="card-tag">від 2 тижнів</span>
+        </div>
+        <div class="card-body">
+          <h3>Гендер-паті</h3>
+          <p>Коротка подія з одним сильним кадром. Декор, фотозона й момент розкриття — усе заради тих трьох секунд.</p>
+          <p class="card-from">від 50 000 ₴</p>
         </div>
       </a>
 
@@ -566,7 +644,7 @@
         <div class="card-body">
           <h3>День народження</h3>
           <p>Камерна вечеря на 20 осіб або свято на 150 з хедлайнером. Однаково уважно до деталей.</p>
-          <p class="card-from">від 140 000 ₴</p>
+          <p class="card-from">від 160 000 ₴</p>
         </div>
       </a>
 
@@ -578,7 +656,7 @@
         <div class="card-body">
           <h3>Відкриття бутика</h3>
           <p>Подія, яку знімають і переказують: гості, преса, фотозона, привід потрапити в сторіс.</p>
-          <p class="card-from">від 180 000 ₴</p>
+          <p class="card-from">від 170 000 ₴</p>
         </div>
       </a>
 
@@ -602,7 +680,7 @@
         <div class="card-body">
           <h3>Приватна вечірка</h3>
           <p>Закритий формат без зайвих очей: локація, бар, DJ, і ніяких слідів у соцмережах, якщо так треба.</p>
-          <p class="card-from">від 90 000 ₴</p>
+          <p class="card-from">від 120 000 ₴</p>
         </div>
       </a>
     </div>
@@ -964,8 +1042,8 @@
   </div>
 </div>
 
-<script src="assets/js/prices.js?v=20260912b"></script>
-<script src="assets/js/constructor.js?v=20260912b"></script>
-<script src="assets/js/main.js?v=20260912b"></script>
+<script src="assets/js/prices.js?v=20260912c"></script>
+<script src="assets/js/constructor.js?v=20260912c"></script>
+<script src="assets/js/main.js?v=20260912c"></script>
 </body>
 </html>

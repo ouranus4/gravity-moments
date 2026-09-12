@@ -82,17 +82,25 @@
     var keys = Object.keys(GM.items);
     var low = {}, high = {};
 
+    var skip = occ.skip || [];
+
     // 1) детермінована частина по кожній статті
     keys.forEach(function (key) {
+      // статті, яких у цьому форматі немає
+      if (skip.indexOf(key) !== -1) { low[key] = 0; high[key] = 0; return; }
+
       var it = GM.items[key];
       var kLvl = (lvl.k && lvl.k[key] !== undefined) ? lvl.k[key]
                : (lvl.k && lvl.k._ !== undefined ? lvl.k._ : 1);
       var kVt  = (vt.k && vt.k[key]) ? vt.k[key] : 1;
       var k    = occ.k * city.k * kLvl * kVt;
       var mid  = (it.fixed + it.perGuest * g) * k;
-      // floor не дає камерній події показати «техніка 4 000 ₴»
-      low[key]  = Math.max(it.floor, mid * GM.spread.low);
-      high[key] = Math.max(it.floor, mid * GM.spread.high);
+      // floor не дає камерній події показати «техніка 4 000 ₴».
+      // Масштабуємо його на коефіцієнт приводу: межі пораховані під
+      // весілля, і для дівич-вечора вони були б більші за сам кошторис.
+      var floor = it.floor * occ.k;
+      low[key]  = Math.max(floor, mid * GM.spread.low);
+      high[key] = Math.max(floor, mid * GM.spread.high);
     });
 
     // 2) опції — вже у грошах, мають власну вилку.
@@ -109,8 +117,11 @@
     // 3) робота організатора — відсоток від усього іншого
     var sumLow = 0, sumHigh = 0;
     keys.forEach(function (key) { sumLow += low[key]; sumHigh += high[key]; });
-    var workLow  = Math.max(GM.agency.min, sumLow  * GM.agency.pct);
-    var workHigh = Math.max(GM.agency.min, sumHigh * GM.agency.pct);
+    // Камерний формат забирає менше часу, ніж весілля, тому привід
+    // може перекрити загальний мінімум своїм.
+    var aMin = (occ.agencyMin !== undefined) ? occ.agencyMin : GM.agency.min;
+    var workLow  = Math.max(aMin, sumLow  * GM.agency.pct);
+    var workHigh = Math.max(aMin, sumHigh * GM.agency.pct);
 
     // 4) складаємо список статей, порожні відкидаємо
     var rows = [];

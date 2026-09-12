@@ -54,16 +54,30 @@ window.GM_PRICES = {
   agency: { label: 'Робота організатора', pct: 0.15, min: 30000 },
 
   /* ---------- ПРИВІД ----------
-     k      — множник на весь кошторис
-     guests — скільки гостей підставити за замовчуванням
-     pre    — які опції позначити одразу */
+     k         — множник на весь кошторис
+     guests    — скільки гостей підставити за замовчуванням
+     pre       — які опції позначити одразу
+     skip      — статті, яких у цьому форматі просто немає. Дівич-вечір
+                 не замовляє світло-звук-екран, і рядок на 22 000 ₴ там
+                 виглядав би як помилка
+     agencyMin — свій мінімум за роботу. Камерні формати займають менше
+                 часу, ніж весілля, тому загальний мінімум для них
+                 завеликий. Якщо не вказано — береться agency.min */
   occasions: {
-    wedding:   { label: 'Весілля',            k: 1.00, guests: 90,  pre: ['host', 'music'] },
-    birthday:  { label: 'День народження',    k: 0.90, guests: 40,  pre: ['host', 'dj'] },
-    corporate: { label: 'Корпоратив',         k: 0.95, guests: 150, pre: ['host', 'show'] },
-    jubilee:   { label: 'Ювілей',             k: 0.95, guests: 60,  pre: ['host', 'music'] },
-    opening:   { label: 'Відкриття бутика',   k: 0.85, guests: 70,  pre: ['dj'] },
-    private:   { label: 'Приватна вечірка',   k: 0.85, guests: 30,  pre: ['dj'] }
+    wedding:    { label: 'Весілля',           k: 1.00, guests: 90,  pre: ['host', 'music'] },
+    engagement: { label: 'Заручини',          k: 0.80, guests: 25,  pre: ['dj'],
+                  skip: ['tech'], agencyMin: 15000 },
+    hen:        { label: 'Дівич-вечір',       k: 0.70, guests: 14,  pre: [],
+                  skip: ['tech'], agencyMin: 12000 },
+    stag:       { label: 'Парубочий вечір',   k: 0.70, guests: 14,  pre: [],
+                  skip: ['tech'], agencyMin: 12000 },
+    gender:     { label: 'Гендер-паті',       k: 0.65, guests: 25,  pre: [],
+                  skip: ['tech'], agencyMin: 12000 },
+    birthday:   { label: 'День народження',   k: 0.90, guests: 40,  pre: ['host', 'dj'] },
+    jubilee:    { label: 'Ювілей',            k: 0.95, guests: 60,  pre: ['host', 'music'] },
+    corporate:  { label: 'Корпоратив',        k: 0.95, guests: 150, pre: ['host', 'show'] },
+    opening:    { label: 'Відкриття бутика',  k: 0.85, guests: 70,  pre: ['dj'] },
+    private:    { label: 'Приватна вечірка',  k: 0.85, guests: 30,  pre: ['dj'] }
   },
 
   /* ---------- МІСТО ---------- */
