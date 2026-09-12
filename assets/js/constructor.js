@@ -288,12 +288,17 @@
 
     if (elItems) {
       var html = r.rows.map(function (row) {
+        // Частку саме цієї статті не показуємо: сума роботи організатора
+        // у відсотках від бюджету — це, по суті, оголошена ставка, а її
+        // ми на сайті не називаємо. У смузі сегмент лишається: він
+        // пропорційний і без підпису.
+        var pct = row.key === 'agency' ? '' : row.pct + '%';
         return '<li>' +
           '<span class="k">' +
             '<span class="sw" style="background:' + (COLORS[row.key] || '#6E6B7A') + '"></span>' +
             row.label +
           '</span>' +
-          '<span class="p">' + row.pct + '%</span>' +
+          '<span class="p">' + pct + '</span>' +
           '<span class="v">' + group(row.low) + '–' + group(row.high) + '</span>' +
         '</li>';
       }).join('');
