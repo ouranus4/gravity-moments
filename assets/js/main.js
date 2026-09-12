@@ -509,6 +509,9 @@
   $$('[data-photo], [data-portrait]').forEach(function (slot) {
     var src = slot.getAttribute('data-photo') || slot.getAttribute('data-portrait');
     if (!src) return;
+    // Секція кейсів прихована, поки немає реальних історій. Пробувати
+    // вантажити фото з неї — це 404 на кожному відкритті сайту.
+    if (slot.closest('[hidden]')) return;
     var probe = new Image();
     probe.onload = function () {
       var img = document.createElement('img');
