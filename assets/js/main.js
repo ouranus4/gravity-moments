@@ -296,14 +296,23 @@
      розмита копія: її малює canvas із того самого <video>, бо другий
      <video> декодував би ролик удруге. Буфер крихітний (64 px), а
      оновлюється ~15 разів на секунду — під розмиттям різниці не видно.
+
+     Телефони блокують автозапуск частіше, ніж здається: режим
+     енергозбереження на iPhone, економія даних на Android, вбудовані
+     браузери застосунків. Тому ролик ніколи не лишається «мертвим»:
+     кнопка на першому екрані видна завжди, а якщо автозапуск
+     заборонили — ролик стартує від першого дотику до сторінки.
      ---------------------------------------------------------- */
   (function heroVideo() {
     var video = $('#heroVideo');
     if (!video) return;
     var src = video.getAttribute('data-src');
+    if (!src) return;
+
     var saveData = navigator.connection && navigator.connection.saveData;
-    // лишається постер: руху не хочуть або трафік дорогий
-    if (!src || reduceMotion || saveData) return;
+    // Сам не вмикаємо, якщо руху не хочуть або трафік дорогий.
+    // Кнопка «Увімкнути» при цьому лишається — вирішує людина.
+    var autoplay = !reduceMotion && !saveData;
 
     var btn = $('#heroPause');
     var hero = video.closest('.hero') || video;
@@ -311,7 +320,17 @@
     var ctx = backdrop && backdrop.getContext ? backdrop.getContext('2d') : null;
     var wide = window.matchMedia('(min-width: 1000px)');
 
-    var onScreen = true, userPaused = false, raf = 0, last = 0;
+    var onScreen = true, userPaused = !autoplay;
+    var raf = 0, last = 0, loaded = false, triedBlob = false, armed = false;
+
+    // Safari на iPhone вмикає ролик без жесту, лише якщо він
+    // беззвучний і грає всередині сторінки. Атрибутів у розмітці
+    // деяким версіям мало — дублюємо властивостями.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
 
     function sizeBackdrop() {
       if (!backdrop) return;
@@ -336,24 +355,102 @@
       backdrop.classList.add('lit');
     }
 
-    function play() {
-      if (userPaused || !onScreen || document.hidden) return;
-      var p = video.play();
-      // автоплей заборонений браузером — лишається постер, без помилок
-      if (p && p.catch) p.catch(function () {});
-      if (ctx && !raf) raf = requestAnimationFrame(paint);
+    // Стан кнопки беремо з самого плеєра, а не з власного прапорця:
+    // ролик може стати на паузу й без нас (система, дзвінок, вкладка).
+    function sync() {
+      if (!btn) return;
+      var playing = !video.paused;
+      btn.setAttribute('aria-pressed', playing ? 'false' : 'true');
+      btn.setAttribute('aria-label', playing ? 'Зупинити відео' : 'Увімкнути відео');
     }
-    function stop() {
-      video.pause();
+
+    function loadOnce() {
+      if (loaded) return;
+      loaded = true;
+      video.src = src;
+    }
+
+    function stopPaint() {
       if (raf) { cancelAnimationFrame(raf); raf = 0; }
     }
 
-    function start() {
-      video.src = src;
-      video.addEventListener('playing', function () {
-        if (btn) btn.hidden = false;
-      }, { once: true });
+    // Автозапуск заборонили — чекаємо на перший жест. Саме ці події
+    // браузери зараховують як дію користувача; дотик-прокрутка — ні.
+    var GESTURES = ['pointerup', 'touchend', 'click', 'keydown'];
+    function onGesture() {
+      disarm();
+      play();
+    }
+    function arm() {
+      if (armed || userPaused) return;
+      armed = true;
+      GESTURES.forEach(function (t) {
+        window.addEventListener(t, onGesture, { capture: true, passive: true });
+      });
+    }
+    function disarm() {
+      if (!armed) return;
+      armed = false;
+      GESTURES.forEach(function (t) {
+        window.removeEventListener(t, onGesture, { capture: true, passive: true });
+      });
+    }
 
+    function play() {
+      if (userPaused || !onScreen || document.hidden) return;
+      loadOnce();
+      var p = video.play();
+      if (p && p.then) {
+        p.then(disarm, function () {
+          stopPaint();
+          arm();
+          sync();
+        });
+      }
+      if (ctx && !raf) raf = requestAnimationFrame(paint);
+    }
+
+    function stop() {
+      video.pause();
+      stopPaint();
+    }
+
+    // Частина хостингів віддає файл без підтримки Range-запитів, а
+    // Safari на iPhone без неї не грає відео взагалі. Тоді забираємо
+    // ролик цілком і віддаємо плеєру локальну копію.
+    video.addEventListener('error', function () {
+      if (triedBlob || !window.fetch || !window.URL || !URL.createObjectURL) return;
+      triedBlob = true;
+      fetch(src)
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+        .then(function (blob) {
+          video.src = URL.createObjectURL(blob);
+          play();
+        })
+        .catch(function () {});
+    });
+
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+
+    if (btn) {
+      btn.hidden = false;
+      sync();
+      btn.addEventListener('click', function (e) {
+        // клік по кнопці не має ще й спрацювати як «перший жест»
+        e.stopPropagation();
+        disarm();
+        if (video.paused) {
+          userPaused = false;
+          play();
+        } else {
+          userPaused = true;
+          stop();
+        }
+      });
+    }
+
+    function start() {
       sizeBackdrop();
       window.addEventListener('resize', sizeBackdrop, { passive: true });
 
@@ -368,15 +465,6 @@
         document.hidden ? stop() : play();
       });
       play();
-    }
-
-    if (btn) {
-      btn.addEventListener('click', function () {
-        userPaused = !userPaused;
-        btn.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
-        btn.setAttribute('aria-label', userPaused ? 'Увімкнути відео' : 'Зупинити відео');
-        userPaused ? stop() : play();
-      });
     }
 
     // ролик важить ~3 МБ — вантажимо його вже після першого екрана
