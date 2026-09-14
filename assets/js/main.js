@@ -291,188 +291,95 @@
   }
 
   /* ----------------------------------------------------------
-     HERO — ГРАВІТАЦІЙНИЙ КОЛОДЯЗЬ
-     Шар 0 (CSS-градієнт) видний завжди. Цей шейдер — прогресивне
-     покращення: якщо WebGL немає, пристрій слабкий або кадри
-     виходять довгими, canvas просто зникає й лишається шар 0.
+     HERO — РОЛИК ІЗ ПОДІЇ
+     Ролик вертикальний. На широкому екрані за текстом лежить його
+     розмита копія: її малює canvas із того самого <video>, бо другий
+     <video> декодував би ролик удруге. Буфер крихітний (64 px), а
+     оновлюється ~15 разів на секунду — під розмиттям різниці не видно.
      ---------------------------------------------------------- */
-  (function heroField() {
-    var canvas = $('#heroField');
-    if (!canvas) return;
-    if (reduceMotion) return;
-
-    // Пристрої, на яких важкий шейдер не вартий свічки.
-    // deviceMemory є не всюди — відсутність не вважаємо за відмову.
-    var cores = navigator.hardwareConcurrency || 4;
-    var mem = navigator.deviceMemory;
+  (function heroVideo() {
+    var video = $('#heroVideo');
+    if (!video) return;
+    var src = video.getAttribute('data-src');
     var saveData = navigator.connection && navigator.connection.saveData;
-    if (cores < 4 || (mem !== undefined && mem < 4) || saveData) return;
+    // лишається постер: руху не хочуть або трафік дорогий
+    if (!src || reduceMotion || saveData) return;
+
+    var btn = $('#heroPause');
+    var hero = video.closest('.hero') || video;
+    var backdrop = $('#heroBackdrop');
+    var ctx = backdrop && backdrop.getContext ? backdrop.getContext('2d') : null;
+    var wide = window.matchMedia('(min-width: 1000px)');
+
+    var onScreen = true, userPaused = false, raf = 0, last = 0;
+
+    function sizeBackdrop() {
+      if (!backdrop) return;
+      var r = backdrop.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      backdrop.width = 64;
+      backdrop.height = Math.max(1, Math.round(64 * r.height / r.width));
+    }
+
+    function paint(now) {
+      raf = requestAnimationFrame(paint);
+      if (now - last < 66) return;
+      last = now;
+      if (!ctx || !wide.matches || video.readyState < 2) return;
+      var cw = backdrop.width, ch = backdrop.height;
+      var vw = video.videoWidth, vh = video.videoHeight;
+      if (!vw || !vh || !cw || !ch) return;
+      // object-fit: cover вручну
+      var k = Math.max(cw / vw, ch / vh);
+      var sw = cw / k, sh = ch / k;
+      ctx.drawImage(video, (vw - sw) / 2, (vh - sh) / 2, sw, sh, 0, 0, cw, ch);
+      backdrop.classList.add('lit');
+    }
+
+    function play() {
+      if (userPaused || !onScreen || document.hidden) return;
+      var p = video.play();
+      // автоплей заборонений браузером — лишається постер, без помилок
+      if (p && p.catch) p.catch(function () {});
+      if (ctx && !raf) raf = requestAnimationFrame(paint);
+    }
+    function stop() {
+      video.pause();
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    }
 
     function start() {
-      var gl = canvas.getContext('webgl', { antialias: false, alpha: true, depth: false })
-            || canvas.getContext('experimental-webgl');
-      if (!gl) return;
+      video.src = src;
+      video.addEventListener('playing', function () {
+        if (btn) btn.hidden = false;
+      }, { once: true });
 
-      var VERT =
-        'attribute vec2 p;' +
-        'void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
+      sizeBackdrop();
+      window.addEventListener('resize', sizeBackdrop, { passive: true });
 
-      // Світло стікає до центру мас: UV закручуються тим сильніше,
-      // чим ближче до нього. Звідси й назва бренду.
-      var FRAG =
-        'precision highp float;' +
-        'uniform vec2 uRes;' +
-        'uniform float uTime;' +
-        'void main(){' +
-        '  vec2 uv = gl_FragCoord.xy / uRes;' +
-        '  vec2 p = uv - vec2(0.70, 0.56);' +
-        '  p.x *= uRes.x / uRes.y;' +
-        '  float r = length(p);' +
-        '  float a = atan(p.y, p.x);' +
-        '  float t = uTime * 0.06;' +
-        '  float swirl = 0.45 / (r * r + 0.18);' +
-        '  float ang = a + swirl * 0.6 + t;' +
-        '  float v  = sin(ang * 3.0 + r * 9.0 - t * 2.2);' +
-        '  v += sin(ang * 5.0 - r * 6.0 + t * 1.4) * 0.6;' +
-        '  v /= 1.6;' +
-        '  float bands = pow(clamp(v * 0.5 + 0.5, 0.0, 1.0), 2.6);' +
-        '  float falloff = smoothstep(1.25, 0.06, r);' +
-        '  float core = smoothstep(0.40, 0.0, r);' +
-        '  float i = bands * falloff + core * 0.5;' +
-        // ніч -> холодний ультрафіолет -> шампань -> світла шампань
-        '  vec3 col = vec3(0.016, 0.016, 0.030);' +
-        '  col = mix(col, vec3(0.10, 0.07, 0.26), smoothstep(0.02, 0.34, i));' +
-        '  col = mix(col, vec3(0.55, 0.40, 0.16), smoothstep(0.34, 0.70, i));' +
-        '  col = mix(col, vec3(0.96, 0.84, 0.62), smoothstep(0.70, 1.00, i));' +
-        // трохи шуму прибирає смуги на широких плавних переходах
-        '  float n = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453);' +
-        '  col += (n - 0.5) * 0.012;' +
-        '  gl_FragColor = vec4(col, 1.0);' +
-        '}';
-
-      function compile(type, src) {
-        var s = gl.createShader(type);
-        gl.shaderSource(s, src);
-        gl.compileShader(s);
-        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
-          if (window.console) console.error('[Gravity] shader:', gl.getShaderInfoLog(s));
-          return null;
-        }
-        return s;
-      }
-
-      var vs = compile(gl.VERTEX_SHADER, VERT);
-      var fs = compile(gl.FRAGMENT_SHADER, FRAG);
-      if (!vs || !fs) return;
-
-      var prog = gl.createProgram();
-      gl.attachShader(prog, vs);
-      gl.attachShader(prog, fs);
-      gl.linkProgram(prog);
-      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-        if (window.console) console.error('[Gravity] program:', gl.getProgramInfoLog(prog));
-        return;
-      }
-      gl.useProgram(prog);
-
-      var buf = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-      var loc = gl.getAttribLocation(prog, 'p');
-      gl.enableVertexAttribArray(loc);
-      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-
-      var uRes = gl.getUniformLocation(prog, 'uRes');
-      var uTime = gl.getUniformLocation(prog, 'uTime');
-
-      // Шейдер платить за кожен піксель, тому щільність ріжемо:
-      // на телефоні ще й рендеримо в менший буфер, розтягуючи по CSS.
-      var narrow = window.innerWidth < 768;
-      var DPR = narrow
-        ? Math.min(window.devicePixelRatio || 1, 1) * 0.7
-        : Math.min(window.devicePixelRatio || 1, 1.5);
-      var w = 0, h = 0;
-
-      function size() {
-        var r = canvas.getBoundingClientRect();
-        if (!r.width || !r.height) return false;
-        var nw = Math.round(r.width * DPR), nh = Math.round(r.height * DPR);
-        if (nw !== w || nh !== h) {
-          w = nw; h = nh;
-          canvas.width = w;
-          canvas.height = h;
-          gl.viewport(0, 0, w, h);
-        }
-        return true;
-      }
-
-      // починаємо не з нуля, щоб перший кадр уже мав сформовану картину
-      var t0 = 12;
-      function render(seconds) {
-        if (!size()) return false;
-        gl.uniform2f(uRes, w, h);
-        gl.uniform1f(uTime, t0 + seconds);
-        gl.drawArrays(gl.TRIANGLES, 0, 3);
-        canvas.classList.add('lit');
-        return true;
-      }
-
-      render(0);
-
-      var start = performance.now();
-      var raf = 0;
-      var onScreen = true;
-
-      // Самовимкнення. Гейти вище спираються на API, які іноді брешуть;
-      // це — єдина перевірка, яка дивиться на реальну швидкість. Якщо
-      // перші 30 кадрів виходять довгими, знімаємо canvas і лишаємо шар 0.
-      var frames = 0, t1 = start, budget = 0, judged = false;
-
-      function loop() {
-        var now = performance.now();
-        if (!judged) {
-          budget += now - t1;
-          t1 = now;
-          if (++frames >= 30) {
-            judged = true;
-            if (budget / frames > 24) {
-              cancelAnimationFrame(raf);
-              canvas.parentNode && canvas.parentNode.removeChild(canvas);
-              return;
-            }
-          }
-        }
-        render((now - start) / 1000);
-        raf = requestAnimationFrame(loop);
-      }
-      function play() {
-        if (raf || !onScreen || document.hidden) return;
-        t1 = performance.now();
-        raf = requestAnimationFrame(loop);
-      }
-      function stop() {
-        if (!raf) return;
-        cancelAnimationFrame(raf);
-        raf = 0;
-      }
-
-      // Малюємо лише поки герой на екрані й таб активний: постійний
-      // повноекранний шейдер — це рівний податок на всю сторінку.
+      // не крутимо ролик, поки перший екран не видно або таб у фоні
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
           onScreen = entries[0].isIntersecting;
           onScreen ? play() : stop();
-        }, { threshold: 0 }).observe(canvas);
+        }, { threshold: 0 }).observe(hero);
       }
       document.addEventListener('visibilitychange', function () {
         document.hidden ? stop() : play();
       });
       play();
-
-      window.addEventListener('resize', function () { w = 0; h = 0; });
     }
 
-    // Не чіпаємо перший екран: шейдер стартує, коли браузер вільний.
+    if (btn) {
+      btn.addEventListener('click', function () {
+        userPaused = !userPaused;
+        btn.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
+        btn.setAttribute('aria-label', userPaused ? 'Увімкнути відео' : 'Зупинити відео');
+        userPaused ? stop() : play();
+      });
+    }
+
+    // ролик важить ~3 МБ — вантажимо його вже після першого екрана
     if (document.readyState === 'complete') whenIdle(start);
     else window.addEventListener('load', function () { whenIdle(start); });
   })();

@@ -509,7 +509,7 @@ a.card{color:inherit}
 body.locked{overflow:hidden}
 
 /* ============================================================
-   1. HERO — гравітаційний колодязь
+   1. HERO — ролик із події
    ============================================================ */
 .hero{
   position:relative;overflow:hidden;
@@ -519,9 +519,8 @@ body.locked{overflow:hidden}
   background:var(--black);
   isolation:isolate;
 }
-/* ШАР 0 — завжди видимий, нуль запитів і нуль JS.
-   Те, що людина бачить на першому кадрі, і те, що лишається,
-   якщо шейдер не запустився або був вимкнений. */
+/* ШАР 0 — завжди видимий, нуль запитів і нуль JS: тло під
+   постером, поки той вантажиться. */
 .hero::before{
   content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
@@ -530,36 +529,51 @@ body.locked{overflow:hidden}
     radial-gradient(100% 80% at 50% 120%,rgba(5,5,10,.9),transparent 60%),
     linear-gradient(180deg,#07070D,#05050A);
 }
-/* ШАР 1 — шейдер. Лягає поверх шару 0 і проявляється, коли
-   перший кадр намальовано. */
-.hero-field{
-  position:absolute;inset:0;z-index:1;display:block;
-  width:100%;height:100%;pointer-events:none;
-  opacity:0;transition:opacity 1.1s var(--ease);
+/* ШАР 1 — розмита копія ролика за текстом, лише широкі екрани.
+   Постер стоїть фоном одразу, canvas поверх нього оживає, коли ролик
+   пішов. scale ховає світлий край, який лишає розмиття. */
+.hero-backdrop{
+  position:absolute;inset:0;z-index:1;display:none;pointer-events:none;
+  background:#05050A url("../video/hero-poster.jpg") center/cover no-repeat;
+  filter:blur(26px) saturate(1.25) brightness(.8);
+  transform:scale(1.12);
 }
-.hero-field.lit{opacity:1}
-/* ШАР 2 — притінення під текстом. Світло шейдера збирається в
-   яскраву пляму, і без цього шару білий заголовок на ній тоне.
-   На вузьких екранах пляма опиняється просто під текстом, тому
-   там притінення рівне по всій висоті. */
+.hero-backdrop canvas{
+  display:block;width:100%;height:100%;
+  opacity:0;transition:opacity 1.2s var(--ease);
+}
+.hero-backdrop canvas.lit{opacity:1}
+
+/* ШАР 2 — притінення під текстом. Ролик яскравий (фіолетова сцена,
+   прожектори), і без цього шару білий заголовок на ньому тоне. */
 .hero::after{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(102deg,
-    rgba(5,5,10,.88) 0%,
-    rgba(5,5,10,.62) 38%,
-    rgba(5,5,10,.14) 70%,
-    transparent 88%);
+    rgba(5,5,10,.90) 0%,
+    rgba(5,5,10,.70) 40%,
+    rgba(5,5,10,.30) 72%,
+    rgba(5,5,10,.15) 100%);
 }
-@media (max-width:900px){
+
+/* ШАР 3 — сам ролик. Він вертикальний (720×1280): на телефоні
+   лягає на весь екран як є, а на широкому екрані стає чіткою
+   панеллю праворуч — розтягнутий на всю ширину, він був би
+   удвічі збільшений і обрізаний до вузької смуги. */
+.hero-video{
+  position:absolute;inset:0;z-index:1;
+  width:100%;height:100%;object-fit:cover;
+  background:#05050A;pointer-events:none;
+}
+@media (max-width:999px){
   .hero::after{
     background:linear-gradient(180deg,
-      rgba(5,5,10,.70) 0%,
-      rgba(5,5,10,.58) 40%,
-      rgba(5,5,10,.42) 66%,
-      rgba(5,5,10,.62) 100%);
+      rgba(5,5,10,.74) 0%,
+      rgba(5,5,10,.62) 40%,
+      rgba(5,5,10,.56) 66%,
+      rgba(5,5,10,.82) 100%);
   }
 }
-.hero > .wrap{position:relative;z-index:3}
+.hero > .wrap{position:relative;z-index:4}
 
 .hero-inner{max-width:880px}
 .hero h1{margin:20px 0 0}
@@ -576,6 +590,45 @@ body.locked{overflow:hidden}
   font-size:13.5px;color:var(--graphite);
 }
 .hero-facts .ic{width:16px;height:16px;color:var(--accent)}
+
+/* кнопка паузи: рух довше пʼяти секунд має зупинятися на вимогу */
+.hero-pause{
+  position:absolute;z-index:5;right:var(--pad);bottom:20px;
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(5,5,10,.55);border:1px solid rgba(255,255,255,.18);
+  color:#fff;cursor:pointer;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:background .3s var(--ease),border-color .3s var(--ease);
+}
+.hero-pause:hover{background:rgba(5,5,10,.8);border-color:var(--accent-soft)}
+.hero-pause svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.hero-pause .i-play{fill:currentColor;stroke:none}
+.hero-pause[aria-pressed="true"] .i-pause,
+.hero-pause:not([aria-pressed="true"]) .i-play{display:none}
+
+/* широкий екран: текст ліворуч, ролик панеллю праворуч */
+@media (min-width:1000px){
+  .hero{
+    --reel-h:min(74svh,700px);
+    --reel-w:calc(var(--reel-h) * 9 / 16);
+  }
+  .hero-backdrop{display:block}
+  .hero-video{
+    inset:auto;z-index:3;
+    /* центр панелі збігається з центром тексту, а не секції:
+       зверху відступ під навігацію більший, ніж знизу */
+    top:calc(50% + (clamp(104px,13vh,150px) - clamp(40px,6vh,72px)) / 2);
+    right:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
+    width:var(--reel-w);height:var(--reel-h);
+    transform:translateY(-50%);
+    border-radius:26px;
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 40px 120px rgba(0,0,0,.65),0 0 0 1px rgba(217,178,106,.10);
+  }
+  .hero-inner{max-width:min(880px, calc(100% - var(--reel-w) - 64px))}
+  .hero h1{font-size:clamp(2.2rem,3.6vw,3.25rem)}
+}
 
 /* ============================================================
    2. МАНІФЕСТ — що не так з ринком
