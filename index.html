@@ -998,6 +998,64 @@ body.is-loading{overflow:hidden}
   .reels-row.four>.phone:nth-child(3){grid-column:auto;max-width:340px}
   .reels-row.four>.phone.low{margin-top:0}
 }
+
+/* ============ КІНОШНИЙ ВХІД ============ */
+.intro{position:fixed;inset:0;z-index:100;background:#04060e;display:grid;place-items:center;overflow:hidden;
+  transition:opacity .95s cubic-bezier(.4,0,.2,1),visibility .95s}
+.intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+.intro .intro-stage{position:absolute;inset:0;opacity:.38;clip-path:none}
+.intro .intro-stage video{width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1.14);animation:introPush 7s cubic-bezier(.22,.6,.3,1) forwards}
+@keyframes introPush{to{transform:scale(1)}}
+.intro::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 46%,transparent 28%,rgba(4,6,14,.78) 96%)}
+
+.intro-mark{position:relative;z-index:2;text-align:center;color:#fff;padding:0 24px}
+.intro-name{display:block;opacity:0;filter:blur(9px);transform:translateY(16px);
+  animation:markIn 1.9s cubic-bezier(.16,1,.3,1) .35s forwards}
+.intro-name b{font-family:var(--serif);font-weight:400;font-size:clamp(40px,8.4vw,112px);
+  letter-spacing:.012em;line-height:1}
+.intro-name i{font-family:var(--script);font-style:normal;font-size:clamp(54px,11.4vw,152px);
+  line-height:.7;margin-left:-.1em;display:inline-block;transform:translateY(.09em)}
+.intro-rule{display:block;width:0;height:1px;margin:clamp(18px,2.4vw,30px) auto 0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
+  animation:ruleIn 1.5s cubic-bezier(.16,1,.3,1) 1.15s forwards}
+@keyframes ruleIn{to{width:min(300px,58vw)}}
+.intro-mark small{display:block;margin-top:clamp(13px,1.6vw,20px);
+  font-size:clamp(8.5px,.85vw,10.5px);letter-spacing:.44em;text-transform:uppercase;
+  color:rgba(255,255,255,.62);opacity:0;animation:fadeSoft 1.3s ease 1.5s forwards}
+@keyframes markIn{to{opacity:1;filter:blur(0);transform:none}}
+@keyframes fadeSoft{to{opacity:1}}
+.intro-mark.out{animation:markOut .95s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes markOut{to{opacity:0;filter:blur(7px);transform:translateY(-12px) scale(1.05)}}
+
+/* ============ ЗЕРНО Й ВІНЬЄТКА ============ */
+.grain{position:absolute;inset:-60%;z-index:2;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:190px 190px;
+  animation:grainMove .9s steps(3) infinite;will-change:transform}
+@keyframes grainMove{
+  0%{transform:translate(0,0)}33%{transform:translate(-3%,2%)}66%{transform:translate(2%,-2%)}100%{transform:translate(0,0)}}
+.vig{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse at 52% 44%,transparent 38%,rgba(4,6,14,.5) 100%)}
+
+/* ============ ШТОРКИ ============ */
+.bar{position:absolute;left:0;right:0;z-index:4;height:7.5vh;background:#04060e;pointer-events:none;
+  transition:height 1.5s cubic-bezier(.16,1,.3,1) .15s}
+.bar-t{top:0}.bar-b{bottom:0}
+html.lit .bar{height:0}
+@media(max-width:700px){.bar{height:5vh}}
+.hero > .hero-center,.hero-center{z-index:5}
+/* повільний наїзд, поки людина читає перший екран */
+.hero-bg video{transform:scale(1.045);animation:heroDrift 26s ease-out forwards}
+@keyframes heroDrift{to{transform:scale(1)}}
+
+@media (prefers-reduced-motion:reduce){
+  .intro .intro-stage video,.intro-name,.intro-rule,.intro-mark small,.grain,.hero-bg video{animation:none}
+  .intro-name{opacity:1;filter:none;transform:none}
+  .intro-rule{width:min(300px,58vw)}
+  .intro-mark small{opacity:1}
+  .bar{transition:none;height:0}
+}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2322317a%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23df7fa6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23fff%22%3EG%3C/text%3E%3C/svg%3E">
 <link rel="canonical" href="https://ouranus4.github.io/gravity-moments/">
@@ -1017,13 +1075,12 @@ body.is-loading{overflow:hidden}
 <div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"><span>Дивитись</span></div>
 
 <div class="intro" id="loader" aria-hidden="true">
-  <div class="intro-frame" id="introFrame"><img src="img/s/t_px_lw_23.jpg" alt="" class=on><img src="img/s/t_px_wd_17.jpg" alt=""><img src="img/s/t_px_lw_19.jpg" alt=""><img src="img/s/t_px_lw_17.jpg" alt=""><img src="img/s/t_px_gr_14.jpg" alt=""><img src="img/s/t_px_wd_11.jpg" alt=""><img src="img/s/t_conf_17.jpg" alt=""><img src="img/s/t_px_ny_12.jpg" alt=""><img src="img/s/t_px_lw_26.jpg" alt=""><img src="img/s/t_px_wd_13.jpg" alt=""></div>
   <div class="intro-stage"><video src="video/hero.mp4" poster="video/hero.jpg" muted loop playsinline autoplay preload="auto"></video></div>
-  <p class="intro-word">моменти, які памʼятають</p>
-  <div class="intro-bar"><i></i></div>
-  <div class="intro-ui">
-    <div class="intro-top"><div class="intro-brand"><b>Gravity</b><i>Moments</i><small>організація подій</small></div><span>Весілля · корпоративи · ювілеї</span></div>
-    <div class="intro-bot"><div class="intro-count" id="count">0<sup>%</sup></div><span>Київ — вся Україна · 2026</span></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="intro-mark">
+    <span class="intro-name"><b>Gravity</b><i>Moments</i></span>
+    <span class="intro-rule"></span>
+    <small>організація подій</small>
   </div>
 </div>
 
@@ -1068,6 +1125,10 @@ body.is-loading{overflow:hidden}
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"><video src="video/hero.mp4" poster="video/hero.jpg" muted loop playsinline autoplay preload="auto"></video></div>
   <div class="hero-veil"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <span class="vig" aria-hidden="true"></span>
+  <span class="bar bar-t" aria-hidden="true"></span>
+  <span class="bar bar-b" aria-hidden="true"></span>
   <div class="hero-center">
     <p class="hero-eyebrow"><i></i>Gravity Moments · Київ і вся Україна</p>
     <h1><span class="line"><span>Створюємо моменти,</span></span><span class="line"><span><em>які памʼятають усе життя</em></span></span></h1>
@@ -1392,25 +1453,27 @@ body.is-loading{overflow:hidden}
 // intro: real loading progress, then the arch opens into the hero
 (()=>{
   const L=document.getElementById('loader');if(!L)return;
-  const c=document.getElementById('count'),frames=[...L.querySelectorAll('.intro-frame img')];
-  const urls=[...frames.map(i=>i.src),'video/hero.jpg','img/marina-half.jpg'];
-  let loaded=0,shown=0,fi=0,done=false;const t0=performance.now(),MIN=1800;
-  urls.forEach(u=>{const im=new Image();im.onload=im.onerror=()=>loaded++;im.src=u});
-  const flip=setInterval(()=>{frames[fi].classList.remove('on');fi=(fi+1)%frames.length;frames[fi].classList.add('on')},150);
-  const finish=()=>{if(done)return;done=true;clearInterval(flip);c.innerHTML='100<sup>%</sup>';
-    L.querySelector('.intro-bar i').style.width='100%';
-    L.classList.add('final');
-    setTimeout(()=>{L.classList.add('open');document.body.classList.remove('is-loading')},240);
-    setTimeout(()=>{L.classList.add('gone')},1500);
-    setTimeout(()=>L.remove(),2100)};
-  (function tick(){
-    if(done)return;
-    const target=Math.min(loaded/urls.length,(performance.now()-t0)/MIN)*100;
-    shown+=(target-shown)*.14;const n=Math.min(100,Math.round(shown));
-    c.innerHTML=n+'<sup>%</sup>';L.querySelector('.intro-bar i').style.width=n+'%';
-    if(n>=100)finish();else requestAnimationFrame(tick);
-  })();
-  setTimeout(finish,4000);
+  const mark=L.querySelector('.intro-mark');
+  const root=document.documentElement;
+  // напис тримається на екрані рівно стільки, щоб його встигли прочитати,
+  // далі гасне — і аж тоді відкривається перший екран
+  const HOLD=2500, FADE=900;
+  let fired=false;
+  const t0=performance.now();
+  const run=()=>{
+    if(fired)return;fired=true;
+    mark.classList.add('out');
+    setTimeout(()=>{
+      L.classList.add('gone');
+      document.body.classList.remove('is-loading');
+      root.classList.add('lit');          // підіймає шторки й запускає перший екран
+      requestAnimationFrame(()=>document.querySelectorAll('.bar').forEach(b=>b.style.height='0px'));
+    },FADE*.65);
+    setTimeout(()=>L.remove(),FADE+900);
+  };
+  const start=()=>setTimeout(run,Math.max(0,HOLD-(performance.now()-t0)));
+  if(document.readyState==='complete')start();else addEventListener('load',start);
+  setTimeout(run,6000);               // страховка, якщо щось не довантажилось
 })();
 
 // nav state
