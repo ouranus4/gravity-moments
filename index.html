@@ -395,8 +395,6 @@ section{position:relative}
   .intro-word{top:calc(50% - 56vw * .66 - 40px);font-size:18px}
   .intro-top span:last-child,.intro-bot span{display:none}
 }
-body.is-loading{overflow:hidden}
-body.is-loading .hero *{animation-play-state:paused!important}
 
 /* ---------- PROMISE / MANIFESTO ---------- */
 .promise{padding:clamp(100px,13vw,200px) 0 clamp(60px,8vw,120px)}
@@ -662,7 +660,7 @@ body{font-weight:300;letter-spacing:.005em}
 /* логотип: Gravity у серифі + Moments рукописним */
 .logo,.intro-brand{font-family:var(--serif);line-height:1;display:block}
 .logo b,.intro-brand b{display:inline-block;font-weight:500;font-size:24px;letter-spacing:.005em}
-.logo i,.intro-brand i{display:inline-block;font-family:var(--script);font-style:normal;font-size:33px;line-height:.7;margin-left:-.14em;color:var(--pink);transform:translateY(.1em)}
+.logo i,.intro-brand i{display:inline-block;font-family:var(--script);font-style:normal;font-size:33px;line-height:.7;margin-left:-.14em;color:inherit;transform:translateY(.1em)}
 .intro-brand b{font-size:26px}.intro-brand i{font-size:34px}
 .nav.scrolled{background:rgba(249,247,249,.9)}
 
@@ -894,6 +892,9 @@ body{font-weight:300;letter-spacing:.005em}
 
 .gm-star.c,.gm-star.d{display:flex;align-items:center;min-height:clamp(230px,24vw,330px)}
 .gm-credit{margin-top:clamp(18px,2vw,26px);font-size:10.5px;line-height:1.7;color:var(--muted)}
+
+.logo i{color:inherit}
+.nav:not(.scrolled) .logo i{color:#fff}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2322317a%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23df7fa6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23fff%22%3EG%3C/text%3E%3C/svg%3E">
 <link rel="canonical" href="https://ouranus4.github.io/gravity-moments/">
@@ -909,19 +910,8 @@ body{font-weight:300;letter-spacing:.005em}
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="demo.js" defer></script><!-- захист від копіювання -->
 </head>
-<body class="is-loading">
+<body>
 <div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"><span>Дивитись</span></div>
-
-<div class="intro" id="loader" aria-hidden="true">
-  <div class="intro-frame" id="introFrame"><img src="img/s/t_table_03.jpg" alt="" class=on><img src="img/s/t_reception_19.jpg" alt=""><img src="img/s/t_ball_04.jpg" alt=""><img src="img/s/t_arch_18.jpg" alt=""><img src="img/s/t_gala_06.jpg" alt=""><img src="img/s/t_dance_10.jpg" alt=""><img src="img/s/t_champ_02.jpg" alt=""><img src="img/s/t_candle_10.jpg" alt=""><img src="img/s/t_stage_02.jpg" alt=""><img src="img/s/t_table_01.jpg" alt=""></div>
-  <div class="intro-stage"><picture><source media="(max-width:820px)" srcset="img/hero_m.jpg"><img src="img/hero.jpg" alt=""></picture></div>
-  <p class="intro-word">моменти, які памʼятають</p>
-  <div class="intro-bar"><i></i></div>
-  <div class="intro-ui">
-    <div class="intro-top"><div class="intro-brand"><b>Gravity</b><i>Moments</i><small>організація подій</small></div><span>Весілля · корпоративи · ювілеї</span></div>
-    <div class="intro-bot"><div class="intro-count" id="count">0<sup>%</sup></div><span>Київ — вся Україна · 2026</span></div>
-  </div>
-</div>
 
 <!-- NAV -->
 <header class="nav" id="nav">
@@ -1054,7 +1044,7 @@ body{font-weight:300;letter-spacing:.005em}
 <section class="bride" id="budget">
   <div class="bride-stick">
     <div class="bride-media">
-      <img src="img/hero_still.jpg" alt="Перший танець у промені світла" loading="lazy">
+      <img src="img/s/px_lw_23.jpg" alt="Зал у квітах" loading="lazy">
       <span class="stamp">Під ключ</span>
     </div>
     <div class="bride-text">
@@ -1080,12 +1070,12 @@ body{font-weight:300;letter-spacing:.005em}
     <p class="reveal">Від камерної вечері на двадцять осіб до новорічного корпоративу з хедлайнером. Наведіть — побачите, як це виглядає.</p>
   </div>
   <ul class="ev-list">
-    <li class="ev" data-img="img/s/t_rom_03.jpg"><span class="n">01</span><h3>Весілля</h3><span class="ev-sub">церемонія · банкет · перший танець</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_ny2_10.jpg"><span class="n">02</span><h3>Новорічний корпоратив</h3><span class="ev-sub">груднева класика з хедлайнером</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_gala_06.jpg"><span class="n">03</span><h3>Корпоратив</h3><span class="ev-sub">від фуршету до конференції</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_px_lw_23.jpg"><span class="n">01</span><h3>Весілля</h3><span class="ev-sub">церемонія · банкет · перший танець</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_px_ny_12.jpg"><span class="n">02</span><h3>Новорічний корпоратив</h3><span class="ev-sub">груднева класика з хедлайнером</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_px_lw_19.jpg"><span class="n">03</span><h3>Корпоратив</h3><span class="ev-sub">від фуршету до конференції</span><span class="arr">↗</span></li>
     <li class="ev" data-img="img/s/t_ball_02.jpg"><span class="n">04</span><h3>Ювілей</h3><span class="ev-sub">вечір, де головний герой справді головний</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_candle_10.jpg"><span class="n">05</span><h3>День народження</h3><span class="ev-sub">камерна вечеря або свято на 150</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_gender_07.jpg"><span class="n">06</span><h3>Гендер-паті</h3><span class="ev-sub">один кадр, заради якого все</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_px_wd_11.jpg"><span class="n">05</span><h3>День народження</h3><span class="ev-sub">камерна вечеря або свято на 150</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_px_gr_14.jpg"><span class="n">06</span><h3>Гендер-паті</h3><span class="ev-sub">один кадр, заради якого все</span><span class="arr">↗</span></li>
     <li class="ev" data-img="img/s/t_table_06.jpg"><span class="n">07</span><h3>Заручини</h3><span class="ev-sub">вечеря, на якій звучить одне питання</span><span class="arr">↗</span></li>
     <li class="ev" data-img="img/s/t_champ_08.jpg"><span class="n">08</span><h3>Відкриття</h3><span class="ev-sub">подія, яку знімають і переказують</span><span class="arr">↗</span></li>
     <li class="ev" data-img="img/s/t_stage_11.jpg"><span class="n">09</span><h3>Приватна вечірка</h3><span class="ev-sub">закритий формат без зайвих очей</span><span class="arr">↗</span></li>
@@ -1103,18 +1093,18 @@ body{font-weight:300;letter-spacing:.005em}
     </div>
     <div class="show-track" id="showTrack">
       <figure class="card t wipe"><img data-lb src="img/s/lux_14.jpg" alt="Люстри й свічки" loading="lazy"><figcaption><span>Локація</span><b>Люстри й свічки</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/rom_03.jpg" alt="У золотому світлі" loading="lazy"><figcaption><span>Молодята</span><b>У золотому світлі</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_lw_19.jpg" alt="Золоті канделябри" loading="lazy"><figcaption><span>Декор</span><b>Золоті канделябри</b></figcaption></figure>
       <figure class="card quote-card"><p>Найкраще свято — те, на якому господар <em>жодного разу</em> не подивився на годинник.</p><small>Gravity Moments</small></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/lux_11.jpg" alt="Канделябри й зелень" loading="lazy"><figcaption><span>Сервіровка</span><b>Канделябри й зелень</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/fa_02.jpg" alt="Під фатою" loading="lazy"><figcaption><span>Церемонія</span><b>Під фатою</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/lux_13.jpg" alt="Свічки й квіти" loading="lazy"><figcaption><span>Декор</span><b>Свічки й квіти</b></figcaption></figure>
-      <figure class="card w wipe"><img data-lb src="img/s/reception_14.jpg" alt="Довгі столи" loading="lazy"><figcaption><span>Банкет</span><b>Довгі столи</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/bs_06.jpg" alt="Рожевий торт" loading="lazy"><figcaption><span>Гендер-паті</span><b>Рожевий торт</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_wd_11.jpg" alt="Красива сервіровка" loading="lazy"><figcaption><span>Сервіровка</span><b>Красива сервіровка</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_lw_23.jpg" alt="Зала у квітах" loading="lazy"><figcaption><span>Зал</span><b>Зала у квітах</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_wd_17.jpg" alt="Квітуче дерево над столами" loading="lazy"><figcaption><span>Флористика</span><b>Квітуче дерево над столами</b></figcaption></figure>
+      <figure class="card w wipe"><img data-lb src="img/s/px_lw_17.jpg" alt="Довгий стіл під квітами" loading="lazy"><figcaption><span>Банкет</span><b>Довгий стіл під квітами</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_gr_14.jpg" alt="Рожевий дим" loading="lazy"><figcaption><span>Гендер-паті</span><b>Рожевий дим</b></figcaption></figure>
       <figure class="card t wipe"><img data-lb src="img/s/conf_17.jpg" alt="Золоте конфеті" loading="lazy"><figcaption><span>Фінал</span><b>Золоте конфеті</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/gender_07.jpg" alt="Рожевий дим" loading="lazy"><figcaption><span>Гендер-паті</span><b>Рожевий дим</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/lux_06.jpg" alt="Круглі столи з флористикою" loading="lazy"><figcaption><span>Зал</span><b>Круглі столи з флористикою</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/table_03.jpg" alt="Кришталеві люстри" loading="lazy"><figcaption><span>Декор</span><b>Кришталеві люстри</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/rom_05.jpg" alt="На заході сонця" loading="lazy"><figcaption><span>Молодята</span><b>На заході сонця</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_gr_24.jpg" alt="Арка з кульок" loading="lazy"><figcaption><span>Гендер-паті</span><b>Арка з кульок</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_lw_26.jpg" alt="Велика флористика" loading="lazy"><figcaption><span>Декор</span><b>Велика флористика</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_ny_12.jpg" alt="Святкова сервіровка" loading="lazy"><figcaption><span>Новий рік</span><b>Святкова сервіровка</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_wd_13.jpg" alt="Бальна зала" loading="lazy"><figcaption><span>Локація</span><b>Бальна зала</b></figcaption></figure>
     </div>
     <div class="show-bar"><i id="showBar"></i></div>
   </div>
@@ -1159,15 +1149,15 @@ body{font-weight:300;letter-spacing:.005em}
 
   <div class="ev-cards">
     <a class="ev-card reveal" data-open="0" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/s/t_rom_03.jpg" alt="Весілля" loading="lazy"><em>Дивитись 8 фото</em></span>
+      <span class="ev-card-img wipe"><img src="img/s/t_px_lw_23.jpg" alt="Весілля" loading="lazy"><em>Дивитись 8 фото</em></span>
       <span class="ev-card-cap"><b>Весілля</b><i>церемонія · банкет · перший танець</i></span>
     </a>
     <a class="ev-card reveal" data-open="8" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/s/t_gender_07.jpg" alt="Гендер-паті" loading="lazy"><em>Дивитись 6 фото</em></span>
+      <span class="ev-card-img wipe"><img src="img/s/t_px_gr_14.jpg" alt="Гендер-паті" loading="lazy"><em>Дивитись 6 фото</em></span>
       <span class="ev-card-cap"><b>Гендер-паті</b><i>рожевий дим, кулі й той самий кадр</i></span>
     </a>
     <a class="ev-card reveal" data-open="14" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/s/t_ny2_10.jpg" alt="Новорічні корпоративи" loading="lazy"><em>Дивитись 6 фото</em></span>
+      <span class="ev-card-img wipe"><img src="img/s/t_px_ny_12.jpg" alt="Новорічні корпоративи" loading="lazy"><em>Дивитись 6 фото</em></span>
       <span class="ev-card-cap"><b>Новорічні корпоративи</b><i>грудень · зал · хедлайнер</i></span>
     </a>
     <a class="ev-card reveal" data-open="20" role="button" tabindex="0">
@@ -1176,26 +1166,26 @@ body{font-weight:300;letter-spacing:.005em}
     </a>
   </div>
   <div class="gm-hidden" aria-hidden="true">
-    <img data-lb src="img/s/t_rom_03.jpg" data-full="img/s/rom_03.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_lw_23.jpg" data-full="img/s/px_lw_23.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_wd_17.jpg" data-full="img/s/px_wd_17.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_lw_19.jpg" data-full="img/s/px_lw_19.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_lw_17.jpg" data-full="img/s/px_lw_17.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_wd_11.jpg" data-full="img/s/px_wd_11.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_lw_26.jpg" data-full="img/s/px_lw_26.jpg" alt="Весілля" loading="lazy">
     <img data-lb src="img/s/t_lux_14.jpg" data-full="img/s/lux_14.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_fa_09.jpg" data-full="img/s/fa_09.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_lux_11.jpg" data-full="img/s/lux_11.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_fa_02.jpg" data-full="img/s/fa_02.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_table_03.jpg" data-full="img/s/table_03.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_rom_05.jpg" data-full="img/s/rom_05.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_arch_15.jpg" data-full="img/s/arch_15.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_gender_07.jpg" data-full="img/s/gender_07.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_bs_06.jpg" data-full="img/s/bs_06.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_pink_02.jpg" data-full="img/s/pink_02.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_px_wd_13.jpg" data-full="img/s/px_wd_13.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_px_gr_14.jpg" data-full="img/s/px_gr_14.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_px_gr_24.jpg" data-full="img/s/px_gr_24.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_px_gr_27.jpg" data-full="img/s/px_gr_27.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_px_gr_11.jpg" data-full="img/s/px_gr_11.jpg" alt="Гендер-паті" loading="lazy">
     <img data-lb src="img/s/t_gender_18.jpg" data-full="img/s/gender_18.jpg" alt="Гендер-паті" loading="lazy">
     <img data-lb src="img/s/t_bs_03.jpg" data-full="img/s/bs_03.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_pink_14.jpg" data-full="img/s/pink_14.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_ny2_10.jpg" data-full="img/s/ny2_10.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_px_ny_12.jpg" data-full="img/s/px_ny_12.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_px_ny_14.jpg" data-full="img/s/px_ny_14.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_px_ny_16.jpg" data-full="img/s/px_ny_16.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_px_ny_22.jpg" data-full="img/s/px_ny_22.jpg" alt="Новорічні корпоративи" loading="lazy">
     <img data-lb src="img/s/t_conf_17.jpg" data-full="img/s/conf_17.jpg" alt="Новорічні корпоративи" loading="lazy">
     <img data-lb src="img/s/t_ny2_17.jpg" data-full="img/s/ny2_17.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_ny2_06.jpg" data-full="img/s/ny2_06.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_ny_10.jpg" data-full="img/s/ny_10.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_stage_11.jpg" data-full="img/s/stage_11.jpg" alt="Новорічні корпоративи" loading="lazy">
     <img data-lb src="img/ev/t12.jpg" data-full="img/ev/12.jpg" alt="Премії та нагородження" loading="lazy">
     <img data-lb src="img/ev/t05.jpg" data-full="img/ev/05.jpg" alt="Премії та нагородження" loading="lazy">
     <img data-lb src="img/ev/t07.jpg" data-full="img/ev/07.jpg" alt="Премії та нагородження" loading="lazy">
@@ -1385,27 +1375,7 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
 
 
 
-// intro: real loading progress + flipbook, then the arch opens into the hero
-(()=>{
-  const L=document.getElementById('loader'),c=document.getElementById('count'),frames=[...L.querySelectorAll('.intro-frame img')];
-  const urls=[...frames.map(i=>i.src),L.querySelector('.intro-stage img').currentSrc||L.querySelector('.intro-stage img').src,'img/marina-face.jpg'];
-  let loaded=0,shown=0,fi=0,done=false;const t0=performance.now(),MIN=2200;
-  urls.forEach(u=>{const im=new Image();im.onload=im.onerror=()=>loaded++;im.src=u});
-  const flip=setInterval(()=>{frames[fi].classList.remove('on');fi=(fi+1)%frames.length;frames[fi].classList.add('on')},160);
-  const finish=()=>{if(done)return;done=true;clearInterval(flip);c.innerHTML='100<sup>%</sup>';L.style.setProperty('--pr','100%');
-    L.classList.add('final');
-    setTimeout(()=>{L.classList.add('open');document.body.classList.remove('is-loading')},260);
-    setTimeout(()=>{L.classList.add('gone')},1650);
-    setTimeout(()=>L.remove(),2300)};
-  (function tick(){
-    if(done)return;
-    const target=Math.min(loaded/urls.length,(performance.now()-t0)/MIN)*100;
-    shown+=(target-shown)*.12;const n=Math.min(100,Math.round(shown));
-    c.innerHTML=n+'<sup>%</sup>';L.querySelector('.intro-bar i').style.width=n+'%';
-    if(n>=100)finish();else requestAnimationFrame(tick);
-  })();
-  setTimeout(finish,4500);
-})();
+
 
 (()=>{
   // manifesto: split into words that light up while scrolling
