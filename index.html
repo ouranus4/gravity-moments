@@ -398,7 +398,7 @@ section{position:relative}
 }
 
 /* ---------- PROMISE / MANIFESTO ---------- */
-.promise{padding:clamp(80px,9vw,140px) 0 clamp(50px,6vw,90px)}
+.promise{padding:clamp(96px,10vw,165px) 0 clamp(70px,7.5vw,115px)}
 .promise .eyebrow{margin-bottom:40px}
 .manifesto{font-weight:200;font-size:clamp(32px,4.9vw,76px);line-height:1.08;letter-spacing:-.035em;max-width:1250px}
 .manifesto em{font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:-.01em;color:var(--blue)}
@@ -1139,49 +1139,58 @@ html.lit .bar{height:0}
 /* ---- складки шторки трохи виразніші ---- */
 .bride-text::before{opacity:1;filter:contrast(1.12)}
 
-/* ============ ДРУГИЙ БЛОК: СИНЯ ШТОРА Й КЕЛИХ ============ */
-.promise{position:relative;isolation:isolate;overflow:hidden;color:#eef1fb;
-  background:#0a1026}
+/* ============ ДРУГИЙ БЛОК: ШТОРА З КЕЛИХОМ ============
+   Штора тут одна — та, що на фото. Намальовані градієнтом складки
+   прибрані: дві різні тканини поруч читались як наклеєний прямокутник. */
+.promise{position:relative;isolation:isolate;overflow:hidden;color:#eef1fb;background:#080c1e}
 .promise::before{
   content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
-  background:
-    repeating-linear-gradient(90deg,
-      rgba(255,255,255,.055) 0px,rgba(255,255,255,.015) 16px,
-      rgba(0,0,0,.22) 43px,rgba(255,255,255,.03) 70px,rgba(255,255,255,.055) 98px),
-    repeating-linear-gradient(90deg,
-      rgba(255,255,255,.028) 0px,rgba(0,0,0,.13) 35px,rgba(255,255,255,.017) 82px),
-    linear-gradient(180deg,#0c1330 0%,#131c44 46%,#080e24 100%)}
+  background:url("img/glass.jpg") no-repeat right -2% center/auto 100%;
+  opacity:0;transform:scale(1.06);
+  transition:opacity 2s cubic-bezier(.16,1,.3,1) .15s,transform 2.4s cubic-bezier(.16,1,.3,1) .15s}
+.promise.shown::before{opacity:1;transform:none}
+/* затемнення: ліворуч майже глухе під текст, праворуч ледь помітне,
+   щоб скло лишалось світлим */
 .promise::after{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(104deg,transparent 30%,rgba(170,190,255,.11) 49%,transparent 67%);
-  background-size:280% 100%;animation:silkSheen 16s ease-in-out infinite}
+  background:
+    linear-gradient(100deg,#080c1e 0%,rgba(8,12,30,.94) 34%,rgba(8,12,30,.6) 58%,rgba(8,12,30,.26) 78%,rgba(8,12,30,.42) 100%),
+    linear-gradient(180deg,rgba(8,12,30,.55) 0%,transparent 18%,transparent 78%,rgba(8,12,30,.7) 100%)}
+
 .promise .eyebrow{color:#9fb4f2}
 .promise .manifesto{color:#f2f5ff}
 .promise .manifesto em{color:#a9bcff}
 .promise .manifesto .w{opacity:.17}
 .promise .manifesto .w.on{opacity:1}
-.promise .orbit-note{color:rgba(238,241,251,.72)}
-.promise .chain{border-color:rgba(255,255,255,.14)}
-.promise .chain li{border-color:rgba(255,255,255,.14)}
-.promise .chain li:hover{background:rgba(255,255,255,.05)}
-.promise .chain-ic{stroke:#a9bcff}
-.promise .chain b{color:rgba(238,241,251,.8)}
+.promise .orbit-note{color:rgba(238,241,251,.78)}
 
-/* келих праворуч від тексту, проступає разом із блоком */
-.promise .bride-glass{position:absolute;right:-4%;top:50%;translate:0 -50%;
-  z-index:-1;width:min(38%,400px);pointer-events:none;
-  transform:translateY(50px) scale(1.06);
-  transition:opacity 1.9s cubic-bezier(.16,1,.3,1) .2s,transform 2.1s cubic-bezier(.16,1,.3,1) .2s}
-.promise .bride-glass.in{opacity:.95;transform:none}
-.promise .bride-glass img{width:100%;height:auto;display:block;mix-blend-mode:screen;
-  -webkit-mask-image:radial-gradient(ellipse 82% 78% at 52% 42%,#000 44%,rgba(0,0,0,.4) 72%,transparent 94%);
-          mask-image:radial-gradient(ellipse 82% 78% at 52% 42%,#000 44%,rgba(0,0,0,.4) 72%,transparent 94%)}
-/* щоб текст не заходив під келих на широкому екрані */
-@media(min-width:1000px){.promise .manifesto,.promise .orbit-note{max-width:min(1250px,66%)}}
+/* ряд підрядників лежить на фото, тож під ним своя підкладка */
+.promise .chain{border-color:rgba(255,255,255,.16);
+  background:rgba(8,12,30,.55);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+  border-radius:3px}
+.promise .chain li{border-color:rgba(255,255,255,.16)}
+.promise .chain li:hover{background:rgba(255,255,255,.07)}
+.promise .chain-ic{stroke:#b9c8ff}
+.promise .chain b{color:rgba(238,241,251,.88)}
+
+@media(min-width:1000px){
+  .promise .manifesto{max-width:min(1250px,64%)}
+  .promise .orbit-note{max-width:48em}
+}
 @media(max-width:999px){
-  .promise .bride-glass{position:relative;right:auto;top:auto;translate:none;
-    width:min(74%,320px);margin:26px auto 0 0;opacity:.9;transform:none}
-  .promise .bride-glass img{mix-blend-mode:normal}
+  /* на вузькому екрані фото стає вертикальним тлом угорі блока */
+  /* на телефоні показуємо одразу, без очікування появи:
+     поява по скролу тут спрацьовувала через раз */
+  .promise::before{background-position:center 12%;background-size:cover;
+    opacity:.85;transform:none;transition:none}
+  .promise.shown::before{opacity:.85}
+  .promise .chain{background:rgba(8,12,30,.72)}
+  .promise .chain b{color:#eef1fb}
+  .promise::after{background:
+    linear-gradient(180deg,rgba(8,12,30,.72) 0%,rgba(8,12,30,.86) 38%,rgba(8,12,30,.95) 70%,#080c1e 100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .promise::before{transition:none;opacity:1;transform:none}
 }
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%234a6ddf' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M43.6 24.2A15 15 0 1 0 43.6 43.8H47.4V34.6H37.6'/%3E%3Cellipse cx='32' cy='34' rx='28.5' ry='10.5' transform='rotate(-21 32 34)' stroke-width='2.4'/%3E%3C/g%3E%3Ccircle cx='58.4' cy='23.6' r='3.4' fill='%234a6ddf'/%3E%3C/svg%3E">
@@ -1301,7 +1310,6 @@ html.lit .bar{height:0}
 <section class="promise wrap" id="how">
   <p class="eyebrow">Як ми працюємо</p>
   <p class="manifesto" id="manifesto">Ми беремо подію під ключ — <em>щоб ви просто святкували.</em></p>
-  <span class="bride-glass reveal" aria-hidden="true"><img src="img/glass.jpg" alt="" decoding="async" width="900" height="1192"></span>
 
   <ul class="chain reveal">
     <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-venue"/></svg><b>Площадки</b></li>
@@ -1861,14 +1869,12 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
   lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null});
 })();
 
-// келих на шторі. Стежимо за самим блоком, а не за картинкою: вона
-// ліниво вантажиться, і поки її немає, висота дорівнює нулю — через це
-// поява інколи не спрацьовувала. Lenis не завжди шле подію scroll,
-// тому дивимось у кадрах анімації; цикл сам спиняється.
-(()=>{const g=document.querySelector('.bride-glass');
-  const sec=g&&g.closest('section');if(!g||!sec)return;
+// штора з келихом — тло другого блока. Проявляємо, коли блок входить
+// у кадр. Lenis не завжди шле подію scroll, тому дивимось у кадрах
+// анімації; цикл сам спиняється.
+(()=>{const sec=document.querySelector('.promise');if(!sec)return;
   const tick=()=>{const r=sec.getBoundingClientRect();
-    if(r.top<innerHeight*.75&&r.bottom>0){g.classList.add('in');return}
+    if(r.top<innerHeight*.8&&r.bottom>0){sec.classList.add('shown');return}
     requestAnimationFrame(tick)};
   requestAnimationFrame(tick);
 })();
