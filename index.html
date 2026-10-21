@@ -961,6 +961,40 @@ body.is-loading{overflow:hidden}
 @media(max-width:820px){.gm-circles{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:520px){.gm-circles{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
   .gc-pic{width:clamp(84px,32vw,124px);margin-bottom:11px}}
+
+/* ---- ряд підрядників замість орбіти ---- */
+.chain{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);
+  margin:clamp(40px,5vw,76px) 0 clamp(26px,3vw,42px);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chain li{display:flex;flex-direction:column;align-items:center;gap:13px;text-align:center;
+  padding:clamp(26px,3vw,40px) 10px;border-right:1px solid var(--line);transition:background .4s}
+.chain li:last-child{border-right:0}
+.chain li:hover{background:rgba(74,109,223,.04)}
+.chain-ic{width:clamp(21px,2vw,26px);height:clamp(21px,2vw,26px);fill:none;stroke:var(--blue);
+  stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .55s cubic-bezier(.16,1,.3,1)}
+.chain li:hover .chain-ic{transform:translateY(-4px)}
+.chain b{font-weight:500;font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-2)}
+@media(max-width:860px){
+  .chain{grid-template-columns:repeat(3,1fr)}
+  .chain li:nth-child(3n){border-right:0}
+  .chain li:nth-child(-n+3){border-bottom:1px solid var(--line)}
+}
+@media(max-width:480px){
+  .chain{grid-template-columns:repeat(2,1fr)}
+  .chain li:nth-child(3n){border-right:1px solid var(--line)}
+  .chain li:nth-child(2n){border-right:0}
+  .chain li:nth-child(-n+4){border-bottom:1px solid var(--line)}
+}
+
+/* ---- показ подій: чотири рілси ---- */
+.reels-row.four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1100px){.reels-row.four{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){
+  .reels-row.four{grid-template-columns:repeat(2,1fr);gap:14px}
+  .reels-row.four>.phone:nth-child(3){grid-column:auto;max-width:340px}
+  .reels-row.four>.phone.low{margin-top:0}
+}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2322317a%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23df7fa6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23fff%22%3EG%3C/text%3E%3C/svg%3E">
 <link rel="canonical" href="https://ouranus4.github.io/gravity-moments/">
@@ -994,9 +1028,9 @@ body.is-loading{overflow:hidden}
 <header class="nav" id="nav">
   <a href="#top" class="logo"><b>Gravity</b><i>Moments</i><small>організація подій</small></a>
   <nav class="nav-links">
-    <a href="#events">Свята</a>
+    <a href="#show">Свята</a>
     <a href="#stars">Зірки</a>
-    <a href="#gallery">Галерея</a>
+    <a href="#showreel">Відео</a>
     <a href="#how">Як працюємо</a>
     <a href="#about">Про Марину</a>
     <a href="#contact">Контакти</a>
@@ -1074,44 +1108,32 @@ body.is-loading{overflow:hidden}
   <p class="eyebrow">Як ми працюємо</p>
   <p class="manifesto" id="manifesto">Ми беремо подію під ключ — <em>щоб ви просто святкували.</em></p>
 
-  <div class="orbit reveal">
-    <span class="orbit-ring"></span>
-    <span class="orbit-ring r2"></span>
-    <span class="orbit-core"><b>Gravity</b><i>Moments</i></span>
-    <span class="orb" style="--a:-90deg"><svg class="orb-ic" aria-hidden="true"><use href="#gi-mic"/></svg><em>Артисти</em></span>
-    <span class="orb" style="--a:-30deg"><svg class="orb-ic" aria-hidden="true"><use href="#gi-venue"/></svg><em>Площадки</em></span>
-    <span class="orb" style="--a:30deg"><svg class="orb-ic" aria-hidden="true"><use href="#gi-decor"/></svg><em>Декоратори</em></span>
-    <span class="orb" style="--a:90deg"><svg class="orb-ic" aria-hidden="true"><use href="#gi-light"/></svg><em>Техніка</em></span>
-    <span class="orb" style="--a:150deg"><svg class="orb-ic" aria-hidden="true"><use href="#gi-cater"/></svg><em>Кейтеринг</em></span>
-    <span class="orb" style="--a:210deg"><svg class="orb-ic" aria-hidden="true"><use href="#gi-host"/></svg><em>Ведучі</em></span>
-  </div>
+  <ul class="chain reveal">
+    <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-venue"/></svg><b>Площадки</b></li>
+    <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-mic"/></svg><b>Артисти</b></li>
+    <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-decor"/></svg><b>Декоратори</b></li>
+    <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-light"/></svg><b>Техніка</b></li>
+    <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-cater"/></svg><b>Кейтеринг</b></li>
+    <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-host"/></svg><b>Ведучі</b></li>
+  </ul>
   <p class="orbit-note reveal">Площадки, артисти, декор, техніка, кейтеринг і ведучі — усе це ми збираємо й тримаємо самі. Вам не треба нікому дзвонити, нічого звіряти й нічого контролювати.</p>
-  <div class="pillars">
-    <div class="pillar reveal"><i>01</i><svg class="pil-ic" aria-hidden="true"><use href="#gi-brief"/></svg><h3>Бриф</h3><p>45 хвилин розмови: привід, дата, кількість гостей, що обовʼязково має бути і чого бути не повинно.</p></div>
-    <div class="pillar reveal"><i>02</i><svg class="pil-ic" aria-hidden="true"><use href="#gi-plan"/></svg><h3>План події</h3><p>Протягом трьох днів ви отримуєте готовий план: локація, декор, техніка, артисти й таймінг дня.</p></div>
-    <div class="pillar reveal"><i>03</i><svg class="pil-ic" aria-hidden="true"><use href="#gi-deal"/></svg><h3>Підрядники й договори</h3><p>Ми домовляємось, тримаємо дати й закриваємо райдери. Ви бачите кожен рахунок і кожну умову.</p></div>
-    <div class="pillar reveal"><i>04</i><svg class="pil-ic" aria-hidden="true"><use href="#gi-day"/></svg><h3>День події</h3><p>Координація на місці від монтажу до вивозу. Ваша задача цього дня — бути гостем на власному святі.</p></div>
-  </div>
 </section>
 
-<!-- BAND -->
-<div class="band" aria-hidden="true">
-  <div class="band-row b"><div><span>весілля</span><span>корпоративи</span><span>ювілеї</span><span>заручини</span><span>гендер паті</span><span>відкриття</span><span>весілля</span><span>корпоративи</span><span>ювілеї</span><span>заручини</span><span>гендер паті</span><span>відкриття</span></div></div>
-  <div class="band-row a"><div><span>Зірки на ваше свято</span><span>Новорічні корпоративи</span><span>Під ключ</span><span>Зірки на ваше свято</span><span>Новорічні корпоративи</span><span>Під ключ</span></div></div>
-</div>
 
 <!-- SHOWREEL -->
-<section class="reel3" id="showreel">
-  <div class="reel3-stick">
-    <div class="reel3-head">
+<section class="reels wrap" id="showreel">
+  <div class="reels-head">
+    <div class="reveal">
       <p class="eyebrow">Відео з подій</p>
       <h2>Вечори, які<br><em>виглядають ось так</em></h2>
     </div>
-    <div class="r3"><video src="video/soloha.mp4" poster="video/soloha.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
-    <div class="r3"><video src="video/gala.mp4" poster="video/gala.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
-    <div class="r3"><video src="video/singer.mp4" poster="video/singer.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
-    <div class="r3"><video src="video/gravity.mp4" poster="video/gravity.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
-    <div class="reel3-cap"><b>Зал, сцена, <em>і той самий момент</em></b><span>Гала-вечеря · артисти · фінал · нагородження</span></div>
+    <p class="reels-note reveal">Усе зняте на реальних подіях. Натисніть на кадр, щоб зупинити, або на динамік — щоб почути зал. Увімкніть звук 🔊</p>
+  </div>
+  <div class="reels-row four">
+    <div class="phone reveal"><span class="lbl">Гала-вечеря</span><video src="video/gala.mp4" poster="video/gala.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone low reveal"><span class="lbl">Артист і зал</span><video src="video/gravity.mp4" poster="video/gravity.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone reveal"><span class="lbl">Артист на сцені</span><video src="video/singer.mp4" poster="video/singer.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone low reveal"><span class="lbl">СолоХа</span><video src="video/soloha.mp4" poster="video/soloha.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
   </div>
 </section>
 
@@ -1136,12 +1158,6 @@ body.is-loading{overflow:hidden}
     <div class="oval about-small reveal"><img src="img/marina3.jpg" alt="Марина Філіпенко з нагородою Business GRAVITY Awards" loading="lazy"></div>
   </div>
 
-  <div class="stats">
-    <div class="stat reveal"><b>15</b><span>років в організації подій</span></div>
-    <div class="stat reveal"><b>250</b><span>гостей на церемонії MedOrion Awards</span></div>
-    <div class="stat reveal"><b>70+</b><span>лауреатів і резидентів премії</span></div>
-    <div class="stat reveal"><b>62</b><span>партнери та спонсори проєктів</span></div>
-  </div>
 </section>
 
 <!-- BRIDE MORNING -->
@@ -1163,31 +1179,11 @@ body.is-loading{overflow:hidden}
         <li><b>05</b>Координація дня — від монтажу до вивозу</li>
         <li><b>06</b>Консультація по ресторану й локації: звук, підʼїзд, що входить в оренду</li>
       </ol>
-      <p class="gm-note">Хочете подивитись, як це виглядає на практиці — <a href="#gallery">гортайте галерею</a>.</p>
+      <p class="gm-note">Хочете подивитись, як це виглядає на практиці — <a href="#show">гортайте кадри з подій</a>.</p>
     </div>
   </div>
 </section>
 
-<!-- EVENTS -->
-<section class="events wrap" id="events">
-  <div class="events-head">
-    <h2 class="display reveal">Свята,<br><em>які ми робимо</em></h2>
-    <p class="reveal">Від камерної вечері на двадцять осіб до новорічного корпоративу з хедлайнером. Наведіть — побачите, як це виглядає.</p>
-  </div>
-  <ul class="ev-list">
-    <li class="ev" data-img="img/s/t_px_lw_23.jpg"><span class="n">01</span><h3>Весілля</h3><span class="ev-sub">церемонія · банкет · перший танець</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_px_ny_12.jpg"><span class="n">02</span><h3>Новорічний корпоратив</h3><span class="ev-sub">груднева класика з хедлайнером</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_px_lw_19.jpg"><span class="n">03</span><h3>Корпоратив</h3><span class="ev-sub">від фуршету до конференції</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_ball_02.jpg"><span class="n">04</span><h3>Ювілей</h3><span class="ev-sub">вечір, де головний герой справді головний</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_px_wd_11.jpg"><span class="n">05</span><h3>День народження</h3><span class="ev-sub">камерна вечеря або свято на 150</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_px_gr_14.jpg"><span class="n">06</span><h3>Гендер-паті</h3><span class="ev-sub">один кадр, заради якого все</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_table_06.jpg"><span class="n">07</span><h3>Заручини</h3><span class="ev-sub">вечеря, на якій звучить одне питання</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_champ_08.jpg"><span class="n">08</span><h3>Відкриття</h3><span class="ev-sub">подія, яку знімають і переказують</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_stage_11.jpg"><span class="n">09</span><h3>Приватна вечірка</h3><span class="ev-sub">закритий формат без зайвих очей</span><span class="arr">↗</span></li>
-    <li class="ev" data-img="img/s/t_table_10.jpg"><span class="n">10</span><h3>Дівич-вечір</h3><span class="ev-sub">компанія, стіл і жодної анімації</span><span class="arr">↗</span></li>
-  </ul>
-  <div class="ev-thumb" id="evThumb"><img alt=""></div>
-</section>
 
 <!-- SHOWCASE -->
 <section class="show" id="show">
@@ -1243,62 +1239,6 @@ body.is-loading{overflow:hidden}
 </section>
 
 <!-- GALLERY: photos + events -->
-<section class="gallery wrap" id="gallery">
-  <div class="gal-head">
-    <div class="reveal">
-      <p class="eyebrow">Галерея</p>
-      <h2 class="display">Як виглядають<br><em>наші свята</em></h2>
-    </div>
-    <p class="gal-note reveal">Натисніть на картку — відкриється добірка кадрів цього формату.</p>
-  </div>
-
-  <div class="ev-cards">
-    <a class="ev-card reveal" data-open="0" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/s/t_px_lw_23.jpg" alt="Весілля" loading="lazy"><em>Дивитись 8 фото</em></span>
-      <span class="ev-card-cap"><b>Весілля</b><i>церемонія · банкет · перший танець</i></span>
-    </a>
-    <a class="ev-card reveal" data-open="8" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/s/t_px_gr_14.jpg" alt="Гендер-паті" loading="lazy"><em>Дивитись 6 фото</em></span>
-      <span class="ev-card-cap"><b>Гендер-паті</b><i>рожевий дим, кулі й той самий кадр</i></span>
-    </a>
-    <a class="ev-card reveal" data-open="14" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/s/t_px_ny_12.jpg" alt="Новорічні корпоративи" loading="lazy"><em>Дивитись 6 фото</em></span>
-      <span class="ev-card-cap"><b>Новорічні корпоративи</b><i>грудень · зал · хедлайнер</i></span>
-    </a>
-    <a class="ev-card reveal" data-open="20" role="button" tabindex="0">
-      <span class="ev-card-img wipe"><img src="img/ev/t12.jpg" alt="Премії та нагородження" loading="lazy"><em>Дивитись 6 фото</em></span>
-      <span class="ev-card-cap"><b>Премії та нагородження</b><i>червона доріжка · преса · 400 гостей</i></span>
-    </a>
-  </div>
-  <div class="gm-hidden" aria-hidden="true">
-    <img data-lb src="img/s/t_px_lw_23.jpg" data-full="img/s/px_lw_23.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_wd_17.jpg" data-full="img/s/px_wd_17.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_lw_19.jpg" data-full="img/s/px_lw_19.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_lw_17.jpg" data-full="img/s/px_lw_17.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_wd_11.jpg" data-full="img/s/px_wd_11.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_lw_26.jpg" data-full="img/s/px_lw_26.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_lux_14.jpg" data-full="img/s/lux_14.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_wd_13.jpg" data-full="img/s/px_wd_13.jpg" alt="Весілля" loading="lazy">
-    <img data-lb src="img/s/t_px_gr_14.jpg" data-full="img/s/px_gr_14.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_px_gr_24.jpg" data-full="img/s/px_gr_24.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_px_gr_27.jpg" data-full="img/s/px_gr_27.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_px_gr_11.jpg" data-full="img/s/px_gr_11.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_gender_18.jpg" data-full="img/s/gender_18.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_bs_03.jpg" data-full="img/s/bs_03.jpg" alt="Гендер-паті" loading="lazy">
-    <img data-lb src="img/s/t_px_ny_12.jpg" data-full="img/s/px_ny_12.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_px_ny_14.jpg" data-full="img/s/px_ny_14.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_px_ny_16.jpg" data-full="img/s/px_ny_16.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_px_ny_22.jpg" data-full="img/s/px_ny_22.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_conf_17.jpg" data-full="img/s/conf_17.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/s/t_ny2_17.jpg" data-full="img/s/ny2_17.jpg" alt="Новорічні корпоративи" loading="lazy">
-    <img data-lb src="img/ev/t12.jpg" data-full="img/ev/12.jpg" alt="Премії та нагородження" loading="lazy">
-    <img data-lb src="img/ev/t05.jpg" data-full="img/ev/05.jpg" alt="Премії та нагородження" loading="lazy">
-    <img data-lb src="img/ev/t07.jpg" data-full="img/ev/07.jpg" alt="Премії та нагородження" loading="lazy">
-    <img data-lb src="img/ev/t09.jpg" data-full="img/ev/09.jpg" alt="Премії та нагородження" loading="lazy">
-    <img data-lb src="img/ev/t01.jpg" data-full="img/ev/01.jpg" alt="Премії та нагородження" loading="lazy">
-    <img data-lb src="img/ev/t15.jpg" data-full="img/ev/15.jpg" alt="Премії та нагородження" loading="lazy">
-  </div>
-</section>
 
 <!-- REELS -->
 <section class="reels wrap" id="reels">
@@ -1501,7 +1441,8 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
 });
 
 // hover thumbnail on event list
-const th=document.getElementById('evThumb'),thImg=th.querySelector('img');
+const th=document.getElementById('evThumb'),thImg=th&&th.querySelector('img');
+if(th&&thImg)
 document.querySelectorAll('.ev').forEach(ev=>{
   ev.addEventListener('mouseenter',()=>{thImg.src=ev.dataset.img;th.classList.add('on')});
   ev.addEventListener('mouseleave',()=>th.classList.remove('on'));
@@ -1679,6 +1620,7 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
   const sec=document.getElementById('showreel'),stick=sec.querySelector('.reel3-stick'),panels=[...sec.querySelectorAll('.r3')];
   const vids=panels.map(p=>p.querySelector('video'));
   function layout(){
+    if(!stick||!panels.length)return;
     const vw=innerWidth,vh=innerHeight,r=sec.getBoundingClientRect();
     const t=ease(clamp(-r.top/(r.height-vh)));
     stick.style.setProperty('--p',t.toFixed(3));
