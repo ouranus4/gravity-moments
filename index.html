@@ -2,1061 +2,1583 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gravity Moments — організація подій під ключ</title>
-<meta name="description" content="Організація весіль, корпоративів, днів народження та відкриттів. Прямі контакти з артистами, площадками й підрядниками — без ланцюга посередників. Зберіть бюджет своєї події за дві хвилини.">
-<link rel="canonical" href="https://ouranus4.github.io/gravity-moments/">
-
-<!-- ⚠️ ПРИБРАТИ ПЕРЕД ЗАПУСКОМ НА ВЛАСНОМУ ДОМЕНІ ⚠️
-     Поки сайт живе на тимчасовій адресі github.io і ціни ще не
-     підтверджені, ховаємо його від пошуковиків. Інакше Google
-     проіндексує чернетку, і коли зʼявиться справжній домен, ці дві
-     адреси конкуруватимуть між собою у видачі.
-     На відкриття посилання це НЕ впливає: сайт відкривається як завжди. -->
-<meta name="robots" content="noindex, nofollow">
-
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
-<meta name="theme-color" content="#0B0B11">
-<meta name="color-scheme" content="dark">
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="uk_UA">
-<meta property="og:title" content="Gravity Moments — створюємо моменти, які памʼятають усе життя">
-<meta property="og:description" content="Весілля, корпоративи, дні народження, відкриття. Прямі контакти з артистами й площадками — і зрозумілий бюджет ще до першої зустрічі.">
-<meta property="og:image" content="https://ouranus4.github.io/gravity-moments/assets/img/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Gravity Moments — організація подій">
-<meta property="og:url" content="https://ouranus4.github.io/gravity-moments/">
-<meta property="og:site_name" content="Gravity Moments">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gravity Moments — створюємо моменти, які памʼятають усе життя">
-<meta name="twitter:description" content="Прямі контакти з артистами й площадками. Зберіть бюджет своєї події за дві хвилини.">
-<meta name="twitter:image" content="https://ouranus4.github.io/gravity-moments/assets/img/og-cover.jpg">
-
+<meta name="description" content="Gravity Moments — організація весіль, корпоративів, ювілеїв і приватних подій під ключ. Прямі контакти з артистами, площадками й підрядниками. Київ і вся Україна.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20260914c">
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://ouranus4.github.io/gravity-moments/#org",
-      "name":"Gravity Moments",
-      "description":"Організація подій: весілля, корпоративи, дні народження, відкриття. Прямі контакти з артистами, площадками й підрядниками.",
-      "url":"https://ouranus4.github.io/gravity-moments/",
-      "areaServed":{"@type":"Country","name":"Україна"},
-      "founder":{"@type":"Person","name":"Марина Філіпенко"},
-      "telephone":"+380674097350",
-      "sameAs":["https://t.me/marina_philipenko"]
-    },
-    {
-      "@type":"Service",
-      "name":"Організація подій під ключ",
-      "serviceType":"Event planning",
-      "provider":{"@id":"https://ouranus4.github.io/gravity-moments/#org"},
-      "areaServed":{"@type":"Country","name":"Україна"}
-    },
-    {
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Скільки коштує ваша робота?",
-         "acceptedAnswer":{"@type":"Answer","text":"Наша винагорода стоїть у кошторисі окремим рядком — ви бачите її суму ще до підписання договору. Вона залежить від масштабу й складності події, і ми називаємо її на першій же розмові."}},
-        {"@type":"Question","name":"Чи побачу я, з чого складається бюджет?",
-         "acceptedAnswer":{"@type":"Answer","text":"Так. Кошторис приходить по рядках: локація, кейтеринг, декор, техніка, кожен артист окремо. Ви бачите структуру бюджету, а не одну загадкову суму «програма»."}},
-        {"@type":"Question","name":"Хто платить підрядникам?",
-         "acceptedAnswer":{"@type":"Answer","text":"Ви — напряму або через нас, як вам зручніше. Ми не беремо гроші підрядників на себе, щоб не було потреби вам довіряти на слово."}},
-        {"@type":"Question","name":"Яка передоплата?",
-         "acceptedAnswer":{"@type":"Answer","text":"30% нашої винагороди після підписання договору, решта — за три дні до події. Підрядники мають власні умови, вони прописані в кошторисі."}},
-        {"@type":"Question","name":"Чи можна свою локацію або своїх підрядників?",
-         "acceptedAnswer":{"@type":"Answer","text":"Так. Ми працюємо з вашими підрядниками і не беремо за це доплату. Якщо бачимо ризик, скажемо прямо, але вибір за вами."}},
-        {"@type":"Question","name":"А якщо буде дощ?",
-         "acceptedAnswer":{"@type":"Answer","text":"Для будь-якої події просто неба в кошторисі закладений план Б — шатро або резервна локація. Він узгоджується заздалегідь, а не в день події."}},
-        {"@type":"Question","name":"За скільки часу треба починати?",
-         "acceptedAnswer":{"@type":"Answer","text":"Весілля — від 4 місяців, корпоратив — від 6 тижнів, приватна вечірка — від 2 тижнів. Взяти подію швидше можемо, але вибір локацій і артистів буде вужчим."}},
-        {"@type":"Question","name":"Ви справді можете запросити зірку?",
-         "acceptedAnswer":{"@type":"Answer","text":"Так, у нас прямі контакти з артистами й менеджментом. Гонорар ви платите артисту, без посередницької націнки — ми лише домовляємось і закриваємо райдер."}}
-      ]
-    }
-  ]
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f8f4f0;
+  --ink:#2a2220;
+  --ink-2:#5c5048;
+  --muted:#9b8d82;
+  --line:rgba(42,34,32,.15);
+  --blue:#a8837a;
+  --blue-2:#74564f;
+  --blue-3:#c4a49a;
+  --peri:#e3d6cd;
+  --rose:#d7b4ae;
+  --rose-2:#f1e4de;
+  --sky:#f2ebe4;
+  --gold:#c2a05c;
+  --line-inv:rgba(255,255,255,.2);
+  --seam:40%;
+  --pad:clamp(16px,4vw,56px);
+  --sans:"Jost",system-ui,sans-serif;
+  --serif:"Playfair Display",Georgia,serif;
+  --script:"Pinyon Script",cursive;
 }
-</script>
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--blue);color:#fff}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--pad);transition:background .4s,padding .4s}
+.nav.scrolled{background:rgba(247,248,251,.88);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--serif);font-weight:400;letter-spacing:.01em;font-size:27px;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-weight:500;font-size:8.5px;letter-spacing:.38em;margin-top:6px;text-transform:uppercase;opacity:.75}
+.nav-links{display:flex;gap:34px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:width .35s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:var(--paper);border-radius:2px;padding:13px 22px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:transform .3s}
+.nav-cta:hover{transform:translateY(-2px)}
+.nav-links{margin-left:auto;margin-right:34px}
+.nav:not(.scrolled) .logo,.nav:not(.scrolled) .nav-links{color:#fff}
+.nav:not(.scrolled) .logo small{opacity:.8}
+.nav:not(.scrolled) .burger{background:#fff}.nav:not(.scrolled) .burger span{background:var(--ink)}
+
+.burger{display:none;width:44px;height:44px;border-radius:50%;background:var(--ink);position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--paper);transition:.3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:25px}
+.menu-open .burger span:nth-child(1){top:21.5px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:21.5px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:0 var(--pad);gap:6px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mobile-menu a{font-family:var(--serif);font-size:44px;line-height:1.2;font-weight:300}
+.menu-open .mobile-menu{opacity:1;pointer-events:auto}
+.menu-open .nav{background:transparent;border-color:transparent;color:var(--paper)}
+.menu-open .burger{background:var(--paper)}
+.menu-open .burger span{background:var(--ink)}
+
+/* ---------- HERO: full-bleed blue smoke, centred headline, founder card ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;color:#fff;isolation:isolate;background:#e9e0d7}
+.hero-bg{position:absolute;inset:0;z-index:0;translate:calc(var(--mx,0) * -12px) calc(var(--my,0) * -8px + var(--sp,0) * 140px)}
+.hero-bg picture{display:contents}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;animation:kenburns 22s 1.2s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.1)}}
+.hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(90deg,rgba(26,20,18,.82) 0%,rgba(26,20,18,.55) 38%,rgba(26,20,18,.1) 68%,rgba(26,20,18,0) 100%),
+  linear-gradient(180deg,rgba(26,20,18,.55) 0%,rgba(26,20,18,0) 20%,rgba(26,20,18,0) 70%,rgba(26,20,18,.6) 100%)}
+video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
+video::-webkit-media-controls{display:none!important}
+@keyframes fadeIn{to{opacity:1}}
+
+.hero-center{position:absolute;z-index:2;left:var(--pad);width:min(820px,60vw);top:48%;translate:0 calc(-50% + var(--sp,0) * -80px);text-align:left;display:flex;flex-direction:column;align-items:flex-start;opacity:calc(1 - var(--sp,0) * 1.4)}
+.hero-eyebrow{display:flex;align-items:center;gap:16px;font-size:11px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:#efe4db;opacity:0;animation:fadeIn 1.2s .5s forwards;text-shadow:0 2px 16px rgba(42,34,32,.45)}
+.hero-eyebrow i{display:block;width:40px;height:1px;background:#efe4db}
+.hero h1{margin-top:26px;font-family:var(--serif);font-weight:300;font-size:clamp(54px,7.2vw,136px);line-height:.92;letter-spacing:-.02em;text-shadow:0 6px 50px rgba(42,34,32,.45)}
+.hero h1 em{font-style:italic;color:#e4ecfa}
+.line{display:block;overflow:hidden;padding:0 .06em .1em;margin-bottom:-.1em}
+.line>span{display:inline-block;transform:translateY(110%);animation:lineUp 1.5s .35s cubic-bezier(.16,1,.3,1) forwards}
+.line:nth-child(2)>span{animation-delay:.5s}
+@keyframes lineUp{to{transform:none}}
+.hero-lead{margin-top:26px;max-width:540px;font-size:clamp(15px,1.15vw,17px);line-height:1.7;color:rgba(255,255,255,.92);text-shadow:0 2px 20px rgba(42,34,32,.5);opacity:0;animation:fadeIn 1.2s 1s forwards}
+.hero-cta{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:14px;margin-top:38px;opacity:0;transform:translateY(16px);animation:ctaIn 1.2s 1.2s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes ctaIn{to{opacity:1;transform:none}}
+.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:60px;padding:0 34px;border-radius:2px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;transition:background .35s,color .35s,border-color .35s,box-shadow .35s}
+.btn-primary{background:#fff;color:var(--blue);box-shadow:0 20px 50px -20px rgba(42,34,32,.6)}
+.btn-primary span{transition:transform .35s}
+.btn-primary:hover{background:var(--blue);color:#fff}
+.btn-primary:hover span{transform:translateX(5px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.7);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+
+.founder{position:absolute;z-index:3;right:var(--pad);bottom:78px;display:flex;align-items:center;gap:14px;padding:8px 26px 8px 8px;border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 20px 50px -25px rgba(42,34,32,.6);opacity:0;transform:translateY(20px);animation:ctaIn 1.2s 1.5s cubic-bezier(.16,1,.3,1) forwards;transition:background .3s}
+.founder:hover{background:#fff}
+.founder-img{width:58px;height:58px;border-radius:50%;overflow:hidden;flex:none}
+.founder-img img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.founder b{display:block;font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.1}
+.founder small{display:block;margin-top:4px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);font-weight:600}
+.hero-foot{position:absolute;z-index:3;left:var(--pad);right:var(--pad);bottom:28px;display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 2px 14px rgba(42,34,32,.5);opacity:0;animation:fadeIn 1.2s 1.7s forwards;pointer-events:none}
+.scroll-hint{display:flex;align-items:center;gap:14px}
+.scroll-hint i{display:block;width:1px;height:34px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.scroll-hint i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:#fff;animation:drip 2s infinite}
+@keyframes drip{to{top:100%}}
+@media (max-width:820px){
+  .hero h1{font-size:clamp(34px,11vw,60px)}
+  .hero-veil{background:linear-gradient(180deg,rgba(26,20,18,.7) 0%,rgba(26,20,18,.5) 45%,rgba(26,20,18,.15) 70%,rgba(26,20,18,.55) 100%)}
+  .hero-bg img{object-position:50% 60%}
+  .hero-eyebrow{letter-spacing:.22em;font-size:10px}
+  .hero-eyebrow i{display:none}
+  .hero-center{top:40%;left:var(--pad);right:var(--pad);width:auto;text-align:center;align-items:center}
+  .hero-cta{justify-content:center}
+  .hero-cta{flex-direction:column;align-items:stretch;width:100%;max-width:360px}
+  .hero-foot span:first-child{display:none}
+  .hero-foot{justify-content:center}
+}
+
+/* floating CTA */
+.fab{position:fixed;right:var(--pad);bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:12px;padding:16px 24px;border-radius:2px;background:var(--blue);color:#fff;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 18px 40px -14px rgba(168,131,122,.7);transform:translateY(calc(100% + 110px));transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.fab.on{transform:none}
+.fab::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+
+/* booking dialog */
+.dlg{border:0;padding:0;margin:auto;width:min(920px,calc(100% - 32px));max-height:calc(100svh - 32px);background:var(--paper);color:var(--ink);overflow:auto}
+.dlg[open]{display:grid;grid-template-columns:.85fr 1.15fr;animation:dlgIn .6s cubic-bezier(.16,1,.3,1)}
+@keyframes dlgIn{from{opacity:0;transform:translateY(24px)}}
+.dlg::backdrop{background:rgba(42,34,32,.5);backdrop-filter:blur(6px)}
+.dlg-img{position:relative;min-height:100%;background:#222}
+.dlg-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.dlg-body{position:relative;padding:clamp(28px,4vw,52px)}
+.dlg-close{position:absolute;right:18px;top:18px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);font-size:18px;line-height:1;transition:background .3s}
+.dlg-close:hover{background:rgba(0,0,0,.06)}
+.dlg .eyebrow{color:var(--muted)}
+.dlg h3{margin:16px 0 10px;font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.6vw,48px);line-height:1}
+.dlg h3 em{font-style:italic}
+.dlg-sub{font-size:14px;color:var(--ink-2);margin-bottom:24px}
+.dlg-form{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.dlg-form label{display:flex;flex-direction:column;gap:6px}
+.dlg-form label.full{grid-column:1/-1}
+.dlg-form label span{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.dlg-form input,.dlg-form select{appearance:none;-webkit-appearance:none;border:0;border-bottom:1px solid rgba(13,13,13,.25);background:transparent;padding:8px 0 10px;font:400 16px var(--sans);color:var(--ink);outline:0;border-radius:0;transition:border-color .3s}
+.dlg-form input:focus,.dlg-form select:focus{border-color:var(--ink)}
+.dlg-form button{grid-column:1/-1;margin-top:10px;display:flex;justify-content:space-between;align-items:center;min-height:60px;padding:0 28px;background:var(--blue);color:var(--paper);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;transition:background .3s}
+.dlg-form button:hover{background:var(--blue-2)}
+.dlg-alt{margin-top:16px;font-size:12.5px;color:var(--muted)}
+.dlg-alt a{color:var(--ink);border-bottom:1px solid var(--line)}
+
+@media (max-width:640px){
+  .hero-lead{font-size:15px;margin-top:20px}
+  .hero-cta{margin-top:28px}
+  .dlg[open]{grid-template-columns:1fr}
+  .dlg-img{display:none}
+  .dlg-form{grid-template-columns:1fr}
+  .fab{left:16px;right:16px;justify-content:center;bottom:60px}
+}
+/* ---------- common ---------- */
+section{position:relative}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+.eyebrow{color:var(--blue);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.display{font-family:var(--sans);font-weight:200;font-size:clamp(44px,7.4vw,112px);line-height:.98;letter-spacing:-.035em}
+.display em{font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:-.01em;color:var(--blue)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.oval{border-radius:999px;overflow:hidden}
+.oval img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- ABOUT ---------- */
+.about{padding:clamp(90px,12vw,170px) 0 clamp(80px,10vw,140px)}
+.about-head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.about-head .display .l2{display:block;padding-left:22%}
+.about-lead{font-size:14px;line-height:1.65;color:var(--ink-2);max-width:340px;justify-self:end;margin-top:14px}
+.about-grid{display:grid;grid-template-columns:5fr 4fr 3fr;gap:clamp(24px,4vw,70px);margin-top:clamp(40px,5vw,70px);align-items:start}
+.about-oval{aspect-ratio:3/4.4}
+.about-oval img{object-position:50% 14%}
+.sign{display:flex;justify-content:space-between;margin-top:22px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.sign span:last-child{font-family:var(--serif);font-size:18px;letter-spacing:0;text-transform:none;font-weight:400;font-style:italic}
+.about-text{padding-top:clamp(20px,8vw,130px);font-size:14.5px;color:var(--ink-2)}
+.about-text p+p{margin-top:1.1em}
+.about-text p:first-child{text-indent:3em}
+.about-small{aspect-ratio:1/1.6;margin-top:clamp(0px,3vw,40px)}
+.about-small img{object-position:50% 22%}
+.principle{margin-top:34px;font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.3;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:clamp(60px,8vw,110px)}
+.stat{position:relative;padding:28px 20px 0 0}
+.stat::after{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--blue);transition:width 1.6s cubic-bezier(.16,1,.3,1) .15s}
+.stat.in::after{width:calc(100% - 20px)}
+.stat b i{font-style:normal}
+.stat b{display:block;color:var(--blue);font-variant-numeric:tabular-nums;font-family:var(--sans);font-weight:200;font-size:clamp(44px,5.6vw,84px);line-height:1;letter-spacing:-.04em}
+.stat span{display:block;margin-top:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+
+/* ---------- EVENTS LIST ---------- */
+.events{padding:clamp(90px,11vw,160px) 0 clamp(80px,10vw,140px)}
+.events-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+.events-head p{max-width:300px;font-size:14px;color:var(--ink-2)}
+.ev-list{list-style:none;border-top:1px solid var(--line)}
+.ev{position:relative;display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);cursor:default;overflow:hidden}
+.ev::before{content:"";position:absolute;inset:0;background:var(--blue);transform:scaleY(0);transform-origin:bottom;transition:transform .5s cubic-bezier(.2,.7,.2,1);z-index:0}
+.ev>*{position:relative;z-index:1;transition:color .4s,transform .5s}
+.ev .n{font-size:12px;letter-spacing:.2em;color:var(--muted)}
+.ev h3{font-weight:200;font-size:clamp(28px,4.2vw,58px);line-height:1.05;letter-spacing:-.03em}
+.ev .arr{font-size:26px;font-weight:200}
+.ev:hover::before{transform:scaleY(1)}
+.ev:hover>*{color:var(--paper)}
+.ev:hover h3{transform:translateX(20px)}
+.ev-thumb{position:fixed;width:220px;height:300px;pointer-events:none;z-index:30;border-radius:120px;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .3s,transform .3s}
+.ev-thumb.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.ev-thumb img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- DARK / DIFFERENCE ---------- */
+.dark{overflow:hidden;background:var(--paper);padding-top:clamp(120px,16vw,240px);color:var(--paper);isolation:isolate}
+.dark-bg{position:absolute;left:0;right:0;bottom:0;top:clamp(230px,24vw,380px);background:var(--ink);z-index:-1}
+.dark-bg::before{content:"";position:absolute;left:-15%;right:-15%;top:clamp(-220px,-16vw,-110px);height:clamp(440px,40vw,700px);background:var(--ink);border-radius:50%}
+.big-name{font-family:var(--serif);font-weight:300;font-size:clamp(72px,17.5vw,300px);line-height:.8;letter-spacing:-.02em;text-align:center;color:#fff;mix-blend-mode:difference;position:relative;z-index:2;white-space:nowrap}
+.big-name .it{font-style:italic;display:block}
+.diff{display:grid;grid-template-columns:1fr minmax(240px,340px) 1fr;gap:clamp(24px,4vw,70px);align-items:center;padding:clamp(20px,3vw,40px) var(--pad) clamp(90px,10vw,150px)}
+.diff-oval{aspect-ratio:1/1.55;margin-top:-6vw;position:relative;z-index:1}
+.diff-oval img{object-position:50% 25%}
+.diff h2{font-weight:300;font-size:clamp(24px,2.4vw,34px);line-height:1.15;letter-spacing:-.02em;margin-bottom:22px}
+.diff p{font-size:14px;line-height:1.7;color:rgba(246,240,234,.72)}
+.diff .tag{display:inline-block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--line-inv);border-radius:30px;padding:7px 14px;margin-bottom:22px;color:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:18px;padding:18px 26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;transition:.3s}
+.btn-light{background:rgba(255,255,255,.1);color:var(--paper);margin-top:34px}
+.btn-light:hover{background:var(--paper);color:var(--ink)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:#333}
+
+/* ---------- GALLERY STRIP ---------- */
+.strip{background:var(--ink);padding-bottom:clamp(90px,10vw,150px);overflow:hidden}
+.strip-track{display:flex;gap:14px;width:max-content;animation:scroll 60s linear infinite}
+.strip:hover .strip-track{animation-play-state:paused}
+.strip-track figure{width:clamp(200px,22vw,330px);aspect-ratio:3/4.3;overflow:hidden;flex:none}
+.strip-track img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .6s,transform .8s}
+.strip-track figure:hover img{filter:none;transform:scale(1.04)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- SERVICES ---------- */
+.services{padding:clamp(90px,11vw,160px) 0}
+.svc-top{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:30px;margin-bottom:clamp(40px,5vw,70px)}
+.tabs{display:inline-flex;border:1px solid var(--blue);border-radius:40px;padding:4px}
+.tab{padding:12px 24px;border-radius:40px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:.3s}
+.tab[aria-selected="true"]{background:var(--blue);color:#fff}
+.panel{display:none;grid-template-columns:minmax(260px,4fr) 7fr;gap:clamp(30px,5vw,90px);align-items:start}
+.panel.active{display:grid;animation:fadeUp .6s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}}
+.price-card{position:sticky;top:100px;background:var(--ink);color:var(--paper);padding:clamp(28px,3vw,44px)}
+.price-card h3{font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.4vw,50px);line-height:1;margin-bottom:28px}
+.price-card h3 em{font-style:italic}
+.opt{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:18px 0;border-top:1px solid var(--line-inv)}
+.opt b{font-weight:200;font-size:40px;line-height:1;letter-spacing:-.03em;grid-row:span 2;align-self:center}
+.opt span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,240,234,.55);font-weight:500}
+.opt p{font-size:13.5px;line-height:1.5;grid-column:1}
+.big-percent{font-weight:200;font-size:clamp(110px,12vw,180px);line-height:.85;letter-spacing:-.06em}
+.note{margin-top:22px;font-size:12px;line-height:1.55;color:rgba(246,240,234,.55)}
+.price-card .btn{margin-top:28px;background:var(--blue);color:#fff;width:100%;justify-content:space-between}
+.svc-list{list-style:none;counter-reset:s;border-top:1px solid var(--line)}
+.svc-list li{counter-increment:s;border-bottom:1px solid var(--line)}
+.svc-list summary{list-style:none;display:grid;grid-template-columns:54px 1fr 30px;gap:12px;align-items:baseline;padding:22px 0;cursor:pointer;font-size:clamp(18px,1.6vw,23px);font-weight:400;letter-spacing:-.01em}
+.svc-list summary::-webkit-details-marker{display:none}
+.svc-list summary::before{content:counter(s,decimal-leading-zero);font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:500}
+.svc-list summary::after{content:"+";font-weight:200;font-size:26px;line-height:1;text-align:right;transition:transform .3s}
+.svc-list details[open] summary::after{transform:rotate(45deg)}
+.svc-list details p{padding:0 30px 24px 66px;font-size:14.5px;color:var(--ink-2);max-width:640px}
+.secret{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35}
+
+/* ---------- CITIES & STARS ---------- */
+.cities{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(60px,7vw,110px) 0}
+.cities-row{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,80px);align-items:center}
+.cities-left .eyebrow{margin-bottom:clamp(20px,2.4vw,32px)}
+.city-names{display:flex;flex-wrap:wrap;gap:0 18px;font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.6vw,70px);line-height:1.12}
+.city-names span{transition:color .35s}
+.city-names span.hot{color:var(--blue)}
+.city-names span:not(:last-child)::after{content:"·";margin-left:18px;color:var(--muted)}
+.cities-note{margin-top:clamp(20px,2.4vw,32px);font-size:14.5px;line-height:1.7;color:var(--ink-2);max-width:32em}
+.cities-map{width:100%}
+.cities-map svg{width:100%;height:auto;display:block;overflow:visible}
+.ua-land{fill:var(--sky);fill-opacity:0;stroke:var(--blue);stroke-width:2;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;
+  transition:stroke-dashoffset 2.3s cubic-bezier(.55,0,.2,1) .1s,fill-opacity 1.4s ease 1s}
+.cities-map.in .ua-land{stroke-dashoffset:0;fill-opacity:1}
+.ua-city circle{fill:var(--blue);r:0;transition:r .55s cubic-bezier(.34,1.6,.64,1) var(--d,0s)}
+.cities-map.in .ua-city circle{r:9}
+.ua-city .ua-ring{fill:none;stroke:var(--blue);stroke-width:2;r:9;opacity:0}
+.cities-map.in .ua-city .ua-ring{animation:uaping 3.4s ease-out var(--d,0s) infinite}
+@keyframes uaping{0%{r:9;opacity:.55}70%{r:34;opacity:0}100%{r:34;opacity:0}}
+.ua-city text{fill:var(--ink);font-family:var(--sans);font-size:30px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;opacity:0;transition:opacity .7s var(--d,0s)}
+.cities-map.in .ua-city text{opacity:1}
+.ua-city{cursor:default}
+.ua-city:hover circle,.ua-city.hot circle{fill:var(--blue-2)}
+.cities-map.in .ua-city:hover circle,.cities-map.in .ua-city.hot circle{r:14}
+.ua-city.hot text{fill:var(--blue)}
+@media (prefers-reduced-motion:reduce){.ua-land{stroke-dashoffset:0;fill-opacity:1}.cities-map.in .ua-city .ua-ring{animation:none}}
+.stars{padding:clamp(70px,8vw,120px) 0 clamp(20px,3vw,40px)}
+.stars-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,54px)}
+.stars-note{max-width:360px;font-size:14px;color:var(--ink-2)}
+.stars-list{list-style:none;columns:3;column-gap:clamp(24px,4vw,70px)}
+.stars-list li{break-inside:avoid;display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.1vw,30px);line-height:1.2;transition:color .3s,padding-left .3s}
+.stars-list li:hover{color:var(--blue);padding-left:8px}
+.stars-list li span{font-family:var(--sans);font-size:10px;letter-spacing:.2em;font-weight:600;color:var(--muted)}
+@media (max-width:980px){.stars-list{columns:2}}
+@media (max-width:640px){.stars-list{columns:1}}
+
+/* ---------- REVIEWS: real screenshots ---------- */
+.reviews{padding:clamp(90px,11vw,160px) 0;background:var(--sky);overflow:hidden}
+.rev-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
+.rev-head .eyebrow{margin-bottom:22px}
+.rev-note{max-width:340px;font-size:14px;color:var(--ink-2)}
+.rev-rows{display:grid;gap:clamp(10px,1vw,16px)}
+.rev-row{overflow:hidden;padding:clamp(14px,1.4vw,22px) 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rev-track{display:flex;align-items:flex-start;width:max-content;animation:revslide 95s linear infinite;will-change:transform}
+.rev-row.rev-back .rev-track{animation-duration:125s;animation-direction:reverse}
+.rev-rows:hover .rev-track{animation-play-state:paused}
+@keyframes revslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.rev-card{flex:0 0 auto;width:clamp(226px,22vw,300px);margin-right:clamp(12px,1.3vw,20px);background:#fff;border-radius:18px;padding:12px 12px 0;box-shadow:0 26px 55px -34px rgba(42,34,32,.75);cursor:zoom-in;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.rev-card:hover{transform:translateY(-7px);box-shadow:0 36px 70px -32px rgba(42,34,32,.85)}
+.rev-card img{width:100%;display:block;border-radius:11px}
+.rev-card figcaption{display:flex;align-items:center;gap:8px;padding:12px 6px 14px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.rev-card figcaption::before{content:"";width:14px;height:1px;background:currentColor;flex:none}
+.rev-hint{margin-top:clamp(26px,3vw,40px);padding:0 var(--pad);font-size:10.5px;line-height:1.8;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:center}
+.rh-m{display:none}
+@media (prefers-reduced-motion:reduce){.rev-track{animation:none}}
+@media (max-width:820px){
+  .rev-rows{gap:10px}
+  .rev-row{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    padding:10px var(--pad) 16px;-webkit-mask-image:none;mask-image:none}
+  .rev-row::-webkit-scrollbar{display:none}
+  .rev-track{animation:none!important;transform:none!important;will-change:auto}
+  .rev-track{align-items:stretch}
+  .rev-card{width:min(76vw,320px);margin-right:12px;scroll-snap-align:center;display:flex;flex-direction:column}
+  .rev-card img{max-height:300px;object-fit:cover;object-position:top center}
+  .rev-card figcaption{margin-top:auto}
+  .rev-card:nth-child(n+7){display:none}
+  .rh-d{display:none}
+  .rh-m{display:inline}
+}
+
+/* ---------- CONTACT ---------- */
+.contact{background:radial-gradient(85% 65% at 100% 0%, rgba(215,180,174,.5), transparent 62%),radial-gradient(70% 60% at 0% 100%, rgba(194,160,92,.3), transparent 60%),linear-gradient(158deg,#8d6c63 0%,#5d443e 62%,#3b2a26 100%);color:#fff;overflow:hidden;padding:clamp(90px,11vw,160px) 0 0}
+.contact-grid{display:grid;grid-template-columns:7fr 5fr;gap:50px;align-items:end}
+.contact .display{font-size:clamp(50px,8.4vw,132px)}
+.contact-sub{margin-top:28px;font-size:15px;color:rgba(246,240,234,.7);max-width:420px}
+.contact-oval{aspect-ratio:1/1.35;max-width:380px;justify-self:end;width:100%}
+.contact-oval img{object-position:50% 16%}
+.links{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(60px,7vw,100px);border-top:1px solid var(--line-inv)}
+.links a{padding:30px 20px 30px 0;border-right:1px solid var(--line-inv);display:flex;flex-direction:column;gap:8px;transition:background .3s,padding .3s}
+.links a:last-child{border-right:0}
+.links a span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,240,234,.5);font-weight:500}
+.links a b{font-weight:300;font-size:clamp(18px,1.7vw,24px);letter-spacing:-.01em;word-break:break-word}
+.links a:hover{background:rgba(255,255,255,.06);padding-left:16px}
+.footer-word{font-family:var(--serif);font-style:italic;font-weight:300;font-size:17vw;line-height:.9;text-align:center;color:rgba(255,255,255,.16);margin-top:60px;letter-spacing:-.02em;white-space:nowrap;user-select:none}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:24px var(--pad);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,240,234,.5);border-top:1px solid var(--line-inv)}
+
+/* ---------- INTRO LOADER: flipbook in an arch -> expands into the hero ---------- */
+.intro{position:fixed;inset:0;z-index:100;background:var(--paper);color:var(--ink);transition:opacity .6s}
+.intro.gone{opacity:0;pointer-events:none}
+.intro-frame{position:absolute;left:50%;top:50%;width:var(--fw);height:calc(var(--fw) * 1.32);translate:-50% -50%;border-radius:999px 999px 0 0;overflow:hidden;background:#ece3da;box-shadow:0 40px 90px -40px rgba(42,34,32,.5);
+  --fw:min(24vw,300px);clip-path:inset(100% 0 0 0);animation:frameIn 1s .1s cubic-bezier(.77,0,.18,1) forwards;transition:opacity .25s}
+@keyframes frameIn{to{clip-path:inset(0 0 0 0)}}
+.intro-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.intro-frame img.on{opacity:1}
+.intro-stage{position:absolute;inset:0;--fw:min(24vw,300px);--fh:calc(var(--fw) * 1.32);
+  clip-path:inset(calc(50% - var(--fh) / 2) calc(50% - var(--fw) / 2) round 999px 999px 0 0);opacity:0;transition:clip-path 1.35s cubic-bezier(.77,0,.18,1),opacity .25s}
+.intro-stage img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.intro.final .intro-stage{opacity:1}
+.intro.final .intro-frame{opacity:0}
+.intro.open .intro-stage{clip-path:inset(0 0 0 0 round 0 0 0 0)}
+.intro-ui{position:absolute;inset:0;padding:26px var(--pad);display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;transition:opacity .5s}
+.intro.open .intro-ui{opacity:0}
+.intro-top,.intro-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.intro-brand{font-family:var(--serif);font-size:28px;line-height:1}
+.intro-brand small{display:block;font-family:var(--sans);font-size:8.5px;letter-spacing:.38em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
+.intro-top span,.intro-bot span{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.intro-count{font-family:var(--serif);font-weight:300;font-size:clamp(90px,15vw,230px);line-height:.8;color:var(--blue);font-variant-numeric:lining-nums}
+.intro-count sup{font-size:.28em;vertical-align:top;margin-left:6px;font-style:italic}
+.intro-bar{position:absolute;left:50%;top:calc(50% + min(24vw,300px) * .66 + 26px);translate:-50% 0;width:min(24vw,300px);height:1px;background:var(--line)}
+.intro-bar i{position:absolute;left:0;top:0;height:1px;width:var(--pr,0%);background:var(--blue);transition:width .2s}
+.intro-word{position:absolute;left:50%;top:calc(50% - min(24vw,300px) * .66 - 44px);translate:-50% 0;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-2);white-space:nowrap}
+@media (max-width:820px){
+  .intro-frame,.intro-stage{--fw:56vw}
+  .intro-bar{top:calc(50% + 56vw * .66 + 22px);width:56vw}
+  .intro-word{top:calc(50% - 56vw * .66 - 40px);font-size:18px}
+  .intro-top span:last-child,.intro-bot span{display:none}
+}
+body.is-loading{overflow:hidden}
+body.is-loading .hero *{animation-play-state:paused!important}
+
+/* ---------- PROMISE / MANIFESTO ---------- */
+.promise{padding:clamp(100px,13vw,200px) 0 clamp(60px,8vw,120px)}
+.promise .eyebrow{margin-bottom:40px}
+.manifesto{font-weight:200;font-size:clamp(32px,4.9vw,76px);line-height:1.08;letter-spacing:-.035em;max-width:1250px}
+.manifesto em{font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:-.01em;color:var(--blue)}
+.manifesto .w{opacity:.13;transition:opacity .25s}
+.manifesto .w.on{opacity:1}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(60px,8vw,120px);border-top:1px solid var(--line)}
+.pillar{padding:30px 26px 10px 0;border-right:1px solid var(--line);margin-right:26px}
+.pillar:last-child{border-right:0;margin-right:0}
+.pillar i{font-style:normal;font-family:var(--serif);font-size:54px;line-height:1;font-weight:300;display:block;margin-bottom:26px;color:var(--blue)}
+.pillar h3{font-weight:500;font-size:17px;letter-spacing:-.01em;margin-bottom:10px}
+.pillar p{font-size:14px;color:var(--ink-2);line-height:1.6}
+
+/* ---------- BRIDE MORNING (scroll colour reveal) ---------- */
+.bride{height:230vh;background:var(--ink);color:var(--paper)}
+.bride-stick{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.bride-media{position:relative;overflow:hidden}
+.bride-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.bride-media img{transform:scale(calc(1 + var(--r,0) * .0012));transition:transform .2s linear}
+.bride-media .stamp{position:absolute;left:24px;bottom:24px;z-index:2;font-size:10px;letter-spacing:.3em;text-transform:uppercase;background:rgba(13,13,13,.55);backdrop-filter:blur(6px);padding:9px 14px;border-radius:30px}
+.bride-text{display:flex;flex-direction:column;justify-content:center;padding:100px clamp(24px,6vw,110px)}
+.bride-text .eyebrow{color:rgba(246,240,234,.6);margin-bottom:30px}
+.bride-text h2{font-weight:200;font-size:clamp(44px,5.6vw,92px);line-height:.98;letter-spacing:-.035em}
+.bride-text h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:#a9bcff}
+.bride-text>p{margin-top:30px;font-size:15px;line-height:1.7;color:rgba(246,240,234,.72);max-width:470px}
+.bride-steps{list-style:none;margin-top:36px;border-top:1px solid var(--line-inv);max-width:470px}
+.bride-steps li{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line-inv);font-size:14px;opacity:.3;transition:opacity .5s}
+.bride-steps li.on{opacity:1}
+.bride-steps b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:17px;min-width:52px}
+
+/* ---------- SHOWCASE (pinned horizontal) ---------- */
+.show{height:var(--show-h,420vh);background:var(--paper)}
+.show-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:40px}
+.show-head{display:flex;justify-content:space-between;align-items:end;gap:30px;padding:0 var(--pad);margin-bottom:30px}
+.show-head .display{font-size:clamp(40px,5.2vw,84px)}
+.show-count{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;white-space:nowrap}
+.show-track{display:flex;gap:clamp(14px,1.6vw,26px);padding:0 var(--pad);width:max-content;will-change:transform}
+.card{position:relative;flex:none;height:min(58svh,620px);overflow:hidden;color:#fff}
+.card.t{aspect-ratio:3/4}.card.w{aspect-ratio:4/3.4}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.05)}
+.card figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 24px 22px;background:linear-gradient(transparent,rgba(0,0,0,.65))}
+.card figcaption span{display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.card figcaption b{font-weight:300;font-size:clamp(20px,1.9vw,28px);letter-spacing:-.02em;line-height:1.1}
+.card.quote-card{background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:34px;aspect-ratio:3/4}
+.card.quote-card p{font-family:var(--serif);font-weight:300;font-size:clamp(28px,2.6vw,42px);line-height:1.08}
+.card.quote-card p em{font-style:italic}
+.card.quote-card small{font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.6}
+.show-bar{margin:30px var(--pad) 0;height:1px;background:var(--line);position:relative}
+.show-bar i{position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--blue)}
+
+/* ---------- REELS ---------- */
+.reels{background:var(--sky);color:var(--ink);padding:clamp(100px,12vw,180px) 0 clamp(120px,12vw,190px);overflow:hidden}
+.reels-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:clamp(44px,5vw,80px)}
+.reels-head .eyebrow{margin-bottom:26px}
+.reels h2{font-weight:200;font-size:clamp(34px,6vw,96px);line-height:.98;letter-spacing:-.035em}
+.reels h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--blue)}
+.reels-note{color:var(--ink-2);font-size:15px;line-height:1.7;max-width:390px}
+.reels-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,56px);justify-items:center;align-items:start}
+.phone{position:relative;width:100%;max-width:340px;aspect-ratio:9/16;border-radius:34px;overflow:hidden;border:6px solid #fff;box-shadow:0 40px 80px -30px rgba(42,34,32,.55);background:#111}
+.phone.low{margin-top:clamp(28px,5vw,90px)}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.phone .snd{position:absolute;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;font-size:16px;display:grid;place-items:center}
+.phone .lbl{position:absolute;left:14px;top:14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);padding:7px 12px;border-radius:30px;color:#fff}
+
+@media (max-width:1000px){
+  .pillars{grid-template-columns:1fr 1fr}
+  .pillar:nth-child(2){border-right:0;margin-right:0}
+  .phone.low{margin-top:44px}
+}
+@media (max-width:700px){
+  .reels-head{flex-direction:column;align-items:flex-start;gap:22px}
+  .reels-row{grid-template-columns:1fr 1fr;gap:14px}
+  .reels-row>.phone.low{margin-top:0}
+  .reels-row>.phone:nth-child(3){grid-column:1/-1;max-width:calc(50% - 7px)}
+  .phone{border-width:5px;border-radius:26px}
+  .phone .lbl{font-size:8.5px;padding:6px 9px;letter-spacing:.16em;left:9px;top:9px}
+  .phone .snd{width:36px;height:36px;right:9px;bottom:9px;font-size:14px}
+}
+@media (max-width:820px){
+  .bride{height:auto}
+  .bride-stick{position:relative;height:auto;grid-template-columns:1fr}
+  .bride-media{aspect-ratio:4/5}
+  .bride-text{padding:60px var(--pad) 80px}
+  .show{height:auto}
+  .show-stick{position:relative;height:auto;padding:90px 0}
+  .show-track{overflow-x:auto;width:auto;scroll-snap-type:x mandatory;transform:none!important;scrollbar-width:none}
+  .show-track::-webkit-scrollbar{display:none}
+  .card{height:auto;width:78vw;scroll-snap-align:center}
+  .card.w{aspect-ratio:3/4}
+  .show-bar{display:none}
+  .show-head{flex-direction:column;align-items:start}
+}
+@media (max-width:700px){
+  .pillars{grid-template-columns:1fr}
+  .pillar{border-right:0!important;margin-right:0!important;border-bottom:1px solid var(--line);padding-bottom:26px}
+  .reels-grid{gap:12px}
+  .phone{border-radius:22px}
+}
+
+/* ---------- EFFECTS ---------- */
+/* film grain */
+body::after{content:"";position:fixed;inset:-50%;z-index:95;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* custom cursor (mouse only) */
+.cursor,.cursor-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:96;border-radius:50%;display:none}
+@media (hover:hover) and (pointer:fine){
+  .cursor{display:block;width:8px;height:8px;background:#fff;mix-blend-mode:difference;margin:-4px 0 0 -4px}
+  .cursor-ring{display:grid;place-items:center;width:44px;height:44px;margin:-22px 0 0 -22px;border:1px solid #fff;mix-blend-mode:difference;transition:width .35s cubic-bezier(.2,.7,.2,1),height .35s cubic-bezier(.2,.7,.2,1),margin .35s cubic-bezier(.2,.7,.2,1),background .35s,border-color .35s}
+  .cursor-ring span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink);opacity:0;transition:opacity .2s}
+  .cursor-ring.link{width:64px;height:64px;margin:-32px 0 0 -32px}
+  .cursor-ring.view{width:110px;height:110px;margin:-55px 0 0 -55px;background:var(--paper);border-color:var(--paper);mix-blend-mode:normal}
+  .cursor-ring.view span{opacity:1}
+}
+
+/* crossed marquee bands */
+.band{position:relative;height:clamp(200px,22vw,320px);overflow:hidden;background:var(--paper)}
+.band-row{position:absolute;left:-5%;right:-5%;top:50%;display:flex;white-space:nowrap;padding:20px 0;font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.6vw,70px);line-height:1}
+.band-row.a span{font-style:italic}
+.band-row div{display:flex;animation:scroll 40s linear infinite}
+.band-row span{padding:0 26px;display:flex;align-items:center;gap:52px}
+.band-row span::after{content:"✦";font-family:var(--sans);font-size:.5em}
+.band-row.a{background:var(--blue);color:#fff;transform:translateY(-50%) rotate(-4deg);z-index:2}
+.band-row.b{background:var(--sky);color:var(--blue);border-top:1px solid rgba(168,131,122,.35);border-bottom:1px solid rgba(168,131,122,.35);transform:translateY(-50%) rotate(3deg)}
+.band-row.b div{animation-direction:reverse}
+.band-row.b span{font-family:var(--serif);font-style:italic;font-weight:300;text-transform:none}
+
+/* oval photos unveil + inner parallax */
+.oval.reveal{opacity:1;transform:none;clip-path:inset(100% 0 0 0 round 999px);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
+.oval.reveal.in{clip-path:inset(0 0 0 0 round 999px)}
+.oval img{scale:1.18;translate:0 var(--py,0px)}
+
+@media (prefers-reduced-motion:reduce){body::after{animation:none}.band-row div{animation:none}}
+
+
+/* ---------- SHOWREEL: three arches expand into a full-screen triptych ---------- */
+.reel3{height:300vh;background:var(--paper)}
+.reel3-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.reel3-head{position:absolute;left:0;right:0;top:clamp(90px,13svh,130px);text-align:center;z-index:2;opacity:calc(1 - var(--p,0) * 2.4);translate:0 calc(var(--p,0) * -60px);pointer-events:none}
+.reel3-head .eyebrow{justify-content:center;margin-bottom:18px}
+.reel3-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(44px,5.6vw,96px);line-height:.98;letter-spacing:-.01em}
+.reel3-head h2 em{font-style:italic;color:var(--blue)}
+.r3{position:absolute;top:50%;left:50%;overflow:hidden;background:#e9e0d7;will-change:width,height,transform,border-radius;box-shadow:0 40px 90px -40px rgba(42,34,32,.55)}
+.r3 video{width:100%;height:100%;object-fit:cover;display:block}
+.reel3-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:34px;z-index:3;display:flex;justify-content:space-between;align-items:end;color:#fff;opacity:calc((var(--p,0) - .72) * 4);pointer-events:none}
+.reel3-cap b{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.4vw,72px);line-height:1}
+.reel3-cap b em{font-style:italic}
+.reel3-cap span{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
+.reel3-stick::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(42,34,32,0) 55%,rgba(42,34,32,.55));opacity:calc((var(--p,0) - .6) * 2.5)}
+
+/* ---------- GALLERY: mosaic + event rows ---------- */
+.gallery{padding:clamp(100px,12vw,180px) 0}
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(44px,5vw,80px)}
+.gal-head .eyebrow{margin-bottom:22px}
+.gal-note{max-width:330px;font-size:14px;color:var(--ink-2)}
+.ev-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,5vw,96px) clamp(24px,3.4vw,60px)}
+.ev-cards>*:nth-child(even){margin-top:clamp(40px,9vw,140px)}
+.ev-card{display:block;color:inherit}
+.ev-card-img{position:relative;display:block;aspect-ratio:4/5;background:#ece3da}
+.ev-card-img img{width:100%;height:100%;object-fit:cover}
+.ev-card-img::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(42,34,32,0) 50%,rgba(42,34,32,.5));opacity:0;transition:opacity .6s;pointer-events:none}
+.ev-card:hover .ev-card-img::before{opacity:1}
+.ev-card-img em{position:absolute;left:50%;bottom:clamp(20px,2.4vw,34px);translate:-50% 14px;z-index:3;opacity:0;font-style:normal;background:#fff;color:var(--ink);padding:14px 28px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;transition:opacity .5s,translate .5s cubic-bezier(.16,1,.3,1)}
+.ev-card:hover .ev-card-img em{opacity:1;translate:-50% 0}
+.ev-card:hover .ev-card-img img{transform:scale(1.045)}
+.ev-card-cap{display:block;margin-top:clamp(18px,1.8vw,26px);padding-top:clamp(16px,1.6vw,22px);border-top:1px solid var(--line);transition:border-color .5s}
+.ev-card:hover .ev-card-cap{border-color:var(--blue)}
+.ev-card-cap b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(26px,2.7vw,44px);line-height:1.04;letter-spacing:-.01em}
+.ev-card-cap i{display:block;margin-top:12px;font-style:normal;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ev-more{align-self:end;padding-bottom:clamp(6px,2.5vw,40px);max-width:26em}
+.ev-more p{font-size:14.5px;line-height:1.7;color:var(--ink-2)}
+.ev-more-link{display:inline-flex;align-items:center;gap:14px;margin-top:24px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.ev-more-link em{font-style:normal;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(168,131,122,.35);transition:background .35s,color .35s,transform .35s}
+.ev-more-link:hover em{background:var(--blue);color:#fff;transform:translateX(4px)}
+@media (max-width:760px){.ev-cards{grid-template-columns:1fr;gap:48px}.ev-cards>*:nth-child(even){margin-top:0}.ev-card-img em{opacity:1;translate:-50% 0;bottom:auto;top:16px;padding:11px 20px;font-size:9px}}
+
+/* curtain wipe reveal for photos */
+.wipe{position:relative;overflow:hidden}
+.wipe::after{content:"";position:absolute;inset:0;z-index:4;background:var(--blue);transform-origin:100% 50%;transition:transform 1.15s cubic-bezier(.77,0,.18,1);transition-delay:var(--wd,0s);pointer-events:none}
+.wipe.in::after{transform:scaleX(0)}
+.wipe img{scale:1.25;transition:scale 1.8s cubic-bezier(.16,1,.3,1) var(--wd,0s),transform 1.4s cubic-bezier(.16,1,.3,1)}
+.wipe.in img{scale:1}
+
+/* ---------- LIGHTBOX ---------- */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(10,18,42,.94);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .45s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-width:min(92vw,1300px);max-height:84svh;object-fit:contain;box-shadow:0 40px 90px rgba(0,0,0,.5);transform:scale(.96);transition:transform .6s cubic-bezier(.16,1,.3,1),opacity .3s}
+.lb.on img{transform:none}
+.lb button{position:absolute;color:#fff;width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.3);font-size:20px;display:grid;place-items:center;transition:background .3s}
+.lb button:hover{background:rgba(255,255,255,.12)}
+.lb .lb-x{top:22px;right:22px}.lb .lb-p{left:22px;top:50%;margin-top:-27px}.lb .lb-n{right:22px;top:50%;margin-top:-27px}
+.lb-count{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:.3em}
+[data-lb]{cursor:zoom-in}
+
+@media (max-width:820px){
+  .reel3{height:240vh}
+  .reel3-cap{bottom:110px;flex-direction:column;align-items:flex-start;gap:8px}
+  .reel3-cap span{display:none}
+  .lb .lb-p,.lb .lb-n{top:auto;bottom:18px;margin:0}
+}
+
+section.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+
+.contact .eyebrow{color:rgba(255,255,255,.75)}
+.contact .display em{color:#f1e4de}
+.contact-oval{border:6px solid rgba(255,255,255,.9)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .nav-links,.nav .nav-cta{display:none}
+  .burger{display:block}
+  .about-grid{grid-template-columns:1fr 1fr}
+  .about-small{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{padding-bottom:24px}
+  .panel{grid-template-columns:1fr}
+  .price-card{position:relative;top:0}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-oval{justify-self:start;max-width:300px}
+  .links{grid-template-columns:1fr 1fr}
+  .links a:nth-child(2){border-right:0}
+  .links a:nth-child(-n+2){border-bottom:1px solid var(--line-inv)}
+  .diff{grid-template-columns:1fr 1fr}
+  .diff-oval{grid-column:1/-1;grid-row:1;max-width:300px;justify-self:center;margin-top:-4vw}
+}
+@media (max-width:700px){
+  .display{font-size:clamp(30px,8.6vw,52px);letter-spacing:-.025em}
+  .contact .display{font-size:clamp(34px,9.6vw,58px)}
+  .reels h2{font-size:clamp(30px,8.6vw,52px)}
+  .city-names{font-size:clamp(27px,7.6vw,44px)}
+  .stat b{font-size:clamp(34px,9.4vw,54px)}
+  .ev-card-cap b{font-size:clamp(23px,6.2vw,34px)}
+  .about-lead,.gal-note,.rev-note,.reels-note{font-size:14px}
+  .about-head{grid-template-columns:1fr}
+  .about-head .display .l2{padding-left:12%}
+  .about-lead{justify-self:start}
+  .about-grid{grid-template-columns:1fr}
+  .about-oval{max-width:320px}
+  .about-text{padding-top:0}
+  .events-head{flex-direction:column;align-items:start}
+  .ev{grid-template-columns:44px 1fr auto;padding:20px 0}
+  .ev-thumb{display:none}
+  .diff{grid-template-columns:1fr}
+  .cities-row{grid-template-columns:1fr;gap:34px}
+  .ua-city text{font-size:32px;letter-spacing:1.6px}
+  .svc-list summary{grid-template-columns:40px 1fr 24px}
+  .svc-list details p{padding-left:52px;padding-right:0}
+  .tabs{width:100%}.tab{flex:1;padding:12px 10px;letter-spacing:.1em}
+  .links{grid-template-columns:1fr}
+  .links a{border-right:0;border-bottom:1px solid var(--line-inv)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ================= GRAVITY MOMENTS — тема ================= */
+body{font-weight:300;letter-spacing:.005em}
+
+/* логотип: Gravity у серифі + Moments рукописним */
+.logo,.intro-brand{font-family:var(--serif);line-height:1;display:block}
+.logo b,.intro-brand b{display:inline-block;font-weight:500;font-size:24px;letter-spacing:.005em}
+.logo i,.intro-brand i{display:inline-block;font-family:var(--script);font-style:normal;font-size:31px;line-height:.7;margin-left:-.14em;color:var(--blue);transform:translateY(.1em)}
+.intro-brand b{font-size:26px}.intro-brand i{font-size:34px}
+.nav.scrolled{background:rgba(249,247,249,.9)}
+
+/* перший екран: фірмовий градієнт замість глухої темряви */
+.hero{background:#e9e0d7}
+.hero-bg img{object-position:50% 52%}
+.hero-veil{background:
+  linear-gradient(180deg,rgba(36,27,22,.6) 0%,rgba(36,27,22,.22) 34%,rgba(36,27,22,.1) 52%,rgba(38,29,25,.74) 100%),
+  linear-gradient(112deg,rgba(116,86,79,.46) 0%,rgba(227,214,205,.2) 38%,rgba(215,180,174,.5) 74%,rgba(194,160,92,.3) 100%)}
+.hero-eyebrow,.hero-eyebrow i{color:#f3e7df;background-color:#f3e7df}
+.hero-eyebrow{background:none;color:#e9e2f1}
+.hero h1{font-weight:400;font-size:clamp(38px,5.4vw,96px);line-height:1.0;margin-top:22px}
+.hero-lead{max-width:40em}
+.founder-img img{object-position:50% 42%}
+.hero h1 em{color:var(--rose-2)}
+.hero-script{display:block;font-family:var(--script);font-style:normal;font-weight:400;
+  font-size:clamp(40px,5.4vw,98px);line-height:.8;color:var(--rose-2);letter-spacing:.01em;margin-bottom:-.06em}
+
+/* акцентні плашки */
+.nav-cta{background:linear-gradient(120deg,var(--blue) 0%,var(--blue-2) 100%)}
+.eyebrow{color:var(--blue-2)}
+
+/* фірмова смужка-градієнт, роздільник секцій */
+.gm-seam{height:3px;border:0;background:linear-gradient(90deg,var(--blue) 0%,var(--blue-3) 26%,var(--peri) 50%,var(--rose) 76%,var(--rose-2) 100%)}
+
+/* портрет Марини — вирізаний силует на градієнті */
+.gm-grad{background:linear-gradient(165deg,var(--peri) 0%,var(--rose-2) 62%,#fff 100%)}
+.gm-grad img{object-fit:contain;object-position:50% 100%}
+
+/* ціна у списку форматів */
+.ev-price{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--blue-2);white-space:nowrap;justify-self:end;opacity:.85;transition:opacity .3s,color .3s}
+.ev:hover .ev-price{opacity:1;color:var(--blue)}
+.ev{grid-template-columns:64px 1fr auto auto}
+
+/* список того, що входить */
+.gm-budget li{display:grid;grid-template-columns:118px 1fr;align-items:baseline}
+.gm-budget li b{font-variant-numeric:tabular-nums}
+.gm-total{margin-top:10px;padding-top:14px;border-top:1px solid var(--line)}
+.gm-total b{color:var(--blue)}
+.gm-note{margin-top:22px;font-size:13px;line-height:1.7;color:var(--muted)}
+.gm-note a{color:var(--blue);border-bottom:1px solid rgba(168,131,122,.4)}
+
+/* мозаїка реальних подій */
+.gm-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,15.5vw,250px);gap:clamp(8px,.9vw,14px)}
+.gm-mosaic figure{position:relative;margin:0;overflow:hidden;background:var(--sky);cursor:zoom-in}
+.gm-mosaic figure.tall{grid-row:span 2}
+.gm-mosaic figure.wide{grid-column:span 2}
+.gm-mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.gm-mosaic figure:hover img{transform:scale(1.06)}
+@media (max-width:860px){.gm-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:34vw}}
+@media (max-width:700px){.ev{grid-template-columns:44px 1fr auto}.ev-price{display:none}}
+
+
+/* гонорари артистів */
+.gm-fees{list-style:none;border-top:1px solid var(--line)}
+.gm-fees li{display:grid;grid-template-columns:54px minmax(160px,1fr) minmax(130px,auto) minmax(0,1.5fr);gap:clamp(14px,2vw,34px);align-items:baseline;padding:clamp(20px,2.2vw,30px) 0;border-bottom:1px solid var(--line);transition:background .35s}
+.gm-fees li:hover{background:rgba(168,131,122,.05)}
+.gm-fees i{font-style:normal;font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:500}
+.gm-fees b{font-family:var(--serif);font-weight:400;font-size:clamp(21px,2.2vw,32px);letter-spacing:-.01em}
+.gm-fees u{text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--blue-2);white-space:nowrap}
+.gm-fees p{font-size:14px;color:var(--ink-2)}
+.gm-fees-note{margin-top:clamp(26px,3vw,40px);font-size:14.5px;color:var(--ink-2)}
+.gm-fees-note a{color:var(--blue);font-weight:500;border-bottom:1px solid rgba(168,131,122,.4)}
+@media (max-width:860px){
+  .gm-fees li{grid-template-columns:40px 1fr;row-gap:8px}
+  .gm-fees u{grid-column:2}
+  .gm-fees p{grid-column:2}
+}
+
+/* FAQ */
+.gm-faq{margin-top:clamp(10px,2vw,24px)}
+.gm-faq summary{grid-template-columns:54px 1fr 30px}
+
+/* підпис-гігант у підвалі */
+.footer-word{font-size:11.5vw;font-style:normal}
+@media (max-width:700px){.footer-word{font-size:13vw}}
+
+@media (max-width:820px){.bride-media img{object-position:50% 34%}}
+
+/* ================= ПРАЗДНИК: рожеві акценти, кнопки, цифри ================= */
+
+/* — цифри: серифні, з переходом у рожеве — */
+.stat b,.ev .n,.show-count,.pillar i{font-family:var(--serif);font-variant-numeric:lining-nums}
+.stat b{font-weight:400;letter-spacing:-.02em;
+  background:linear-gradient(120deg,var(--blue-2) 0%,var(--blue) 42%,var(--rose) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.ev .n{font-size:15px;letter-spacing:0;color:var(--rose);font-weight:500}
+.ev:hover .n{color:var(--blue)}
+.pillar i{color:transparent;background:linear-gradient(120deg,var(--blue) 0%,var(--rose) 100%);
+  -webkit-background-clip:text;background-clip:text;font-weight:400}
+
+/* — кнопки: пігулка з фірмовим переходом — */
+.btn-primary,.btn,.btn-light,.nav-cta,.fab,.dlg-form button,.ev-card-img em{border-radius:999px}
+.btn-primary{background:#fff;color:var(--blue-2);box-shadow:0 18px 42px -16px rgba(168,131,122,.6)}
+.btn-primary:hover{background:linear-gradient(118deg,var(--blue) 0%,var(--rose) 100%);color:#fff;
+  box-shadow:0 22px 50px -14px rgba(215,180,174,.85)}
+.btn-ghost{border-radius:999px}
+.nav-cta{padding:14px 26px;background:linear-gradient(118deg,var(--blue) 0%,#c0a08f 60%,var(--rose) 130%);
+  background-size:180% 100%;background-position:0 0;transition:background-position .55s cubic-bezier(.16,1,.3,1),transform .3s,box-shadow .35s;
+  box-shadow:0 14px 30px -14px rgba(168,131,122,.75)}
+.nav-cta:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 18px 38px -12px rgba(215,180,174,.9)}
+.fab{padding:17px 28px;background:linear-gradient(118deg,var(--blue) 0%,var(--rose) 160%);background-size:170% 100%;
+  transition:transform .6s cubic-bezier(.16,1,.3,1),background-position .5s}
+.fab.on:hover{background-position:100% 0}
+.btn{padding:18px 30px}
+.btn-light{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
+.btn-light:hover{background:#fff;color:var(--blue-2);border-color:#fff}
+.dlg-form button{border-radius:999px;background:linear-gradient(118deg,var(--blue) 0%,var(--rose) 150%);background-size:170% 100%;transition:background-position .5s}
+.dlg-form button:hover{background-position:100% 0}
+
+/* — рожеві зони, щоб сторінка не була суцільно синьою — */
+.reviews{background:linear-gradient(170deg,#fbf5ef 0%,#f9f3ec 55%,var(--paper) 100%)}
+.events{background:linear-gradient(180deg,var(--paper) 0%,#f8f1ea 100%)}
+.gallery{background:linear-gradient(180deg,#f8f1ea 0%,var(--paper) 38%)}
+.eyebrow::before{background:linear-gradient(90deg,var(--gold),var(--rose))}
+.display em{color:var(--blue)}
+.events .display em,.gallery .display em{
+  background:linear-gradient(110deg,var(--blue) 0%,var(--rose) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* — формати: підпис замість ціни — */
+.ev{grid-template-columns:50px minmax(0,1fr) minmax(0,1.15fr) auto}
+.ev-sub{font-size:13.5px;color:var(--muted);justify-self:start;transition:color .3s}
+.ev:hover .ev-sub{color:var(--ink-2)}
+@media (max-width:860px){.ev{grid-template-columns:44px 1fr auto}.ev-sub{display:none}}
+
+/* — зірки — */
+.gm-hidden{display:none}
+.gm-stars{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,28px)}
+.gm-star{display:flex;flex-direction:column}
+.gm-star-media{display:block;position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:22px;background:var(--sky);
+  box-shadow:0 26px 60px -34px rgba(42,34,32,.6)}
+.gm-star-media video{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block;transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.gm-star:hover .gm-star-media video{transform:scale(1.05)}
+.gm-star-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(42,34,32,.45));pointer-events:none}
+.gm-star h3{margin-top:20px;font-family:var(--serif);font-weight:400;font-size:clamp(21px,2vw,29px);line-height:1.1}
+.gm-star p{margin-top:9px;font-size:13.5px;line-height:1.65;color:var(--ink-2)}
+.gm-star-more{justify-content:center;padding:clamp(24px,2.4vw,34px);border-radius:22px;
+  background:linear-gradient(165deg,var(--peri) 0%,var(--rose-2) 70%,#fff 100%)}
+.gm-star-more h3{margin-top:0}
+.gm-star-ask{font-weight:500;color:var(--ink)}
+.gm-star-more a{display:inline-block;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--blue-2);border-bottom:1px solid rgba(116,86,79,.45);padding-bottom:4px}
+@media (max-width:980px){.gm-stars{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.gm-stars{grid-template-columns:1fr}}
+
+/* — картки галереї клікабельні — */
+.ev-card{cursor:pointer}
+.ev-card:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
+
+/* — зірки: типографічний ростер — */
+.gm-band{display:block;margin:clamp(30px,4vw,56px) 0 clamp(34px,4vw,60px);border-radius:26px;overflow:hidden;aspect-ratio:21/6;background:var(--sky)}
+.gm-band img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.gm-stars{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px)}
+.gm-star{display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(230px,24vw,330px);
+  padding:clamp(24px,2.4vw,34px);border-radius:24px;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.gm-star:hover{transform:translateY(-8px);box-shadow:inset 0 0 0 1px rgba(194,160,92,.45),0 32px 60px -34px rgba(42,34,32,.5)}
+.gm-star{box-shadow:inset 0 0 0 1px rgba(194,160,92,.22)}
+.gm-star.a{background:linear-gradient(160deg,#ece1d4 0%,#f8f3ec 62%,#fff 100%)}
+.gm-star.b{background:linear-gradient(160deg,#d8c6b4 0%,#f0e7dc 62%,#fff 100%)}
+.gm-star.c{background:linear-gradient(160deg,#e8cdc6 0%,#f8ece7 62%,#fff 100%)}
+.gm-star.d{background:linear-gradient(160deg,#c9a08f 0%,#e8cfc3 55%,#fbf5f0 100%)}
+.gm-star-tag{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#9c7c38}
+.gm-star h3{margin-top:14px;font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.3vw,34px);line-height:1.08;letter-spacing:-.01em}
+.gm-star p{margin-top:12px;font-size:13.5px;line-height:1.65;color:var(--ink-2)}
+.gm-ask{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
+  margin-top:clamp(30px,3.4vw,48px);padding-top:clamp(24px,2.6vw,34px);border-top:1px solid var(--line)}
+.gm-ask p{font-size:15px;line-height:1.7;color:var(--ink-2);max-width:40em}
+@media (max-width:980px){.gm-stars{grid-template-columns:repeat(2,1fr)}.gm-band{aspect-ratio:16/7}}
+@media (max-width:560px){.gm-stars{grid-template-columns:1fr}.gm-band{aspect-ratio:4/3}.gm-star{min-height:0;padding:26px 24px}}
+
+/* ================= ПЕРШИЙ ЕКРАН: Марина ================= */
+.hero{color:var(--ink);background:var(--paper)}
+.hero-bg{left:auto;right:0;width:48%;inset-block:0;translate:calc(var(--mx,0) * -6px) calc(var(--sp,0) * 90px);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%);mask-image:linear-gradient(90deg,transparent 0%,#000 16%)}
+.hero-bg img{object-position:50% 16%}
+.hero-veil{left:auto;right:0;width:48%;
+  background:linear-gradient(200deg,rgba(194,160,92,.13) 0%,transparent 48%)}
+.hero-center{top:50%;translate:0 calc(-50% + var(--sp,0) * -60px);width:min(640px,50vw)}
+.hero-eyebrow{color:var(--blue-2);text-shadow:none}
+.hero-eyebrow i{background:var(--gold)}
+.hero h1{color:var(--ink);text-shadow:none;font-size:clamp(38px,4.6vw,82px)}
+.hero h1 em{color:var(--blue)}
+.hero-lead{color:var(--ink-2);text-shadow:none;max-width:30em}
+.hero-sign{margin-top:clamp(30px,3.4vw,46px);padding-top:22px;border-top:1px solid var(--line);
+  opacity:0;animation:fadeIn 1.2s 1.5s forwards}
+.hero-sign b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.9vw,27px);line-height:1.1}
+.hero-sign span{display:block;margin-top:8px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:#fff;border-color:var(--blue)}
+.hero-foot{color:var(--muted);text-shadow:none}
+.scroll-hint i{background:rgba(42,34,32,.2)}
+.scroll-hint i::after{background:var(--blue)}
+.hero-foot span:first-child{max-width:52%}
+
+@media (max-width:820px){
+  .hero{height:auto;min-height:0;padding-bottom:40px}
+  .hero-bg{position:relative;width:100%;height:58svh;min-height:340px;translate:none;-webkit-mask-image:none;mask-image:none}
+  .hero-bg img{object-position:50% 12%}
+  .hero-veil{position:absolute;top:0;width:100%;height:58svh;min-height:340px;
+    background:linear-gradient(180deg,rgba(248,244,240,.5) 0%,transparent 30%,rgba(248,244,240,.9) 100%)}
+  .hero-center{position:relative;top:auto;translate:none;width:auto;left:auto;right:auto;
+    padding:26px var(--pad) 0;margin-top:0;text-align:left;align-items:flex-start;opacity:1}
+  .hero-cta{align-items:stretch}
+  .hero-foot{position:relative;left:auto;right:auto;bottom:auto;padding:26px var(--pad) 0;justify-content:space-between}
+  .hero-foot span:first-child{display:none}
+}
+
+/* шапка на світлому першому екрані */
+.nav:not(.scrolled) .logo,.nav:not(.scrolled) .nav-links{color:var(--ink)}
+.nav:not(.scrolled) .logo i{color:var(--blue)}
+.nav:not(.scrolled) .logo small{color:var(--muted);opacity:1}
+.nav:not(.scrolled) .burger{background:var(--ink)}
+.nav:not(.scrolled) .burger span{background:var(--paper)}
+.nav.scrolled{background:rgba(248,244,240,.92)}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c2a05c%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a8837a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23fff%22%3EG%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://ouranus4.github.io/gravity-moments/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="Gravity Moments">
+<meta property="og:title" content="Gravity Moments — організація подій під ключ">
+<meta property="og:description" content="Організація весіль, корпоративів, ювілеїв і приватних подій під ключ. Прямі контакти з артистами, площадками й підрядниками. Київ і вся Україна.">
+<meta property="og:url" content="https://ouranus4.github.io/gravity-moments/">
+<meta property="og:image" content="https://ouranus4.github.io/gravity-moments/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#a8837a">
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="demo.js" defer></script><!-- захист від копіювання -->
 </head>
-<body>
+<body class="is-loading">
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"><span>Дивитись</span></div>
 
-<!-- смужка прогресу прокрутки -->
-<div class="scroll-prog" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="intro" id="loader" aria-hidden="true">
+  <div class="intro-frame" id="introFrame"><img src="img/s/t_table_03.jpg" alt="" class=on><img src="img/s/t_reception_19.jpg" alt=""><img src="img/s/t_ball_04.jpg" alt=""><img src="img/s/t_arch_18.jpg" alt=""><img src="img/s/t_gala_06.jpg" alt=""><img src="img/s/t_dance_10.jpg" alt=""><img src="img/s/t_champ_02.jpg" alt=""><img src="img/s/t_candle_10.jpg" alt=""><img src="img/s/t_stage_02.jpg" alt=""><img src="img/s/t_table_01.jpg" alt=""></div>
+  <div class="intro-stage"><picture><source media="(max-width:820px)" srcset="img/hero_m.jpg"><img src="img/hero.jpg" alt=""></picture></div>
+  <p class="intro-word">моменти, які памʼятають</p>
+  <div class="intro-bar"><i></i></div>
+  <div class="intro-ui">
+    <div class="intro-top"><div class="intro-brand"><b>Gravity</b><i>Moments</i><small>організація подій</small></div><span>Весілля · корпоративи · ювілеї</span></div>
+    <div class="intro-bot"><div class="intro-count" id="count">0<sup>%</sup></div><span>Київ — вся Україна · 2026</span></div>
+  </div>
+</div>
 
-<!-- ============ ICON SPRITE ============
-     Тонколінійні 24×24 глифи. Колір і розмір задає .ic у CSS,
-     тож тут ніде не прошито жодного кольору.
--->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <!-- дві обручки -->
-    <symbol id="i-rings" viewBox="0 0 24 24">
-      <circle cx="9.5" cy="14" r="6"/><circle cx="16" cy="11" r="5"/>
-      <path d="M14 5.5l2-2 2 2-2 1.5z"/>
-    </symbol>
-    <!-- келих -->
-    <symbol id="i-glass" viewBox="0 0 24 24">
-      <path d="M7 3h10l-1.2 6a4 4 0 0 1-7.6 0z"/><path d="M12 15v6"/><path d="M8.5 21h7"/>
-    </symbol>
-    <!-- торт -->
-    <symbol id="i-cake" viewBox="0 0 24 24">
-      <path d="M4 20h16v-6a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3z"/>
-      <path d="M4 15.5c1.6 1.4 3 1.4 4.6 0s3-1.4 4.6 0 3 1.4 4.6 0"/>
-      <path d="M12 8V5"/><path d="M12 3.5c.9.7.9 1.3 0 1.5-.9-.2-.9-.8 0-1.5z"/>
-    </symbol>
-    <!-- шатро -->
-    <symbol id="i-tent" viewBox="0 0 24 24">
-      <path d="M12 3L3 19h18z"/><path d="M12 3v16"/><path d="M8 19l4-7 4 7"/>
-    </symbol>
-    <!-- мікрофон -->
-    <symbol id="i-mic" viewBox="0 0 24 24">
-      <rect x="9" y="2.5" width="6" height="11" rx="3"/>
-      <path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/>
-    </symbol>
-    <!-- зірка -->
-    <symbol id="i-star" viewBox="0 0 24 24">
-      <path d="M12 3l2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17.1 6.4 20l1.2-6.2L3 9.5l6.3-.8z"/>
-    </symbol>
-    <!-- світло / прожектор -->
-    <symbol id="i-light" viewBox="0 0 24 24">
-      <path d="M12 3v3"/><path d="M5.5 5.5l2 2"/><path d="M18.5 5.5l-2 2"/>
-      <circle cx="12" cy="11.5" r="3.5"/><path d="M9 21l3-6 3 6z"/>
-    </symbol>
-    <!-- стрічка / відкриття -->
-    <symbol id="i-ribbon" viewBox="0 0 24 24">
-      <path d="M3 12h18"/><circle cx="12" cy="12" r="2.5"/>
-      <path d="M9.5 12L5 7"/><path d="M14.5 12L19 7"/>
-    </symbol>
-    <!-- документ / кошторис -->
-    <symbol id="i-doc" viewBox="0 0 24 24">
-      <path d="M6 2.5h8l4 4V21H6z"/><path d="M14 2.5V7h4"/>
-      <path d="M9 12h6"/><path d="M9 15.5h6"/><path d="M9 19h3"/>
-    </symbol>
-    <!-- годинник -->
-    <symbol id="i-clock" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/>
-    </symbol>
-    <!-- щит -->
-    <symbol id="i-shield" viewBox="0 0 24 24">
-      <path d="M12 2.8l7 2.8v5.6c0 4.4-2.9 8.2-7 9.8-4.1-1.6-7-5.4-7-9.8V5.6z"/>
-      <path d="M8.8 12l2.3 2.3 4.1-4.4"/>
-    </symbol>
-    <!-- серце: заручини -->
-    <symbol id="i-heart" viewBox="0 0 24 24">
-      <path d="M12 20.5C6.5 16.8 3.5 13.8 3.5 10.2A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 8.5 2.2c0 3.6-3 6.6-8.5 10.3z"/>
-    </symbol>
-    <!-- два келихи: парубочий вечір -->
-    <symbol id="i-cheers" viewBox="0 0 24 24">
-      <path d="M3.5 3.5h6l-1 5a2 2 0 0 1-4 0z"/><path d="M6.5 10.5v8"/><path d="M4 18.5h5"/>
-      <path d="M14.5 3.5h6l-1 5a2 2 0 0 1-4 0z"/><path d="M17.5 10.5v8"/><path d="M15 18.5h5"/>
-    </symbol>
-    <!-- кулька: гендер-паті -->
-    <symbol id="i-balloon" viewBox="0 0 24 24">
-      <path d="M12 2.8c3.3 0 5.5 2.6 5.5 6 0 3.6-2.7 6.6-5.5 7.6-2.8-1-5.5-4-5.5-7.6 0-3.4 2.2-6 5.5-6z"/>
-      <path d="M12 16.4v1.6"/><path d="M10.8 21c0-1.5 2.4-1.5 2.4-3"/>
-    </symbol>
-    <!-- квітка -->
-    <symbol id="i-flower" viewBox="0 0 24 24">
-      <circle cx="12" cy="9" r="2.2"/>
-      <path d="M12 6.8c0-2 1-3.3 2.6-3.3S17 5 15.5 7"/>
-      <path d="M12 6.8c0-2-1-3.3-2.6-3.3S7 5 8.5 7"/>
-      <path d="M14.2 9c2 0 3.3 1 3.3 2.6S15.5 14 14 12.5"/>
-      <path d="M9.8 9c-2 0-3.3 1-3.3 2.6S8.5 14 10 12.5"/>
-      <path d="M12 11.2V21"/><path d="M12 16c1.8 0 3-1 3.5-2.6"/>
-    </symbol>
-  </defs>
-</svg>
-
-<!-- ============ NAV ============ -->
+<!-- NAV -->
 <header class="nav" id="nav">
-  <a class="nav-logo" href="#top" aria-label="Gravity Moments — на початок">
-    <span class="wm-orb" aria-hidden="true"></span>
-    <span class="wm"><b>Gravity</b><span>Moments</span></span>
-  </a>
-  <nav class="nav-links" id="navLinks" aria-label="Основна навігація">
-    <a href="#top" class="active">Головна</a>
+  <a href="#top" class="logo"><b>Gravity</b><i>Moments</i><small>організація подій</small></a>
+  <nav class="nav-links">
+    <a href="#events">Свята</a>
+    <a href="#stars">Зірки</a>
+    <a href="#gallery">Галерея</a>
     <a href="#how">Як працюємо</a>
-    <a href="#constructor">Кошторис</a>
-    <a href="#formats">Формати</a>
-    <a href="#artists">Артисти</a>
-    <a href="#marina">Про Марину</a>
-    <a href="#faq">Питання</a>
+    <a href="#about">Про Марину</a>
+    <a href="#contact">Контакти</a>
   </nav>
-  <div class="nav-cta">
-    <a class="btn btn-accent" href="#constructor">Зібрати кошторис</a>
-    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Меню">
-      <span></span>
-    </button>
-  </div>
+  <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener" class="nav-cta">Написати →</a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
 </header>
-
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#how">Як ми працюємо</a>
-  <a href="#constructor">Зібрати кошторис</a>
-  <a href="#formats">Формати подій</a>
-  <a href="#artists">Артисти та зірки</a>
-  <a href="#marina">Про Марину</a>
-  <a href="#faq">Питання</a>
-  <a href="#contacts">Контакти</a>
-  <a class="btn btn-accent" href="#apply">Залишити заявку</a>
+  <a href="#events">Свята</a>
+  <a href="#stars">Зірки</a>
+  <a href="#gallery">Галерея</a>
+  <a href="#reels">Відео</a>
+  <a href="#how">Як працюємо</a>
+  <a href="#about">Про Марину</a>
+  <a href="#contact">Контакти</a>
 </div>
 
-<main>
-
-<!-- ============ 1. HERO ============
-     Фон — ролик із вечора Business GRAVITY. Постер видно одразу;
-     сам ролик вмикає main.js, коли сторінка вже завантажилась.
-     Без JS, з prefers-reduced-motion і в режимі економії трафіку
-     лишається нерухомий кадр.
--->
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-backdrop" aria-hidden="true"><canvas id="heroBackdrop"></canvas></div>
-  <video class="hero-video" id="heroVideo"
-         data-src="assets/video/hero.mp4"
-         poster="assets/video/hero-poster.jpg"
-         width="720" height="1280"
-         muted playsinline loop preload="none"
-         aria-hidden="true" tabindex="-1"></video>
-  <button class="hero-pause" id="heroPause" type="button" hidden
-          aria-label="Зупинити відео" aria-pressed="false">
-    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-  </button>
-  <div class="wrap">
-    <div class="hero-inner">
-      <p class="capsule">
-        <span class="dot" aria-hidden="true"></span>
-        Gravity Moments · організація подій
-      </p>
-      <h1>Створюємо моменти, <span class="mute">які памʼятають усе життя</span></h1>
-      <p class="lead">
-        Весілля, корпоративи, дні народження, відкриття. Повний цикл — від першої ідеї
-        до останнього гостя. <span class="mark">Прямі контакти</span> з артистами,
-        площадками й підрядниками — без ланцюга посередників між вами і виконавцем.
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-accent btn-lg" href="#constructor">Зібрати кошторис за 2 хвилини</a>
-        <a class="btn btn-ghost btn-lg" href="#apply">Написати Марині</a>
-      </div>
-      <ul class="hero-facts">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Артисти та зірки напряму</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Свої площадки й підрядники</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Бюджет зрозумілий одразу</li>
-      </ul>
+  <div class="hero-bg" aria-hidden="true"><img src="img/marina2.jpg" alt="" fetchpriority="high"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-center">
+    <p class="hero-eyebrow"><i></i>Gravity Moments · Київ і вся Україна</p>
+    <h1><span class="line"><span>Створюємо моменти,</span></span><span class="line"><span><em>які памʼятають усе життя</em></span></span></h1>
+    <p class="hero-lead">Весілля, новорічні корпоративи, ювілеї та приватні вечірки під ключ. Прямі контакти з артистами й підрядниками — тому зірка на вашому святі реальніша, ніж здається.</p>
+    <div class="hero-cta">
+      <a href="#stars" class="btn-primary">Зірки на ваше свято <span>→</span></a>
+      <a href="#gallery" class="btn-ghost">Дивитись свята</a>
     </div>
+    <p class="hero-sign"><b>Марина Філіпенко</b><span>засновниця Gravity Moments · MedOrion Awards · Business GRAVITY</span></p>
+  </div>
+  <div class="hero-foot"><span>Весілля · Новорічні корпоративи · Ювілеї · Відкриття</span><span class="scroll-hint">Гортайте <i></i></span></div>
+</section>
+<button type="button" class="fab" id="fab" data-book>Забронювати дату</button>
+
+<div class="lb" id="lb" aria-hidden="true"><img alt=""><button class="lb-x" aria-label="Закрити">×</button><button class="lb-p" aria-label="Попереднє">←</button><button class="lb-n" aria-label="Наступне">→</button><div class="lb-count"></div></div>
+
+<dialog class="dlg" id="bookDlg" aria-labelledby="dlgTitle">
+  <div class="dlg-img"><img src="img/s/table_06.jpg" alt="" loading="lazy"></div>
+  <div class="dlg-body">
+    <button type="button" class="dlg-close" data-close aria-label="Закрити">×</button>
+    <p class="eyebrow">Заявка</p>
+    <h3 id="dlgTitle">Розкажіть про <em>подію</em></h3>
+    <p class="dlg-sub">Кілька деталей — і Марина повернеться з планом під ваш формат. Відповідаємо того ж дня.</p>
+    <form class="dlg-form" id="book">
+      <label><span>Подія</span>
+        <select name="type"><option>Весілля</option><option>Корпоратив</option><option>Ювілей</option><option>День народження</option><option>Заручини</option><option>Гендер-паті</option><option>Відкриття бутика</option><option>Приватна вечірка</option></select></label>
+      <label><span>Дата</span><input type="date" name="date"></label>
+      <label><span>Гостей</span>
+        <select name="guests"><option>до 30</option><option selected>30–80</option><option>80–150</option><option>150+</option></select></label>
+      <label><span>Послуга</span>
+        <select name="svc"><option>Повна організація під ключ</option><option>Координація дня</option><option>Тільки підрядники й координація</option><option>Ще не знаю</option></select></label>
+      <label class="full"><span>Ваше ім’я</span><input type="text" name="name" autocomplete="given-name" placeholder="Як до вас звертатися"></label>
+      <button type="submit">Надіслати заявку <span>→</span></button>
+    </form>
+    <p class="dlg-alt">Або напишіть напряму: <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a> · <a href="tel:+380674097350">+38 (067) 409-73-50</a></p>
+  </div>
+</dialog>
+
+<!-- PROMISE -->
+<section class="promise wrap" id="how">
+  <p class="eyebrow">Як ми працюємо</p>
+  <p class="manifesto" id="manifesto">Ми не перепродаємо підрядників. Артисти, площадки, декоратори й техніка — це <em>наші прямі контакти,</em> напрацьовані роками. Ланцюга посередників між вами й виконавцем просто немає — тому ми одразу кажемо, що реально зробити саме на вашу дату.</p>
+  <div class="pillars">
+    <div class="pillar reveal"><i>01</i><h3>Бриф</h3><p>45 хвилин розмови: привід, дата, кількість гостей, що обовʼязково має бути і чого бути не повинно.</p></div>
+    <div class="pillar reveal"><i>02</i><h3>План події</h3><p>Протягом трьох днів ви отримуєте готовий план: локація, декор, техніка, артисти й таймінг дня.</p></div>
+    <div class="pillar reveal"><i>03</i><h3>Підрядники й договори</h3><p>Ми домовляємось, тримаємо дати й закриваємо райдери. Ви бачите кожен рахунок і кожну умову.</p></div>
+    <div class="pillar reveal"><i>04</i><h3>День події</h3><p>Координація на місці від монтажу до вивозу. Ваша задача цього дня — бути гостем на власному святі.</p></div>
   </div>
 </section>
 
-<!-- ============ 2. МАНІФЕСТ ============ -->
-<section id="why">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Чесно про ринок</p>
-      <h2 class="rv d1">Три речі, через які <span class="mute">свято дорожчає на третину</span></h2>
-      <p class="lead rv d2">
-        Ми говоримо це вголос, бо саме на цьому будуємо свою роботу.
-      </p>
-    </div>
-
-    <div class="mf-grid">
-      <div class="mf rv d1">
-        <div class="mf-n">01</div>
-        <h3>«Ціну скажемо після брифу»</h3>
-        <p>
-          На практиці це означає інше: спершу дізнаємось ваш бюджет, а потім підженемо
-          кошторис під нього. Ви ніколи не побачите, скільки подія коштує насправді.
-        </p>
-      </div>
-      <div class="mf rv d2">
-        <div class="mf-n">02</div>
-        <h3>Націнка, якої немає в кошторисі</h3>
-        <p>
-          Агентство бере декоратора за 30 тисяч, а в кошторисі у вас стоїть 45.
-          Різниця нікуди не зникає — вона у вашому чеку, просто без назви.
-        </p>
-      </div>
-      <div class="mf rv d3">
-        <div class="mf-n">03</div>
-        <h3>Підрядники через третіх осіб</h3>
-        <p>
-          Чим довший ланцюг, тим дорожче і тим важче щось змінити за три дні до події.
-          Кожна ланка хоче свою частку — і має на це право.
-        </p>
-      </div>
-    </div>
-
-    <div class="mf-answer rv d2">
-      <p>
-        Тому ми не перепродаємо. Артисти, площадки, декоратори, техніка — це наші
-        <span class="mark">прямі контакти</span>, напрацьовані роками в MedOrion Awards
-        і Business GRAVITY. Ланцюга посередників між вами й виконавцем просто немає —
-        а бюджет ви бачите структурою, по рядках, ще до першої зустрічі.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3. ЯК ПРАЦЮЄМО + КОШТОРИС ============ -->
-<section id="how" class="light">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Як ми працюємо</p>
-      <h2 class="rv d1">Чотири кроки <span class="mute">від ідеї до останнього гостя</span></h2>
-    </div>
-
-    <div class="bento-4 steps">
-      <div class="step rv d1">
-        <h3>Бриф</h3>
-        <p>45 хвилин розмови: повід, дата, кількість гостей, що обов'язково має бути і чого бути не повинно.</p>
-      </div>
-      <div class="step rv d2">
-        <h3>Кошторис по рядках</h3>
-        <p>Протягом трьох днів ви отримуєте таблицю по рядках: локація, кейтеринг, декор, техніка, кожен артист окремо.</p>
-      </div>
-      <div class="step rv d3">
-        <h3>Підрядники й договори</h3>
-        <p>Ми домовляємось, тримаємо дати й закриваємо райдери. Ви бачите кожен рахунок і кожну умову.</p>
-      </div>
-      <div class="step rv d4">
-        <h3>День події</h3>
-        <p>Координація на місці від монтажу до вивозу. Ваша задача цього дня — бути гостем на власному святі.</p>
-      </div>
-    </div>
-
-    <!-- Реальний приклад кошторису. Ця ж таблиця служить запасним
-         варіантом для конструктора, якщо JavaScript вимкнений. -->
-    <div class="smeta-wrap rv d2">
-      <table class="smeta">
-        <caption>
-          <b>Весілля на 80 гостей, Київ, ресторан</b><br>
-          Приклад повного кошторису — рівно в такому вигляді ви його й отримуєте
-        </caption>
-        <thead>
-          <tr><th scope="col">Стаття</th><th scope="col">Сума, ₴</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Локація та оренда<span class="t-sub">оренда зали, посадка, персонал</span></td><td>53 000</td></tr>
-          <tr><td>Кейтеринг і бар<span class="t-sub">80 гостей × 1 400 ₴</span></td><td>112 000</td></tr>
-          <tr><td>Декор і флористика<span class="t-sub">президіум, центри столів, арка</span></td><td>38 000</td></tr>
-          <tr><td>Світло, звук, екран<span class="t-sub">комплект, монтаж, оператор</span></td><td>44 600</td></tr>
-          <tr><td>Ведучий</td><td>25 000</td></tr>
-          <tr><td>Кавер-гурт<span class="t-sub">три сети по 40 хвилин</span></td><td>55 000</td></tr>
-          <tr><td>Робота організатора<span class="t-sub">підготовка, підрядники, координація дня</span></td><td>49 140</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td>Разом</td><td>376 740</td></tr>
-        </tfoot>
-      </table>
-    </div>
-    <p class="smeta-note rv d3">
-      Це приклад, а не прайс: суми залежать від дати, локації та складу програми.
-      Щоб побачити вилку під вашу подію — <a href="#constructor">зберіть її в конструкторі</a>.
-    </p>
-  </div>
-</section>
-
-<!-- ============ 4. КОНСТРУКТОР ПОДІЇ ============ -->
-<section id="constructor" class="light">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Конструктор</p>
-      <h2 class="rv d1">Зберіть свою подію <span class="mute">— і побачте бюджет</span></h2>
-      <p class="lead rv d2">
-        П'ять кроків. На виході — вилка бюджету й розкладка по статтях: скільки піде
-        на локацію, скільки на їжу, скільки артистам.
-      </p>
-    </div>
-
-    <div class="gm-split">
-      <div>
-        <form class="gm gm-shell" id="gmCalc" novalidate>
-          <ol class="gm-steps" id="gmSteps" aria-hidden="true">
-            <li class="now"><i></i>Привід</li>
-            <li><i></i>Гості</li>
-            <li><i></i>Локація</li>
-            <li><i></i>Рівень</li>
-            <li><i></i>Програма</li>
-          </ol>
-
-          <!-- крок 1 -->
-          <fieldset class="gm-step" data-step="1">
-            <legend tabindex="-1">Що святкуємо?</legend>
-            <span class="gm-count">Крок 1 з 5</span>
-            <div class="gm-opts">
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="wedding" checked>
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-rings"/></svg>Весілля</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="engagement">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Заручини</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="hen">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg>Дівич-вечір</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="stag">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-cheers"/></svg>Парубочий вечір</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="gender">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-balloon"/></svg>Гендер-паті</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="birthday">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-cake"/></svg>День народження</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="corporate">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-glass"/></svg>Корпоратив</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="jubilee">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Ювілей</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="opening">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-ribbon"/></svg>Відкриття бутика</span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="ev" value="private">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-light"/></svg>Приватна вечірка</span>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- крок 2 -->
-          <fieldset class="gm-step" data-step="2" hidden>
-            <legend tabindex="-1">Скільки буде гостей?</legend>
-            <span class="gm-count">Крок 2 з 5</span>
-            <p class="gm-hint" id="gmGuestsHint">
-              Орієнтовно — цифру завжди можна змінити. Від кількості гостей найбільше
-              залежить кейтеринг і розмір локації.
-            </p>
-            <div class="gm-guests">
-              <div class="gm-range">
-                <input type="range" id="gmRange" name="g"
-                       min="10" max="600" step="5" value="90"
-                       aria-label="Кількість гостей" aria-describedby="gmGuestsHint">
-              </div>
-              <div class="gm-num">
-                <input type="number" id="gmNum" min="10" max="600" step="1" value="90"
-                       inputmode="numeric" aria-label="Кількість гостей, точне число">
-                <span>гостей</span>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- крок 3 -->
-          <fieldset class="gm-step" data-step="3" hidden>
-            <legend tabindex="-1">Де святкуємо?</legend>
-            <span class="gm-count">Крок 3 з 5</span>
-            <p class="gm-hint">Місто впливає на ціни підрядників, тип локації — на оренду й техніку.</p>
-            <div class="gm-opts">
-              <label class="gm-opt"><input type="radio" name="city" value="kyiv" checked><span class="gm-opt-in">Київ</span></label>
-              <label class="gm-opt"><input type="radio" name="city" value="lviv"><span class="gm-opt-in">Львів</span></label>
-              <label class="gm-opt"><input type="radio" name="city" value="odesa"><span class="gm-opt-in">Одеса</span></label>
-              <label class="gm-opt"><input type="radio" name="city" value="dnipro"><span class="gm-opt-in">Дніпро</span></label>
-              <label class="gm-opt"><input type="radio" name="city" value="other"><span class="gm-opt-in">Інше місто</span></label>
-            </div>
-            <p class="gm-hint" style="margin-top:18px">Тип локації</p>
-            <div class="gm-opts">
-              <label class="gm-opt"><input type="radio" name="loc" value="restaurant" checked><span class="gm-opt-in">Ресторан</span></label>
-              <label class="gm-opt"><input type="radio" name="loc" value="loft"><span class="gm-opt-in">Лофт</span></label>
-              <label class="gm-opt"><input type="radio" name="loc" value="outdoor"><span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-tent"/></svg>Просто неба</span></label>
-              <label class="gm-opt"><input type="radio" name="loc" value="estate"><span class="gm-opt-in">Садиба</span></label>
-              <label class="gm-opt"><input type="radio" name="loc" value="hotel"><span class="gm-opt-in">Готель</span></label>
-            </div>
-          </fieldset>
-
-          <!-- крок 4 -->
-          <fieldset class="gm-step" data-step="4" hidden>
-            <legend tabindex="-1">Який рівень?</legend>
-            <span class="gm-count">Крок 4 з 5</span>
-            <div class="gm-opts two">
-              <label class="gm-opt">
-                <input type="radio" name="lvl" value="intimate">
-                <span class="gm-opt-in"><span>Камерно<span class="gm-opt-sub">Тісне коло, акцент на їжі та атмосфері</span></span></span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="lvl" value="full" checked>
-                <span class="gm-opt-in"><span>Повноцінно<span class="gm-opt-sub">Ведучий, музика, декор, техніка</span></span></span>
-              </label>
-              <label class="gm-opt">
-                <input type="radio" name="lvl" value="premium">
-                <span class="gm-opt-in"><span>Преміум<span class="gm-opt-sub">Авторський декор, сильна техніка, запрошені артисти</span></span></span>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- крок 5 -->
-          <fieldset class="gm-step" data-step="5" hidden>
-            <legend tabindex="-1">Програма</legend>
-            <span class="gm-count">Крок 5 з 5</span>
-            <p class="gm-hint">Позначте те, що потрібне. Суми одразу підуть у статтю «Артисти та програма».</p>
-            <div class="gm-opts two">
-              <label class="gm-opt">
-                <input type="checkbox" name="opt" value="host" checked>
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg>Ведучий<span class="gm-opt-price">18–45 тис.</span></span>
-              </label>
-              <label class="gm-opt">
-                <input type="checkbox" name="opt" value="music" checked>
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Жива музика<span class="gm-opt-price">25–90 тис.</span></span>
-              </label>
-              <label class="gm-opt">
-                <input type="checkbox" name="opt" value="dj">
-                <span class="gm-opt-in">DJ<span class="gm-opt-price">12–30 тис.</span></span>
-              </label>
-              <label class="gm-opt">
-                <input type="checkbox" name="opt" value="show">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-light"/></svg>Шоу-програма<span class="gm-opt-price">15–60 тис.</span></span>
-              </label>
-              <label class="gm-opt">
-                <input type="checkbox" name="opt" value="headliner">
-                <span class="gm-opt-in"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Зірка-хедлайнер<span class="gm-opt-price">від 150 тис.</span></span>
-              </label>
-            </div>
-          </fieldset>
-
-          <div class="gm-nav">
-            <button class="gm-back" type="button" id="gmBack" hidden>Назад</button>
-            <button class="btn btn-accent" type="button" id="gmNext">Далі</button>
-          </div>
-
-          <noscript>
-            <p class="gm-ns">
-              Щоб порахувати бюджет автоматично, потрібен JavaScript. Орієнтовні суми є
-              в таблиці вище, а точний розрахунок під вашу подію зробимо вручну —
-              <a href="#apply">залиште заявку</a>.
-            </p>
-          </noscript>
-        </form>
-      </div>
-
-      <!-- панель результату -->
-      <div class="gm gm-result" id="gmResult">
-        <div class="gm-total" id="gmTotal"></div>
-        <div class="gm-bar" id="gmBar" aria-hidden="true"></div>
-        <ul class="gm-items" id="gmItems"></ul>
-        <p class="gm-note" id="gmNote" hidden></p>
-        <p class="gm-disclaimer">
-          Розрахунок орієнтовний і не є публічною офертою. Точний кошторис —
-          після брифу. Прайс оновлено 11.09.2026.
-        </p>
-        <p class="sr-only" id="gmLive" role="status" aria-live="polite"></p>
-
-        <div class="gm-up">
-          <p class="gm-up-h">Що можна додати</p>
-          <div class="gm-up-grid" id="gmUpGrid"></div>
-        </div>
-
-        <div class="gm-actions">
-          <button class="gm-copy" type="button" id="gmCopy">Скопіювати посилання на розрахунок</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. ФОРМАТИ ПОДІЙ ============ -->
-<section id="formats">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Формати</p>
-      <h2 class="rv d1">Що ми робимо</h2>
-      <p class="lead rv d2">Натисніть на формат — конструктор відкриється вже налаштованим під нього.</p>
-    </div>
-
-    <div class="bento-3">
-      <a class="card rv d1" href="?ev=wedding&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-rings"/></svg></span>
-          <span class="card-tag">від 4 місяців</span>
-        </div>
-        <div class="card-body">
-          <h3>Весілля</h3>
-          <p>Повний цикл: локація, церемонія, банкет, програма. Координація дня від монтажу до вивозу декору.</p>
-          <p class="card-from">від 250 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d2" href="?ev=engagement&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>
-          <span class="card-tag">від 3 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Заручини</h3>
-          <p>Вечеря, на якій має прозвучати одне питання. Локація, фотограф і сценарій, зведений до однієї хвилини.</p>
-          <p class="card-from">від 75 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d3" href="?ev=hen&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg></span>
-          <span class="card-tag">від 2 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Дівич-вечір</h3>
-          <p>Формат, де головне не програма, а компанія. Локація, стіл, декор, фотограф — і жодної незручної анімації.</p>
-          <p class="card-from">від 45 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d1" href="?ev=stag&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-cheers"/></svg></span>
-          <span class="card-tag">від 2 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Парубочий вечір</h3>
-          <p>Від спокійної вечері до виїзду за місто. Беремо на себе логістику — щоб наступного дня всі були на місці.</p>
-          <p class="card-from">від 45 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d2" href="?ev=gender&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-balloon"/></svg></span>
-          <span class="card-tag">від 2 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Гендер-паті</h3>
-          <p>Коротка подія з одним сильним кадром. Декор, фотозона й момент розкриття — усе заради тих трьох секунд.</p>
-          <p class="card-from">від 50 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d2" href="?ev=corporate&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-glass"/></svg></span>
-          <span class="card-tag">від 6 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Корпоратив</h3>
-          <p>Від новорічної вечірки до конференції з фуршетом. Закритий звіт по витратах для бухгалтерії.</p>
-          <p class="card-from">від 320 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d3" href="?ev=birthday&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-cake"/></svg></span>
-          <span class="card-tag">від 3 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>День народження</h3>
-          <p>Камерна вечеря на 20 осіб або свято на 150 з хедлайнером. Однаково уважно до деталей.</p>
-          <p class="card-from">від 160 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d1" href="?ev=opening&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-ribbon"/></svg></span>
-          <span class="card-tag">від 3 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Відкриття бутика</h3>
-          <p>Подія, яку знімають і переказують: гості, преса, фотозона, привід потрапити в сторіс.</p>
-          <p class="card-from">від 170 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d2" href="?ev=jubilee&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
-          <span class="card-tag">від 2 місяців</span>
-        </div>
-        <div class="card-body">
-          <h3>Ювілей</h3>
-          <p>Сценарій, у якому головний герой справді головний: відеозвернення, живі історії, правильний тайминг.</p>
-          <p class="card-from">від 200 000 ₴</p>
-        </div>
-      </a>
-
-      <a class="card rv d3" href="?ev=private&amp;step=2#constructor">
-        <div class="card-top">
-          <span class="card-icon"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg></span>
-          <span class="card-tag">від 2 тижнів</span>
-        </div>
-        <div class="card-body">
-          <h3>Приватна вечірка</h3>
-          <p>Закритий формат без зайвих очей: локація, бар, DJ, і ніяких слідів у соцмережах, якщо так треба.</p>
-          <p class="card-from">від 120 000 ₴</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6. АРТИСТИ ТА ЗІРКИ ============ -->
-<section id="artists">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Артисти та зірки</p>
-      <h2 class="rv d1">Скільки коштує <span class="mute">запросити артиста</span></h2>
-      <p class="lead rv d2">
-        Ці цифри зазвичай не пишуть на сайтах. Ми пишемо: гонорар ви платите артисту,
-        без нашої націнки. Наша частина — домовитись і закрити райдер.
-      </p>
-    </div>
-
-    <div class="fees rv d1" id="fees"></div>
-
-    <!-- ІМЕНА АРТИСТІВ
-         Тут мають стояти реальні імена тих, із ким уже працювали.
-         Щоб блок з'явився на сайті, заберіть слово hidden у рядку нижче
-         і впишіть імена замість прикладів. Порожнім його не публікуємо:
-         обіцянка «у нас є зірки» без жодного імені працює проти нас.
-    -->
-    <div class="rv d2" hidden id="feeNames">
-      <p class="gm-up-h" style="margin-top:clamp(26px,3vw,36px)">З ким уже працювали</p>
-      <div class="fee-names">
-        <span>Імʼя артиста</span>
-        <span>Імʼя артиста</span>
-        <span>Імʼя артиста</span>
-      </div>
-    </div>
-
-    <div class="sec-cta rv d3">
-      <a class="btn btn-accent" href="#apply">Запитати про конкретного артиста</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 7. КЕЙСИ ============
-     Розмітка готова, але секція не показується, поки немає реальних
-     історій. Щоб увімкнути: заберіть hidden нижче і замініть текст
-     трьома справжніми кейсами. Фото кладіть у assets/img/cases/ з
-     іменами з data-photo — картки підхоплять їх самі.
-     Вигаданих відгуків тут бути не повинно.
--->
-<section id="cases" class="light" hidden>
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Кейси</p>
-      <h2 class="rv d1">Три події <span class="mute">і їхні кошториси</span></h2>
-    </div>
-    <div class="cases">
-      <article class="case rv d1">
-        <div class="case-media" data-photo="assets/img/cases/case-1.jpg" data-alt="">
-          <span class="case-mark" aria-hidden="true">GM</span>
-        </div>
-        <div class="case-body">
-          <h3>Назва події</h3>
-          <p class="case-meta"><span>Формат</span><span>N гостей</span><span>Бюджет</span></p>
-          <p><b>Завдання.</b> Що просив клієнт.</p>
-          <p><b>Що зробили.</b> Рішення й чому саме таке.</p>
-          <p><b>Результат.</b> Чим закінчилось.</p>
-        </div>
-      </article>
-      <article class="case rv d2">
-        <div class="case-media" data-photo="assets/img/cases/case-2.jpg" data-alt="">
-          <span class="case-mark" aria-hidden="true">GM</span>
-        </div>
-        <div class="case-body">
-          <h3>Назва події</h3>
-          <p class="case-meta"><span>Формат</span><span>N гостей</span><span>Бюджет</span></p>
-          <p><b>Завдання.</b> Що просив клієнт.</p>
-          <p><b>Що зробили.</b> Рішення й чому саме таке.</p>
-          <p><b>Результат.</b> Чим закінчилось.</p>
-        </div>
-      </article>
-      <article class="case rv d3">
-        <div class="case-media" data-photo="assets/img/cases/case-3.jpg" data-alt="">
-          <span class="case-mark" aria-hidden="true">GM</span>
-        </div>
-        <div class="case-body">
-          <h3>Назва події</h3>
-          <p class="case-meta"><span>Формат</span><span>N гостей</span><span>Бюджет</span></p>
-          <p><b>Завдання.</b> Що просив клієнт.</p>
-          <p><b>Що зробили.</b> Рішення й чому саме таке.</p>
-          <p><b>Результат.</b> Чим закінчилось.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. ПРО МАРИНУ ============ -->
-<section id="marina" class="light">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="portrait rv" data-portrait="assets/img/marina.jpg">
-        <span class="monogram" aria-hidden="true">МФ</span>
-      </div>
-      <div>
-        <p class="eyebrow rv">Хто організовує</p>
-        <h2 class="rv d1">Марина Філіпенко</h2>
-        <p class="lead rv d2">
-          Засновниця премії MedOrion Awards і бізнес-проєкту Business GRAVITY,
-          організаторка закритих клубів для підприємців. Gravity Moments — про
-          ті самі події, але вже для вас, а не для індустрії.
-        </p>
-        <p class="rv d3" style="margin-top:20px">
-          За роки роботи з преміями й закритими клубами зібралась база людей, без якої
-          подію не зробити: локації, кейтеринг, декоратори, техніка, артисти та їхній
-          менеджмент. Це і є відповідь на питання, чому в нас виходить дешевше
-          при тому ж результаті — ми домовляємось напряму.
-        </p>
-        <p class="rv d4" style="margin-top:16px">
-          І чому кошторис приходить по рядках: коли ти плануєш повернутись до цих
-          підрядників наступного року, ховати від клієнта структуру бюджету
-          немає жодного сенсу.
-        </p>
-        <div class="about-sign rv d5">
-          <b>Марина Філіпенко</b> · засновниця Gravity Moments<br>
-          <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9. FAQ ============ -->
-<section id="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow rv">Питання</p>
-      <h2 class="rv d1">Те, що питають <span class="mute">до підписання договору</span></h2>
-    </div>
-
-    <div class="faq rv d1">
-      <details>
-        <summary>Скільки коштує ваша робота?</summary>
-        <p class="faq-a">
-          Наша винагорода стоїть у кошторисі окремим рядком — ви бачите її суму
-          ще до підписання договору. Вона залежить від масштабу й складності події,
-          і ми називаємо її на першій же розмові, а не після брифу.
-        </p>
-      </details>
-      <details>
-        <summary>Чи побачу я, з чого складається бюджет?</summary>
-        <p class="faq-a">
-          Так. Кошторис приходить по рядках: локація, кейтеринг, декор, техніка,
-          кожен артист окремо. Нічого не сходиться в одну загадкову суму
-          «програма — 180 000»: ви бачите структуру бюджету й розумієте, на чому
-          можна зекономити, а на чому не варто.
-        </p>
-      </details>
-      <details>
-        <summary>Хто платить підрядникам?</summary>
-        <p class="faq-a">
-          Ви — напряму або через нас, як вам зручніше. Ми не наполягаємо проводити
-          всі гроші через себе: так вам не потрібно вірити нам на слово.
-        </p>
-      </details>
-      <details>
-        <summary>Яка передоплата?</summary>
-        <p class="faq-a">
-          30% нашої винагороди після підписання договору, решта — за три дні до події.
-          У підрядників свої умови: вони прописані в кошторисі окремо, щоб ви бачили
-          графік платежів цілком.
-        </p>
-      </details>
-      <details>
-        <summary>Чи можна свою локацію або своїх підрядників?</summary>
-        <p class="faq-a">
-          Так, і доплати за це немає. Якщо бачимо ризик — скажемо прямо та обґрунтуємо,
-          але рішення за вами.
-        </p>
-      </details>
-      <details>
-        <summary>А якщо буде дощ?</summary>
-        <p class="faq-a">
-          Для події просто неба в кошторисі завжди закладений план Б — шатро або резервна
-          локація. Він узгоджується заздалегідь, а не в день події по телефону.
-        </p>
-      </details>
-      <details>
-        <summary>За скільки часу треба починати?</summary>
-        <p class="faq-a">
-          Весілля — від 4 місяців, корпоратив — від 6 тижнів, приватна вечірка —
-          від 2 тижнів. Швидше теж беремо, але вибір локацій і артистів буде вужчим,
-          і це вплине на ціну.
-        </p>
-      </details>
-      <details>
-        <summary>Ви справді можете запросити зірку?</summary>
-        <p class="faq-a">
-          Так, у нас прямі контакти з артистами та їхнім менеджментом. Гонорар ви платите
-          артисту без посередницької націнки, ми домовляємось і закриваємо райдер.
-          Напишіть, про кого саме йдеться, — скажемо суму й чи вільна дата.
-        </p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 10. ФОРМА ============ -->
-<section id="apply">
-  <div class="wrap">
-    <div class="form-shell">
-
-      <div class="form-aside">
-        <p class="eyebrow rv">Заявка</p>
-        <h2 class="rv d1">Розкажіть про подію <span class="mute">— і ми порахуємо</span></h2>
-        <p class="lead rv d2">
-          Марина відповість у Telegram або подзвонить. Спершу — коротка розмова,
-          далі кошторис по рядках протягом трьох днів.
-        </p>
-        <p class="rv d3" style="margin-top:22px">
-          <span class="capsule">
-            <span class="dot" aria-hidden="true"></span>
-            Відповідаємо того ж дня
-          </span>
-        </p>
-      </div>
-
-      <form class="form-card rv d1" id="applyForm" novalidate>
-
-        <!-- зведення розрахунку, якщо людина прийшла з конструктора -->
-        <div class="apply-calc" id="applyCalc">
-          <div class="apply-calc-h">
-            Ваш розрахунок
-            <a href="#constructor">змінити</a>
-          </div>
-          <p id="applyCalcText"></p>
-        </div>
-
-        <div class="fgrid">
-          <div class="field">
-            <label for="f-name">Імʼя <span class="req">*</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Як до вас звертатися" required>
-            <span class="err">Вкажіть, будь ласка, вашe імʼя</span>
-          </div>
-
-          <div class="field">
-            <label for="f-contact">Телефон <span class="req">*</span></label>
-            <input id="f-contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required>
-            <span class="err">Вкажіть номер, до якого привʼязаний месенджер</span>
-          </div>
-
-          <div class="field">
-            <label for="f-messenger">Де зручніше спілкуватись</label>
-            <div class="sel">
-              <select id="f-messenger" name="messenger">
-                <option>Telegram</option>
-                <option>WhatsApp</option>
-                <option>Viber</option>
-                <option>Дзвінок</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="f-date">Дата події</label>
-            <!-- навмисно text, а не date: «серпень 2026, точної дати ще немає»
-                 має проходити так само легко, як конкретне число -->
-            <input id="f-date" name="date" type="text" placeholder="17.05.2026 або «літо 2026»">
-          </div>
-
-          <div class="field full">
-            <label for="f-comment">Коротко про подію</label>
-            <textarea id="f-comment" name="comment" placeholder="Повід, приблизна кількість гостей, що обов'язково має бути"></textarea>
-          </div>
-
-          <!-- Пастка для ботів: людина цього поля не бачить і не заповнює.
-               Заповнене — заявка тихо відкидається. -->
-          <div class="hp" aria-hidden="true">
-            <label for="f-company">Не заповнюйте це поле</label>
-            <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
-          </div>
-
-          <!-- повна конфігурація конструктора, якщо вона є -->
-          <input type="hidden" id="f-calc" name="calc">
-        </div>
-
-        <div class="form-error" id="formError" role="alert"></div>
-
-        <div class="form-foot">
-          <button class="btn btn-accent" type="submit" id="submitBtn">Надіслати заявку</button>
-          <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
-        </div>
-
-        <p class="form-direct">
-          Не хочете форму? Напишіть напряму:
-          <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a>
-          або <a href="tel:+380674097350">+38 (067) 409-73-50</a>.
-        </p>
-      </form>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ============ ФУТЕР ============ -->
-<footer class="footer" id="contacts">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-logo">
-        <span class="wm"><b>Gravity</b><span>Moments</span></span>
-        <p>
-          Організація подій під ключ: весілля, корпоративи, дні народження, відкриття.
-          Київ і вся Україна. Прямі контакти з артистами, площадками й підрядниками.
-        </p>
-      </div>
-
-      <div>
-        <div class="foot-h">Контакти</div>
-        <div class="foot-list">
-          <a href="tel:+380674097350">+38 (067) 409-73-50</a>
-          <span>Марина Філіпенко — організаторка</span>
-          <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="foot-h">Сторінка</div>
-        <div class="foot-list">
-          <a href="#constructor">Зібрати кошторис</a>
-          <a href="#artists">Гонорари артистів</a>
-          <a href="#faq">Питання та відповіді</a>
-          <a href="#apply">Залишити заявку</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="foot-bottom">
-      <span>© 2026 Gravity Moments</span>
-      <span>Ціни на сторінці орієнтовні й не є публічною офертою</span>
-    </div>
-  </div>
-</footer>
-
-<!-- sticky CTA, тільки телефони -->
-<div class="sticky-cta" id="stickyCta">
-  <a class="btn btn-accent" href="#constructor">Зібрати кошторис</a>
+<!-- BAND -->
+<div class="band" aria-hidden="true">
+  <div class="band-row b"><div><span>весілля</span><span>корпоративи</span><span>ювілеї</span><span>заручини</span><span>гендер паті</span><span>відкриття</span><span>весілля</span><span>корпоративи</span><span>ювілеї</span><span>заручини</span><span>гендер паті</span><span>відкриття</span></div></div>
+  <div class="band-row a"><div><span>Зірки на ваше свято</span><span>Новорічні корпоративи</span><span>Під ключ</span><span>Зірки на ваше свято</span><span>Новорічні корпоративи</span><span>Під ключ</span></div></div>
 </div>
 
-<!-- модалка успіху -->
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-  <div class="modal-card">
-    <button class="modal-close" type="button" id="modalClose" aria-label="Закрити">&times;</button>
-    <div class="modal-mark" aria-hidden="true">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+<!-- SHOWREEL -->
+<section class="reel3" id="showreel">
+  <div class="reel3-stick">
+    <div class="reel3-head">
+      <p class="eyebrow">Відео з подій</p>
+      <h2>Вечори, які<br><em>виглядають ось так</em></h2>
     </div>
-    <h3 id="modalTitle">Заявку отримано</h3>
-    <p>Дякуємо. Марина звʼяжеться з вами найближчим часом — у Telegram або дзвінком.</p>
-    <a class="btn btn-white" href="https://t.me/marina_philipenko" target="_blank" rel="noopener">Написати в Telegram</a>
+    <div class="r3"><video src="video/soloha.mp4" poster="video/soloha.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+    <div class="r3"><video src="video/gala.mp4" poster="video/gala.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+    <div class="r3"><video src="video/singer.mp4" poster="video/singer.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+    <div class="reel3-cap"><b>Зал, сцена, <em>і той самий момент</em></b><span>Гала-вечеря · артисти · фінал</span></div>
   </div>
-</div>
+</section>
 
-<script src="assets/js/prices.js?v=20260914c"></script>
-<script src="assets/js/constructor.js?v=20260914c"></script>
-<script src="assets/js/main.js?v=20260914c"></script>
+<!-- ABOUT -->
+<section class="about wrap" id="about">
+  <div class="about-head">
+    <h2 class="display reveal">Хто<span class="l2"><em>організовує</em></span></h2>
+    <p class="about-lead reveal">Марина Філіпенко — засновниця премії MedOrion Awards і бізнес-проєкту Business GRAVITY, організаторка закритих клубів для підприємців.</p>
+  </div>
+
+  <div class="about-grid">
+    <div>
+      <div class="oval about-oval reveal"><img src="img/marina2.jpg" alt="Марина Філіпенко" loading="lazy"></div>
+      <div class="sign"><span>Founder<br>&amp; event producer</span><span>Марина Філіпенко</span></div>
+    </div>
+    <div class="about-text reveal">
+      <p>Gravity Moments — про ті самі події, що й премії та закриті клуби, але вже для вас, а не для індустрії. За роки роботи зібралась база людей, без якої подію не зробити: локації, кейтеринг, декоратори, техніка, артисти та їхній менеджмент.</p>
+      <p>Це і є відповідь на питання, чому в нас виходить дешевше при тому ж результаті — ми домовляємось напряму, без ланцюга посередників, кожен із яких хоче свою частку.</p>
+      <p>І чому ми кажемо прямо, що вийде, а що ні: коли плануєш повертатись до цих підрядників наступного року, обіцяти неможливе немає жодного сенсу.</p>
+      <p class="principle">«Я беру на себе все, що між ідеєю і першим тостом. Вам лишається прийти красивою і святкувати».</p>
+    </div>
+    <div class="oval about-small reveal"><img src="img/marina3.jpg" alt="Марина Філіпенко з нагородою Business GRAVITY Awards" loading="lazy"></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat reveal"><b>10</b><span>форматів подій</span></div>
+    <div class="stat reveal"><b>4</b><span>кроки від ідеї до свята</span></div>
+    <div class="stat reveal"><b>3</b><span>дні на план події</span></div>
+    <div class="stat reveal"><b>24/7</b><span>на звʼязку</span></div>
+  </div>
+</section>
+
+<!-- BRIDE MORNING -->
+<section class="bride" id="budget">
+  <div class="bride-stick">
+    <div class="bride-media">
+      <img src="img/s/arch_08.jpg" alt="Виїзна церемонія" loading="lazy">
+      <span class="stamp">Під ключ</span>
+    </div>
+    <div class="bride-text">
+      <p class="eyebrow">Що ми беремо на себе</p>
+      <h2>Вам лишається <em>лише святкувати</em></h2>
+      <p>Ви приходите на готове. Усе, що між ідеєю і першим тостом, — наша робота: домовитись, перевірити, привезти, зібрати і простежити, щоб усе сталося вчасно.</p>
+      <ol class="bride-steps" id="brideSteps">
+        <li><b>01</b>Локація, підрядники, договори й дати</li>
+        <li><b>02</b>Декор, флористика, світло і сцена</li>
+        <li><b>03</b>Кейтеринг, бар і розсадка гостей</li>
+        <li><b>04</b>Артисти, ведучий і шоу-програма</li>
+        <li><b>05</b>Координація дня — від монтажу до вивозу</li>
+      </ol>
+      <p class="gm-note">Хочете подивитись, як це виглядає на практиці — <a href="#gallery">гортайте галерею</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events wrap" id="events">
+  <div class="events-head">
+    <h2 class="display reveal">Свята,<br><em>які ми робимо</em></h2>
+    <p class="reveal">Від камерної вечері на двадцять осіб до новорічного корпоративу з хедлайнером. Наведіть — побачите, як це виглядає.</p>
+  </div>
+  <ul class="ev-list">
+    <li class="ev" data-img="img/s/t_arch_15.jpg"><span class="n">01</span><h3>Весілля</h3><span class="ev-sub">церемонія · банкет · перший танець</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_ny_14.jpg"><span class="n">02</span><h3>Новорічний корпоратив</h3><span class="ev-sub">груднева класика з хедлайнером</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_gala_06.jpg"><span class="n">03</span><h3>Корпоратив</h3><span class="ev-sub">від фуршету до конференції</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_ball_02.jpg"><span class="n">04</span><h3>Ювілей</h3><span class="ev-sub">вечір, де головний герой справді головний</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_candle_10.jpg"><span class="n">05</span><h3>День народження</h3><span class="ev-sub">камерна вечеря або свято на 150</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_gender_07.jpg"><span class="n">06</span><h3>Гендер-паті</h3><span class="ev-sub">один кадр, заради якого все</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_table_06.jpg"><span class="n">07</span><h3>Заручини</h3><span class="ev-sub">вечеря, на якій звучить одне питання</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_champ_08.jpg"><span class="n">08</span><h3>Відкриття</h3><span class="ev-sub">подія, яку знімають і переказують</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_stage_11.jpg"><span class="n">09</span><h3>Приватна вечірка</h3><span class="ev-sub">закритий формат без зайвих очей</span><span class="arr">↗</span></li>
+    <li class="ev" data-img="img/s/t_table_10.jpg"><span class="n">10</span><h3>Дівич-вечір</h3><span class="ev-sub">компанія, стіл і жодної анімації</span><span class="arr">↗</span></li>
+  </ul>
+  <div class="ev-thumb" id="evThumb"><img alt=""></div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="show" id="show">
+  <div class="show-stick">
+    <div class="show-head">
+      <h2 class="display">Як це<br><em>виглядає</em></h2>
+      <span class="show-count"><span id="showNum">01</span> / 13</span>
+    </div>
+    <div class="show-track" id="showTrack">
+      <figure class="card t wipe"><img data-lb src="img/s/table_03.jpg" alt="Стіл під кришталевими люстрами" loading="lazy"><figcaption><span>Декор</span><b>Стіл під кришталевими люстрами</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/arch_18.jpg" alt="Арка на березі" loading="lazy"><figcaption><span>Церемонія</span><b>Арка на березі</b></figcaption></figure>
+      <figure class="card quote-card"><p>Найкраще свято — те, на якому господар <em>жодного разу</em> не подивився на годинник.</p><small>Gravity Moments</small></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/gala_08.jpg" alt="Світло, звук, сцена" loading="lazy"><figcaption><span>Шоу-програма</span><b>Світло, звук, сцена</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/candle_10.jpg" alt="Свічки й пастельні тони" loading="lazy"><figcaption><span>Сервіровка</span><b>Свічки й пастельні тони</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/dance_06.jpg" alt="Зал, що завмирає" loading="lazy"><figcaption><span>Перший танець</span><b>Зал, що завмирає</b></figcaption></figure>
+      <figure class="card w wipe"><img data-lb src="img/s/reception_14.jpg" alt="Довгі столи й зелень" loading="lazy"><figcaption><span>Банкет</span><b>Довгі столи й зелень</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/champ_02.jpg" alt="Ігристе на вході" loading="lazy"><figcaption><span>Велком-зона</span><b>Ігристе на вході</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/ball_05.jpg" alt="Палацова зала" loading="lazy"><figcaption><span>Локація</span><b>Палацова зала</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/stage_15.jpg" alt="Світло на весь зал" loading="lazy"><figcaption><span>Фінал</span><b>Світло на весь зал</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/table_12.jpg" alt="Камерна вечеря" loading="lazy"><figcaption><span>Деталі</span><b>Камерна вечеря</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/arch_08.jpg" alt="Квіти й молодята" loading="lazy"><figcaption><span>Виїзна церемонія</span><b>Квіти й молодята</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/reception_12.jpg" alt="Готово до гостей" loading="lazy"><figcaption><span>Зал</span><b>Готово до гостей</b></figcaption></figure>
+    </div>
+    <div class="show-bar"><i id="showBar"></i></div>
+  </div>
+</section>
+
+<!-- DIFFERENCE (dark with arc) -->
+<section class="dark">
+  <div class="dark-bg"></div>
+  <div class="big-name" aria-hidden="true">Gravity<span class="it">moments</span></div>
+  <div class="diff">
+    <div class="reveal">
+      <span class="tag">Головне</span>
+      <h2>Свято із зіркою — не обовʼязково дорого</h2>
+      <p>Більшість думає, що запросити відомого артиста можуть лише ті, хто знімає палац на триста гостей. Насправді все залежить від дати, формату й того, хто домовляється.</p>
+      <p style="margin-top:16px">Ми спілкуємось з артистами та їхнім менеджментом напряму. Без ланцюга посередників, кожен із яких хоче свою частку. Тому зірка на вашому святі — питання не стільки грошей, скільки правильних контактів і вчасно заброньованої дати.</p>
+      <a href="#stars" class="btn btn-light">Подивитись, кого можемо запросити <span>→</span></a>
+    </div>
+    <div class="oval diff-oval reveal"><img src="img/s/ny_02.jpg" alt="Новорічний вечір" loading="lazy"></div>
+    <div class="reveal">
+      <span class="tag">Як ми працюємо</span>
+      <h2>Напряму — з площадками, декором і артистами</h2>
+      <p>Площадки, декоратори, техніка, кейтеринг і артисти — це наші прямі контакти, напрацьовані роками на преміях і закритих клубах. Ми не перепродаємо нічого й нікого.</p>
+      <p style="margin-top:18px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--paper)">Скажіть дату й формат — підкажемо, що реально зробити саме для вас.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<section class="strip" aria-label="Фото з подій">
+  <div class="strip-track" id="strip"></div>
+</section>
+
+<!-- GALLERY: photos + events -->
+<section class="gallery wrap" id="gallery">
+  <div class="gal-head">
+    <div class="reveal">
+      <p class="eyebrow">Галерея</p>
+      <h2 class="display">Як виглядають<br><em>наші свята</em></h2>
+    </div>
+    <p class="gal-note reveal">Натисніть на картку — відкриється добірка кадрів цього формату.</p>
+  </div>
+
+  <div class="ev-cards">
+    <a class="ev-card reveal" data-open="0" role="button" tabindex="0">
+      <span class="ev-card-img wipe"><img src="img/s/t_arch_15.jpg" alt="Весілля" loading="lazy"><em>Дивитись 8 фото</em></span>
+      <span class="ev-card-cap"><b>Весілля</b><i>церемонія · банкет · перший танець</i></span>
+    </a>
+    <a class="ev-card reveal" data-open="8" role="button" tabindex="0">
+      <span class="ev-card-img wipe"><img src="img/s/t_gender_07.jpg" alt="Гендер-паті" loading="lazy"><em>Дивитись 6 фото</em></span>
+      <span class="ev-card-cap"><b>Гендер-паті</b><i>дим, кулі й той самий кадр</i></span>
+    </a>
+    <a class="ev-card reveal" data-open="14" role="button" tabindex="0">
+      <span class="ev-card-img wipe"><img src="img/s/t_ny_14.jpg" alt="Новорічні корпоративи" loading="lazy"><em>Дивитись 6 фото</em></span>
+      <span class="ev-card-cap"><b>Новорічні корпоративи</b><i>грудень · зал · хедлайнер</i></span>
+    </a>
+    <a class="ev-card reveal" data-open="20" role="button" tabindex="0">
+      <span class="ev-card-img wipe"><img src="img/ev/t12.jpg" alt="Премії та нагородження" loading="lazy"><em>Дивитись 6 фото</em></span>
+      <span class="ev-card-cap"><b>Премії та нагородження</b><i>червона доріжка · преса · 400 гостей</i></span>
+    </a>
+  </div>
+  <div class="gm-hidden" aria-hidden="true">
+    <img data-lb src="img/s/t_arch_15.jpg" data-full="img/s/arch_15.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_table_03.jpg" data-full="img/s/table_03.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_dance_06.jpg" data-full="img/s/dance_06.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_reception_14.jpg" data-full="img/s/reception_14.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_arch_08.jpg" data-full="img/s/arch_08.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_bride_11.jpg" data-full="img/s/bride_11.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_champ_02.jpg" data-full="img/s/champ_02.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_dance_18.jpg" data-full="img/s/dance_18.jpg" alt="Весілля" loading="lazy">
+    <img data-lb src="img/s/t_gender_07.jpg" data-full="img/s/gender_07.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_gender_18.jpg" data-full="img/s/gender_18.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_gender_06.jpg" data-full="img/s/gender_06.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_gender_20.jpg" data-full="img/s/gender_20.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_gender_10.jpg" data-full="img/s/gender_10.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_gender_02.jpg" data-full="img/s/gender_02.jpg" alt="Гендер-паті" loading="lazy">
+    <img data-lb src="img/s/t_ny_14.jpg" data-full="img/s/ny_14.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_ny_02.jpg" data-full="img/s/ny_02.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_ny_10.jpg" data-full="img/s/ny_10.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_ny_16.jpg" data-full="img/s/ny_16.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_ny_04.jpg" data-full="img/s/ny_04.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/s/t_ny_06.jpg" data-full="img/s/ny_06.jpg" alt="Новорічні корпоративи" loading="lazy">
+    <img data-lb src="img/ev/t12.jpg" data-full="img/ev/12.jpg" alt="Премії та нагородження" loading="lazy">
+    <img data-lb src="img/ev/t05.jpg" data-full="img/ev/05.jpg" alt="Премії та нагородження" loading="lazy">
+    <img data-lb src="img/ev/t07.jpg" data-full="img/ev/07.jpg" alt="Премії та нагородження" loading="lazy">
+    <img data-lb src="img/ev/t09.jpg" data-full="img/ev/09.jpg" alt="Премії та нагородження" loading="lazy">
+    <img data-lb src="img/ev/t01.jpg" data-full="img/ev/01.jpg" alt="Премії та нагородження" loading="lazy">
+    <img data-lb src="img/ev/t15.jpg" data-full="img/ev/15.jpg" alt="Премії та нагородження" loading="lazy">
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="reels wrap" id="reels">
+  <div class="reels-head">
+    <div class="reveal">
+      <p class="eyebrow">Артисти на подіях</p>
+      <h2>Ті, кого ми<br><em>виводимо на сцену</em></h2>
+    </div>
+    <p class="reels-note reveal">Гонорар ви платите артисту напряму, без нашої націнки. Наша частина — домовитись, закрити райдер і вивести його на сцену вчасно. Увімкніть звук 🔊</p>
+  </div>
+  <div class="reels-row">
+    <div class="phone reveal"><span class="lbl">Vlad Darwin</span><video src="video/darwin.mp4" poster="video/darwin.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone low reveal"><span class="lbl">Оля Полякова</span><video src="video/polyakova.mp4" poster="video/polyakova.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone reveal"><span class="lbl">Шоу-програма</span><video src="video/soloha2.mp4" poster="video/soloha2.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<!-- constructor removed -->
+
+<!-- CITIES & STARS -->
+<section class="cities wrap" id="cities">
+  <div class="cities-row">
+    <div class="cities-left">
+      <p class="eyebrow reveal">Де ми працюємо</p>
+      <div class="city-names reveal"><span data-c="kyiv">Київ</span><span data-c="lviv">Львів</span><span data-c="odesa">Одеса</span><span data-c="dnipro">Дніпро</span></div>
+      <p class="cities-note reveal">Київ — база, але виїжджаємо по всій Україні. Логістика, підрядники на місці та узгодження з локацією — це вже наша частина роботи.</p>
+    </div>
+    <div class="cities-map reveal">
+      <svg viewBox="-16 -16 1032 698" role="img" aria-label="Карта України з містами, де працює Gravity Moments">
+        <path class="ua-land" pathLength="1000" d="M539.1,19.5L559.8,22.9L573.8,3.9L590.7,8.1L648.3,0.0L683.9,47.3L670.0,64.2L674.6,90.1L718.9,94.2L738.7,130.4L737.4,146.8L808.0,176.2L850.7,163.0L885.0,202.1L917.4,201.2L999.3,228.4L1000.0,252.9L977.4,296.7L989.7,342.7L981.0,370.6L927.2,376.7L898.5,400.0L896.8,437.1L852.4,443.8L815.5,470.8L763.4,475.2L715.6,506.4L718.8,558.3L746.0,578.5L802.7,573.5L791.8,603.3L731.0,617.8L655.6,666.1L624.7,649.1L636.9,609.8L576.2,585.4L586.0,569.4L639.2,541.6L623.1,522.5L536.7,501.4L532.9,470.2L481.4,480.5L460.8,526.5L417.8,588.2L392.6,573.9L366.4,587.3L341.6,572.0L355.6,562.9L365.3,534.2L380.6,507.6L376.6,492.6L388.2,486.0L393.7,497.5L426.5,500.0L441.2,493.8L430.8,485.3L434.7,472.9L415.3,451.6L407.3,416.7L387.1,403.0L391.1,374.7L365.9,352.3L343.1,349.1L302.1,323.1L265.2,331.4L251.9,343.7L228.5,343.7L214.5,363.2L173.5,371.2L154.5,384.1L128.7,363.6L93.1,363.3L58.7,354.1L34.7,372.0L30.9,349.6L0.0,326.9L10.8,293.2L26.3,271.4L38.4,276.3L24.1,238.8L74.5,169.3L102.1,159.6L108.0,136.1L80.1,63.2L106.7,59.9L137.1,37.3L180.2,35.5L236.3,42.0L298.3,62.0L342.1,63.7L363.0,75.8L383.8,61.2L398.4,80.8L448.6,76.8L470.7,84.8L474.2,42.8L491.4,24.5L539.1,19.5Z"/>
+        <g class="ua-city" data-c="kyiv" style="--d:1.15s"><circle class="ua-ring" cx="468.9" cy="157.5"/><circle cx="468.9" cy="157.5"/><text x="488" y="167">Київ</text></g>
+        <g class="ua-city" data-c="lviv" style="--d:1.33s"><circle class="ua-ring" cx="108.0" cy="208.6"/><circle cx="108.0" cy="208.6"/><text x="128" y="218">Львів</text></g>
+        <g class="ua-city" data-c="dnipro" style="--d:1.51s"><circle class="ua-ring" cx="720.2" cy="323.5"/><circle cx="720.2" cy="323.5"/><text x="739" y="333">Дніпро</text></g>
+        <g class="ua-city" data-c="odesa" style="--d:1.69s"><circle class="ua-ring" cx="480.0" cy="488.9"/><circle cx="480.0" cy="488.9"/><text x="499" y="498">Одеса</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+<section class="stars wrap" id="stars">
+  <div class="stars-head">
+    <div class="reveal">
+      <p class="eyebrow">Зірки на ваше свято</p>
+      <h2 class="display">Кого ми можемо<br><em>вивести на сцену</em></h2>
+    </div>
+    <p class="stars-note reveal">Прямі контакти з артистами та їхнім менеджментом. Ми домовляємось, закриваємо райдер і виводимо на сцену вчасно — вам лишається слухати.</p>
+  </div>
+
+  <div class="gm-band wipe" aria-hidden="true"><img src="img/s/conf_17.jpg" alt="" loading="lazy"></div>
+
+  <div class="gm-stars">
+    <article class="gm-star a reveal">
+      <span class="gm-star-tag">Хедлайнер</span>
+      <h3>Оля Полякова</h3>
+      <p>Повноцінне шоу з балетом і живим звуком. Фінал вечора, після якого всі пишуть сторіс.</p>
+    </article>
+    <article class="gm-star b reveal">
+      <span class="gm-star-tag">Зірковий виконавець</span>
+      <h3>Vlad Darwin</h3>
+      <p>Сольна програма або сет під танці — залежно від того, який у вас вечір.</p>
+    </article>
+    <article class="gm-star c reveal">
+      <span class="gm-star-tag">Гурт</span>
+      <h3>СолоХа</h3>
+      <p>Піднімає зал за дві пісні. Перевірено на весіллях і корпоративах.</p>
+    </article>
+    <article class="gm-star d reveal">
+      <span class="gm-star-tag">А також</span>
+      <h3>Ведучі, кавер-гурти, DJ</h3>
+      <p>Вокалісти, шоу-балети, барабанщики, вогняні та повітряні номери — десятки імен під ваш формат і дату.</p>
+    </article>
+  </div>
+
+  <div class="gm-ask reveal">
+    <p>Напишіть, про кого саме йдеться — скажемо, чи вільна дата й що реально зробити під ваш вечір.</p>
+    <a class="ev-more-link" href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko <em>&rarr;</em></a>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="faq">
+  <div class="wrap">
+    <div class="rev-head">
+      <div class="reveal">
+        <p class="eyebrow">Питання</p>
+        <h2 class="display">Те, що питають<br><em>найчастіше</em></h2>
+      </div>
+      <p class="rev-note reveal">Коротко й без «залежить від багатьох факторів». Якщо вашого питання тут немає — напишіть, додамо.</p>
+    </div>
+    <ol class="svc-list gm-faq">
+      <li><details open><summary>Чи справді можна запросити зірку на невелике свято?</summary><p>Так. Усе залежить від дати, формату й того, наскільки короткий ланцюг між вами і артистом. У нас прямі контакти з виконавцями та їхнім менеджментом, тому ми одразу скажемо, кого реально запросити саме на вашу дату.</p></details></li>
+      <li><details><summary>Що входить у вашу роботу?</summary><p>Локація й підрядники, договори та дати, декор і флористика, техніка та сцена, кейтеринг, артисти й програма, координація дня від монтажу до вивозу. Ви приходите на готове.</p></details></li>
+      <li><details><summary>Хто спілкується з підрядниками?</summary><p>Ми. Домовляємось, тримаємо дати, закриваємо райдери й стежимо, щоб усі приїхали вчасно. Ви бачите кожну умову, але не витрачаєте на це свій час.</p></details></li>
+      <li><details><summary>Чи можна свою локацію або своїх підрядників?</summary><p>Так, і доплати за це немає. Якщо бачимо ризик — скажемо прямо та обґрунтуємо, але рішення за вами.</p></details></li>
+      <li><details><summary>А якщо буде дощ?</summary><p>Для події просто неба завжди закладений план Б — шатро або резервна локація. Він узгоджується заздалегідь, а не в день події по телефону.</p></details></li>
+      <li><details><summary>За скільки часу треба починати?</summary><p>Весілля — від чотирьох місяців, новорічний корпоратив — краще з вересня, приватна вечірка — від двох тижнів. Швидше теж беремо, але вибір локацій і артистів буде вужчим.</p></details></li>
+      <li><details><summary>Ви працюєте тільки в Києві?</summary><p>Київ — база, але виїжджаємо по всій Україні. Логістика, підрядники на місці й узгодження з локацією — це вже наша частина роботи.</p></details></li>
+      <li><details><summary>З чого почати?</summary><p>З короткої розмови: привід, дата, приблизна кількість гостей і те, що обовʼязково має бути. Далі ми повертаємось із планом під ваш формат.</p></details></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:30px">Заявка</p>
+        <h2 class="display">Розкажіть про подію<br>— і ми <em>порахуємо</em></h2>
+        <p class="contact-sub">Марина відповість у Telegram або подзвонить. Спершу коротка розмова, далі — план під ваш формат протягом трьох днів. Відповідаємо того ж дня.</p>
+        <p style="margin-top:34px"><button type="button" class="btn btn-light" data-book>Залишити заявку <span>→</span></button></p>
+      </div>
+      <div class="oval contact-oval reveal"><img src="img/marina3.jpg" alt="Марина Філіпенко" loading="lazy"></div>
+    </div>
+    <div class="links">
+      <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener"><span>Telegram</span><b>@marina_philipenko</b></a>
+      <a href="tel:+380674097350"><span>Телефон</span><b>+38 (067) 409-73-50</b></a>
+      <a href="https://wa.me/380674097350" target="_blank" rel="noopener"><span>WhatsApp</span><b>+38 (067) 409-73-50</b></a>
+      <a href="viber://chat?number=%2B380674097350"><span>Viber</span><b>+38 (067) 409-73-50</b></a>
+    </div>
+  </div>
+  <div class="footer-word" aria-hidden="true">Gravity Moments</div>
+  <div class="foot"><span>© 2026 Gravity Moments · організація подій</span><span>Київ — Львів — Одеса — Дніпро — вся Україна</span></div>
+</section>
+
+<script>
+// nav state
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+document.getElementById('burger').onclick=()=>document.body.classList.toggle('menu-open');
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.onclick=()=>document.body.classList.remove('menu-open'));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// city names <-> map dots
+(()=>{
+  const names=[...document.querySelectorAll('.city-names span[data-c]')],dots=[...document.querySelectorAll('.ua-city[data-c]')];
+  if(!names.length||!dots.length)return;
+  const pair=(a,b,on)=>{a.classList.toggle('hot',on);b.classList.toggle('hot',on)};
+  names.forEach(n=>{const d=dots.find(x=>x.dataset.c===n.dataset.c);if(!d)return;
+    n.addEventListener('mouseenter',()=>pair(n,d,true));
+    n.addEventListener('mouseleave',()=>pair(n,d,false));
+    d.addEventListener('mouseenter',()=>pair(n,d,true));
+    d.addEventListener('mouseleave',()=>pair(n,d,false));});
+})();
+
+// tabs
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===t.dataset.tab));
+});
+
+// hover thumbnail on event list
+const th=document.getElementById('evThumb'),thImg=th.querySelector('img');
+document.querySelectorAll('.ev').forEach(ev=>{
+  ev.addEventListener('mouseenter',()=>{thImg.src=ev.dataset.img;th.classList.add('on')});
+  ev.addEventListener('mouseleave',()=>th.classList.remove('on'));
+  ev.addEventListener('mousemove',e=>{th.style.left=e.clientX+'px';th.style.top=e.clientY+'px'});
+});
+
+// photo strip (duplicated for seamless loop)
+const photos=['table_01','arch_19','gala_06','candle_11','reception_17','dance_18','champ_16','ball_07','table_09','arch_02','stage_04','table_05','reception_07','birthday_13'];
+const strip=document.getElementById('strip');
+strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" alt="" loading="lazy"></figure>`).join('');
+
+
+
+// intro: real loading progress + flipbook, then the arch opens into the hero
+(()=>{
+  const L=document.getElementById('loader'),c=document.getElementById('count'),frames=[...L.querySelectorAll('.intro-frame img')];
+  const urls=[...frames.map(i=>i.src),L.querySelector('.intro-stage img').currentSrc||L.querySelector('.intro-stage img').src,'img/marina-face.jpg'];
+  let loaded=0,shown=0,fi=0,done=false;const t0=performance.now(),MIN=2200;
+  urls.forEach(u=>{const im=new Image();im.onload=im.onerror=()=>loaded++;im.src=u});
+  const flip=setInterval(()=>{frames[fi].classList.remove('on');fi=(fi+1)%frames.length;frames[fi].classList.add('on')},160);
+  const finish=()=>{if(done)return;done=true;clearInterval(flip);c.innerHTML='100<sup>%</sup>';L.style.setProperty('--pr','100%');
+    L.classList.add('final');
+    setTimeout(()=>{L.classList.add('open');document.body.classList.remove('is-loading')},260);
+    setTimeout(()=>{L.classList.add('gone')},1650);
+    setTimeout(()=>L.remove(),2300)};
+  (function tick(){
+    if(done)return;
+    const target=Math.min(loaded/urls.length,(performance.now()-t0)/MIN)*100;
+    shown+=(target-shown)*.12;const n=Math.min(100,Math.round(shown));
+    c.innerHTML=n+'<sup>%</sup>';L.querySelector('.intro-bar i').style.width=n+'%';
+    if(n>=100)finish();else requestAnimationFrame(tick);
+  })();
+  setTimeout(finish,4500);
+})();
+
+(()=>{
+  // manifesto: split into words that light up while scrolling
+  const man=document.getElementById('manifesto');
+  (function split(el){[...el.childNodes].forEach(n=>{
+    if(n.nodeType!==3){split(n);return}
+    const f=document.createDocumentFragment();
+    n.textContent.split(/(\s+)/).forEach(w=>{if(!w.trim()){f.append(w);return}const sp=document.createElement('span');sp.className='w';sp.textContent=w;f.append(sp)});
+    n.replaceWith(f);
+  })})(man);
+  const words=[...man.querySelectorAll('.w')];
+
+  const bride=document.getElementById('budget'),col=bride.querySelector('img'),steps=[...document.querySelectorAll('#brideSteps li')];
+  const show=document.getElementById('show'),track=document.getElementById('showTrack'),bar=document.getElementById('showBar'),num=document.getElementById('showNum');
+  const wide=()=>innerWidth>820;
+  const clamp=v=>Math.min(1,Math.max(0,v));
+  const sizeShow=()=>{show.style.setProperty('--show-h',wide()?(innerHeight+track.scrollWidth-innerWidth)+'px':'auto')};
+
+  function onScroll(){
+    const vh=innerHeight;
+    const r=man.getBoundingClientRect();
+    const k=Math.round(clamp((vh*.8-r.top)/(r.height+vh*.3))*words.length);
+    words.forEach((w,i)=>w.classList.toggle('on',i<k));
+
+    const bb=bride.getBoundingClientRect();
+    const bp=wide()?clamp(-bb.top/(bb.height-vh)*1.15):clamp((vh*.9-bb.top)/(vh*1.1));
+    col.style.setProperty('--r',(bp*100).toFixed(1));
+    steps.forEach((li,i)=>li.classList.toggle('on',bp>=i/steps.length*.85));
+
+    if(wide()){
+      const sr=show.getBoundingClientRect(),d=track.scrollWidth-innerWidth,sp=clamp(-sr.top/(sr.height-vh));
+      track.style.transform=`translate3d(${-sp*d}px,0,0)`;
+      bar.style.width=sp*100+'%';
+      num.textContent=String(Math.min(13,1+Math.floor(sp*13))).padStart(2,'0');
+    }
+  }
+  addEventListener('resize',()=>{sizeShow();onScroll()});
+  addEventListener('load',()=>{sizeShow();onScroll()});
+  addEventListener('scroll',onScroll,{passive:true});
+  sizeShow();onScroll();
+
+  // reels: autoplay muted when visible, one video with sound at a time
+  document.querySelectorAll('.phone').forEach(ph=>{
+    const v=ph.querySelector('video'),btn=ph.querySelector('.snd');
+    new IntersectionObserver(([e])=>{e.isIntersecting?v.play().catch(()=>{}):v.pause()},{threshold:.3}).observe(v);
+    btn.onclick=()=>{
+      document.querySelectorAll('.phone').forEach(o=>{if(o!==ph){o.querySelector('video').muted=true;o.querySelector('.snd').textContent='🔇'}});
+      v.muted=!v.muted;btn.textContent=v.muted?'🔇':'🔊';v.play();
+    };
+  });
+})();
+
+// ---------- effects ----------
+(()=>{
+  const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // smooth scroll (Lenis)
+  // (deferred CDN script is ready by DOMContentLoaded)
+  document.addEventListener('DOMContentLoaded',()=>{
+    if(!window.Lenis||reduce)return;
+    document.documentElement.style.scrollBehavior='auto';
+    const lenis=new Lenis({lerp:.09,smoothWheel:true});
+    const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();
+      document.body.classList.remove('menu-open');lenis.scrollTo(t,{duration:1.6})}));
+  });
+
+  // hero: mouse parallax + scroll drift; oval photos inner parallax
+  const hero=document.querySelector('.hero');
+  if(fine)hero.addEventListener('mousemove',e=>{
+    hero.style.setProperty('--mx',((e.clientX/innerWidth-.5)*2).toFixed(3));
+    hero.style.setProperty('--my',((e.clientY/innerHeight-.5)*2).toFixed(3))});
+  const ovals=[...document.querySelectorAll('.oval img')];
+  const onS=()=>{
+    hero.style.setProperty('--sp',Math.min(1,scrollY/innerHeight).toFixed(3));
+    ovals.forEach(im=>{const r=im.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+      im.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-.08).toFixed(1)+'px')});
+  };
+  addEventListener('scroll',onS,{passive:true});onS();
+
+  // custom cursor + magnetic buttons
+  if(fine){
+    const dot=document.getElementById('cursor'),ring=document.getElementById('ring');
+    let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y;
+    addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;dot.style.transform=`translate(${x}px,${y}px)`});
+    (function loop(){rx+=(x-rx)*.18;ry+=(y-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+    document.addEventListener('mouseover',e=>{
+      const v=e.target.closest('.card,.oval,.strip-track figure,.shots img,.bride-media');
+      const l=e.target.closest('a,button,summary,.ev');
+      ring.classList.toggle('view',!!v&&!l);ring.classList.toggle('link',!!l);
+    });
+    document.querySelectorAll('.nav-cta,.btn,.snd,.tab').forEach(b=>{
+      b.style.transition=(getComputedStyle(b).transition||'')+',translate .3s';
+      b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.translate=`${(e.clientX-r.left-r.width/2)*.25}px ${(e.clientY-r.top-r.height/2)*.35}px`});
+      b.addEventListener('mouseleave',()=>b.style.translate='0 0');
+    });
+  }
+
+  // stats count-up
+  const figs=[...document.querySelectorAll('.stat b')];
+  const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;so.unobserve(e.target);
+    const el=e.target,m=el.textContent.match(/^(\d+)(.*)$/);if(!m)return;
+    const to=+m[1],rest=m[2],i=figs.indexOf(el);
+    el.textContent='0'+rest;
+    setTimeout(()=>{
+      el.style.opacity='1';el.style.transform='none';
+      const t0=performance.now(),dur=1800;
+      const step=t=>{const k=Math.min(1,(t-t0)/dur);
+        el.textContent=Math.round(to*(k===1?1:1-Math.pow(2,-9*k)))+rest;
+        if(k<1)requestAnimationFrame(step);else el.textContent=to+rest};
+      requestAnimationFrame(step);
+      setTimeout(()=>{el.textContent=to+rest},dur+200);
+    },i*150);
+  }),{threshold:.6});
+  figs.forEach(b=>{b.style.transition='opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)';
+    b.style.opacity='.18';b.style.transform='translateY(16px)';so.observe(b)});
+})();
+
+// ---------- booking dialog -> WhatsApp with a ready message ----------
+(()=>{
+  const dlg=document.getElementById('bookDlg'),f=document.getElementById('book'),d=f.querySelector('[name=date]');
+  d.min=new Date().toISOString().slice(0,10);
+  const open=()=>{if(!dlg.open){dlg.showModal();document.body.style.overflow='hidden'}};
+  const close=()=>{dlg.close()};
+  dlg.addEventListener('close',()=>{document.body.style.overflow=''});
+  document.querySelectorAll('[data-book]').forEach(b=>b.addEventListener('click',open));
+  dlg.querySelector('[data-close]').addEventListener('click',close);
+  dlg.addEventListener('click',e=>{if(e.target===dlg)close()});
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const date=d.value?new Date(d.value+'T12:00').toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'}):'ще не визначена';
+    const name=f.querySelector('[name=name]').value.trim();
+    const msg=`Вітаю, Марино!${name?' Мене звати '+name+'.':''} Хочу порахувати подію.
+Подія: ${f.type.value}
+Дата: ${date}
+Гостей: ${f.guests.value}
+Формат роботи: ${f.svc.value}`;
+    window.open('https://wa.me/380674097350?text='+encodeURIComponent(msg),'_blank','noopener');
+  });
+
+  // floating CTA: after the hero, hidden near contacts
+  const fab=document.getElementById('fab'),contact=document.getElementById('contact');
+  const upd=()=>{fab.classList.toggle('on',scrollY>innerHeight*.8&&contact.getBoundingClientRect().top>innerHeight)};
+  addEventListener('scroll',upd,{passive:true});upd();
+
+  // reliable muted autoplay (iOS Low Power Mode, Instagram/Telegram in-app browsers)
+  const vids=[...document.querySelectorAll('.hero video')];
+  const kick=v=>{v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('muted','');v.setAttribute('playsinline','');const p=v.play();p&&p.catch(()=>{})};
+  vids.forEach(v=>{kick(v);v.addEventListener('loadeddata',()=>kick(v),{once:true})});
+  const wake=()=>{vids.forEach(kick);document.querySelectorAll('.phone video').forEach(v=>{const r=v.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){v.muted=true;v.play().catch(()=>{})}})};
+  ['touchstart','pointerdown','scroll','keydown'].forEach(ev=>addEventListener(ev,wake,{once:true,passive:true}));
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)vids.forEach(kick)});
+  document.querySelectorAll('.phone video').forEach(v=>{v.setAttribute('muted','');v.addEventListener('click',()=>v.paused?v.play():v.pause())});
+})();
+
+// ---------- showreel triptych, wipe reveals, lightbox ----------
+(()=>{
+  const clamp=v=>Math.min(1,Math.max(0,v)),lerp=(a,b,t)=>a+(b-a)*t,ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  const sec=document.getElementById('showreel'),stick=sec.querySelector('.reel3-stick'),panels=[...sec.querySelectorAll('.r3')];
+  const vids=panels.map(p=>p.querySelector('video'));
+  function layout(){
+    const vw=innerWidth,vh=innerHeight,r=sec.getBoundingClientRect();
+    const t=ease(clamp(-r.top/(r.height-vh)));
+    stick.style.setProperty('--p',t.toFixed(3));
+    const mob=vw<820;
+    const w=lerp(mob?.26*vw:Math.min(.17*vw,300),vw/3,t),h=lerp(mob?.36*vh:.5*vh,vh,t),g=lerp(mob?.03*vw:.022*vw,0,t),rad=lerp(w/2,0,t);
+    const y0=lerp(mob?.1*vh:.12*vh,0,t);
+    panels.forEach((p,i)=>{
+      const off=(i-1)*(w+g),dy=y0+(i===1?0:lerp(mob?.05*vh:.06*vh,0,t));
+      p.style.width=w+1+'px';p.style.height=h+'px';
+      p.style.borderRadius=`${rad}px ${rad}px ${lerp(6,0,t)}px ${lerp(6,0,t)}px`;
+      p.style.transform=`translate(calc(-50% + ${off}px),calc(-50% + ${dy}px))`;
+    });
+  }
+  addEventListener('scroll',layout,{passive:true});addEventListener('resize',layout);layout();
+  new IntersectionObserver(([e])=>vids.forEach(v=>{if(e.isIntersecting){v.muted=true;v.play().catch(()=>{})}else v.pause()}),{threshold:.05}).observe(sec);
+  ['touchstart','pointerdown'].forEach(ev=>addEventListener(ev,()=>{const r=sec.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)vids.forEach(v=>v.play().catch(()=>{}))},{once:true,passive:true}));
+
+  // curtain wipe on photos as they enter the viewport
+  const wo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');wo.unobserve(e.target)}}),{threshold:.2});
+  document.querySelectorAll('.wipe').forEach(el=>wo.observe(el));
+
+  // lightbox over every [data-lb] photo
+  const lb=document.getElementById('lb'),img=lb.querySelector('img'),cnt=lb.querySelector('.lb-count');
+  const all=[...document.querySelectorAll('[data-lb]')],list=[],seen=new Map();
+  all.forEach(el=>{const k=el.dataset.full||el.getAttribute('src');
+    if(seen.has(k)){el.dataset.lbRef=seen.get(k)}else{seen.set(k,list.length);el.dataset.lbRef=list.length;list.push(el)}});
+  let cur=0;
+  const show=i=>{cur=(i+list.length)%list.length;img.style.opacity=0;
+    const el=list[cur],src=el.dataset.full||el.currentSrc||el.src;
+    const n=new Image();n.onload=()=>{img.src=src;img.style.opacity=1};n.src=src;cnt.textContent=`${cur+1} / ${list.length}`};
+  const open=i=>{show(i);lb.classList.add('on');document.body.style.overflow='hidden'};
+  document.querySelectorAll('[data-open]').forEach(el=>{
+    const go=()=>open(+el.dataset.open);
+    el.addEventListener('click',go);
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+  });
+  const close=()=>{lb.classList.remove('on');document.body.style.overflow=''};
+  all.forEach(el=>el.addEventListener('click',()=>open(+el.dataset.lbRef)));
+  lb.querySelector('.lb-x').onclick=close;lb.querySelector('.lb-p').onclick=e=>{e.stopPropagation();show(cur-1)};lb.querySelector('.lb-n').onclick=e=>{e.stopPropagation();show(cur+1)};
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+  let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+  lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null});
+})();
+</script>
 </body>
 </html>

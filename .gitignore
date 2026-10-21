@@ -1,13 +1,10 @@
-# local tooling / editor
+# оригінали (сайт використовує оптимізовані копії з img/ та video/)
+/IMG_*.MOV
+/IMG_*.MP4
+/AQ*.mp4
+/photos/
+# службове
+/_*
 .claude/
-
-# OS cruft
-Thumbs.db
-desktop.ini
-.DS_Store
-
-# робоча тека з оригіналами фото (у репозиторій ідуть стиснені з assets/img)
-photos/
-
-# оригінали відео — GitHub відхиляє файли >100МБ
-/video/
+/цветовая палитра.jpg
+/шрифтовые пары на выбор.jpg
