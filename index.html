@@ -1117,11 +1117,11 @@ html.lit .bar{height:0}
 @media (prefers-reduced-motion:reduce){.bride-glass{transition:none}}
 
 /* ---- знак як SVG: колір успадковується, нічого не вантажиться ---- */
-.logo-mark{width:clamp(30px,2.9vw,40px);height:auto;flex:0 0 auto;border-radius:0;box-shadow:none;
+.logo-mark{width:clamp(34px,3.2vw,46px);height:clamp(34px,3.2vw,46px);flex:0 0 auto;border-radius:0;box-shadow:none;
   fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;
   overflow:visible;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .logo:hover .logo-mark{transform:rotate(-10deg) scale(1.05)}
-.intro-logo{width:clamp(54px,6.4vw,88px);height:auto;border-radius:0;box-shadow:none;
+.intro-logo{width:clamp(58px,6.8vw,94px);height:clamp(58px,6.8vw,94px);border-radius:0;box-shadow:none;
   fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
 .intro-logo circle{fill:#fff}
 
@@ -1138,6 +1138,51 @@ html.lit .bar{height:0}
 }
 /* ---- складки шторки трохи виразніші ---- */
 .bride-text::before{opacity:1;filter:contrast(1.12)}
+
+/* ============ ДРУГИЙ БЛОК: СИНЯ ШТОРА Й КЕЛИХ ============ */
+.promise{position:relative;isolation:isolate;overflow:hidden;color:#eef1fb;
+  background:#0a1026}
+.promise::before{
+  content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.055) 0px,rgba(255,255,255,.015) 16px,
+      rgba(0,0,0,.22) 43px,rgba(255,255,255,.03) 70px,rgba(255,255,255,.055) 98px),
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.028) 0px,rgba(0,0,0,.13) 35px,rgba(255,255,255,.017) 82px),
+    linear-gradient(180deg,#0c1330 0%,#131c44 46%,#080e24 100%)}
+.promise::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(104deg,transparent 30%,rgba(170,190,255,.11) 49%,transparent 67%);
+  background-size:280% 100%;animation:silkSheen 16s ease-in-out infinite}
+.promise .eyebrow{color:#9fb4f2}
+.promise .manifesto{color:#f2f5ff}
+.promise .manifesto em{color:#a9bcff}
+.promise .manifesto .w{opacity:.17}
+.promise .manifesto .w.on{opacity:1}
+.promise .orbit-note{color:rgba(238,241,251,.72)}
+.promise .chain{border-color:rgba(255,255,255,.14)}
+.promise .chain li{border-color:rgba(255,255,255,.14)}
+.promise .chain li:hover{background:rgba(255,255,255,.05)}
+.promise .chain-ic{stroke:#a9bcff}
+.promise .chain b{color:rgba(238,241,251,.8)}
+
+/* келих праворуч від тексту, проступає разом із блоком */
+.promise .bride-glass{position:absolute;right:-4%;top:50%;translate:0 -50%;
+  z-index:-1;width:min(38%,400px);pointer-events:none;
+  transform:translateY(50px) scale(1.06);
+  transition:opacity 1.9s cubic-bezier(.16,1,.3,1) .2s,transform 2.1s cubic-bezier(.16,1,.3,1) .2s}
+.promise .bride-glass.in{opacity:.95;transform:none}
+.promise .bride-glass img{width:100%;height:auto;display:block;mix-blend-mode:screen;
+  -webkit-mask-image:radial-gradient(ellipse 82% 78% at 52% 42%,#000 44%,rgba(0,0,0,.4) 72%,transparent 94%);
+          mask-image:radial-gradient(ellipse 82% 78% at 52% 42%,#000 44%,rgba(0,0,0,.4) 72%,transparent 94%)}
+/* щоб текст не заходив під келих на широкому екрані */
+@media(min-width:1000px){.promise .manifesto,.promise .orbit-note{max-width:min(1250px,66%)}}
+@media(max-width:999px){
+  .promise .bride-glass{position:relative;right:auto;top:auto;translate:none;
+    width:min(74%,320px);margin:26px auto 0 0;opacity:.9;transform:none}
+  .promise .bride-glass img{mix-blend-mode:normal}
+}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%234a6ddf' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M43.6 24.2A15 15 0 1 0 43.6 43.8H47.4V34.6H37.6'/%3E%3Cellipse cx='32' cy='34' rx='28.5' ry='10.5' transform='rotate(-21 32 34)' stroke-width='2.4'/%3E%3C/g%3E%3Ccircle cx='58.4' cy='23.6' r='3.4' fill='%234a6ddf'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="img/favicon.png">
@@ -1161,7 +1206,7 @@ html.lit .bar{height:0}
   <div class="intro-stage"><video src="video/hero.mp4" poster="video/hero.jpg" muted loop playsinline autoplay preload="auto"></video></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="intro-mark">
-    <svg class="intro-logo" viewBox="0 0 64 64" role="img" aria-label="Gravity Moments"><use href="#gi-gm"/></svg>
+    <svg class="intro-logo" role="img" aria-label="Gravity Moments"><use href="#gi-gm"/></svg>
     <span class="intro-name"><b>Gravity</b><i>Moments</i></span>
     <span class="intro-rule"></span>
     <small>організація подій</small>
@@ -1170,7 +1215,7 @@ html.lit .bar{height:0}
 
 <!-- NAV -->
 <header class="nav" id="nav">
-  <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#gi-gm"/></svg><span class="logo-type"><b>Gravity</b><i>Moments</i><small>організація подій</small></span></a>
+  <a href="#top" class="logo"><svg class="logo-mark" aria-hidden="true"><use href="#gi-gm"/></svg><span class="logo-type"><b>Gravity</b><i>Moments</i><small>організація подій</small></span></a>
   <nav class="nav-links">
     <a href="#show">Свята</a>
     <a href="#stars">Зірки</a>
@@ -1200,7 +1245,7 @@ html.lit .bar{height:0}
 <symbol id="gi-decor" viewBox="0 0 24 24"><circle cx="12" cy="8.6" r="2.3"/><path d="M12 6.3c0-2 1-3.3 2.6-3.3S17 4.6 15.5 6.6"/><path d="M12 6.3c0-2-1-3.3-2.6-3.3S7 4.6 8.5 6.6"/><path d="M14.3 8.6c2 0 3.3 1 3.3 2.6s-1.9 2.4-3.4.9"/><path d="M9.7 8.6c-2 0-3.3 1-3.3 2.6s1.9 2.4 3.4.9"/><path d="M12 10.9V21"/></symbol>
 <symbol id="gi-light" viewBox="0 0 24 24"><path d="M12 2.6v3.2"/><path d="M5.2 5.2l2.2 2.2M18.8 5.2l-2.2 2.2"/><circle cx="12" cy="11.4" r="3.4"/><path d="M8.6 21.4l3.4-6.6 3.4 6.6z"/></symbol>
 <symbol id="gi-cater" viewBox="0 0 24 24"><path d="M7 2.8h10l-1.3 6.1a3.9 3.9 0 0 1-7.4 0z"/><path d="M12 14.6V21"/><path d="M8.4 21h7.2"/></symbol>
-<symbol id="gi-gm" viewBox="0 0 64 64"><path d="M43.6 24.2A15 15 0 1 0 43.6 43.8H47.4V34.6H37.6"/><ellipse cx="32" cy="34" rx="28.5" ry="10.5" transform="rotate(-21 32 34)" stroke-width="1.7"/><circle cx="58.4" cy="23.6" r="3.1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="gi-gm" viewBox="-7 -7 78 78"><path d="M43.6 24.2A15 15 0 1 0 43.6 43.8H47.4V34.6H37.6"/><ellipse cx="32" cy="34" rx="28.5" ry="10.5" transform="rotate(-21 32 34)" stroke-width="1.7"/><circle cx="58.4" cy="23.6" r="3.1" fill="currentColor" stroke="none"/></symbol>
 <symbol id="gi-brief" viewBox="0 0 24 24"><path d="M8.6 3.4h6.8l4 4v13.2H4.6V3.4z" fill="none"/><path d="M15.4 3.4v4h4"/><path d="M8.4 12.4h7.2M8.4 16h5"/></symbol>
 <symbol id="gi-plan" viewBox="0 0 24 24"><rect x="3.2" y="4.6" width="17.6" height="16.4" rx="2.4"/><path d="M3.2 9.6h17.6"/><path d="M8 2.6v4M16 2.6v4"/><path d="M8.2 14.2l2 2 4-4.2"/></symbol>
 <symbol id="gi-deal" viewBox="0 0 24 24"><path d="M3 11.4l4-4.4 4.6 1.6 1.8-1.4 4 1 3.6 3.2"/><path d="M12.4 17.6l-2 1.8-2-2.2-2-1.8"/><path d="M21 11.8l-4.4 5-3.4-3"/></symbol>
@@ -1256,6 +1301,7 @@ html.lit .bar{height:0}
 <section class="promise wrap" id="how">
   <p class="eyebrow">Як ми працюємо</p>
   <p class="manifesto" id="manifesto">Ми беремо подію під ключ — <em>щоб ви просто святкували.</em></p>
+  <span class="bride-glass reveal" aria-hidden="true"><img src="img/glass.jpg" alt="" decoding="async" width="900" height="1192"></span>
 
   <ul class="chain reveal">
     <li><svg class="chain-ic" aria-hidden="true"><use href="#gi-venue"/></svg><b>Площадки</b></li>
@@ -1327,7 +1373,6 @@ html.lit .bar{height:0}
         <li><b>06</b>Консультація по ресторану й локації: звук, підʼїзд, що входить в оренду</li>
       </ol>
       <p class="gm-note">Хочете подивитись, як це виглядає на практиці — <a href="#show">гортайте кадри з подій</a>.</p>
-      <span class="bride-glass reveal" aria-hidden="true"><img src="img/glass.jpg" alt="" loading="lazy" width="900" height="1192"></span>
     </div>
   </div>
 </section>
@@ -1816,13 +1861,14 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
   lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null});
 })();
 
-// келих на шторі. Сторінка крутиться через Lenis, і подія scroll у вікні
-// приходить не завжди, а IntersectionObserver на вузьких екранах цей
-// елемент пропускав. Тому просто дивимось на рамку в кадрах анімації —
-// цикл сам зупиняється, щойно келих проступив.
-(()=>{const g=document.querySelector('.bride-glass');if(!g)return;
-  const tick=()=>{const r=g.getBoundingClientRect();
-    if(r.height&&r.top<innerHeight*.92&&r.bottom>0){g.classList.add('in');return}
+// келих на шторі. Стежимо за самим блоком, а не за картинкою: вона
+// ліниво вантажиться, і поки її немає, висота дорівнює нулю — через це
+// поява інколи не спрацьовувала. Lenis не завжди шле подію scroll,
+// тому дивимось у кадрах анімації; цикл сам спиняється.
+(()=>{const g=document.querySelector('.bride-glass');
+  const sec=g&&g.closest('section');if(!g||!sec)return;
+  const tick=()=>{const r=sec.getBoundingClientRect();
+    if(r.top<innerHeight*.75&&r.bottom>0){g.classList.add('in');return}
     requestAnimationFrame(tick)};
   requestAnimationFrame(tick);
 })();
