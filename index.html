@@ -7,7 +7,7 @@
 <meta name="description" content="Gravity Moments — організація весіль, корпоративів, ювілеїв і приватних подій під ключ. Прямі контакти з артистами, площадками й підрядниками. Київ і вся Україна.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;0,400;0,500&family=Manrope:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#f5f7fd;
@@ -29,7 +29,7 @@
   --seam:40%;
   --pad:clamp(16px,4vw,56px);
   --sans:"Manrope",system-ui,sans-serif;
-  --serif:"Playfair Display",Georgia,serif;
+  --serif:"Cormorant Garamond",Georgia,serif;
   --italic:"Cormorant Garamond",Georgia,serif;
   --script:"Pinyon Script",cursive;
 }
@@ -174,8 +174,9 @@ section{position:relative}
 .wrap{padding-left:var(--pad);padding-right:var(--pad)}
 .eyebrow{color:var(--blue);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:12px}
 .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
-.display{font-family:var(--sans);font-weight:200;font-size:clamp(44px,7.4vw,112px);line-height:.98;letter-spacing:-.035em}
-.display em{font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:-.01em;color:var(--blue)}
+.display{font-family:var(--serif);font-weight:300;font-size:clamp(40px,7vw,104px);line-height:1.04;
+  text-transform:uppercase;letter-spacing:.055em}
+.display em{font-style:italic;font-weight:300;text-transform:none;letter-spacing:.005em;color:var(--blue)}
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 .oval{border-radius:999px;overflow:hidden}
@@ -232,7 +233,8 @@ section{position:relative}
 .diff{display:grid;grid-template-columns:1fr minmax(240px,340px) 1fr;gap:clamp(24px,4vw,70px);align-items:center;padding:clamp(20px,3vw,40px) var(--pad) clamp(90px,10vw,150px)}
 .diff-oval{aspect-ratio:1/1.55;margin-top:-6vw;position:relative;z-index:1}
 .diff-oval img{object-position:50% 25%}
-.diff h2{font-weight:300;font-size:clamp(24px,2.4vw,34px);line-height:1.15;letter-spacing:-.02em;margin-bottom:22px}
+.diff h2{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2vw,27px);line-height:1.25;
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:22px}
 .diff p{font-size:14px;line-height:1.7;color:rgba(244,242,238,.72)}
 .diff .tag{display:inline-block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--line-inv);border-radius:30px;padding:7px 14px;margin-bottom:22px;color:var(--paper)}
 .btn{display:inline-flex;align-items:center;gap:18px;padding:18px 26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;transition:.3s}
@@ -352,7 +354,7 @@ section{position:relative}
 /* ---------- CONTACT ---------- */
 .contact{background:radial-gradient(85% 65% at 100% 0%, rgba(227,183,212,.5), transparent 62%),radial-gradient(70% 60% at 0% 100%, rgba(223,127,166,.3), transparent 60%),linear-gradient(158deg,#4a6ddf 0%,#22317a 62%,#0e1536 100%);color:#fff;overflow:hidden;padding:clamp(90px,11vw,160px) 0 0}
 .contact-grid{display:grid;grid-template-columns:7fr 5fr;gap:50px;align-items:end}
-.contact .display{font-size:clamp(50px,8.4vw,132px)}
+.contact .display{font-size:clamp(44px,7.8vw,120px)}
 .contact-sub{margin-top:28px;font-size:15px;color:rgba(244,242,238,.7);max-width:420px}
 .contact-oval{aspect-ratio:1/1.35;max-width:380px;justify-self:end;width:100%}
 .contact-oval img{object-position:50% 16%}
@@ -426,8 +428,8 @@ section{position:relative}
 .bride-media .stamp{position:absolute;left:24px;bottom:24px;z-index:2;font-size:10px;letter-spacing:.3em;text-transform:uppercase;background:rgba(13,13,13,.55);backdrop-filter:blur(6px);padding:9px 14px;border-radius:30px}
 .bride-text{display:flex;flex-direction:column;justify-content:center;padding:100px clamp(24px,6vw,110px)}
 .bride-text .eyebrow{color:rgba(244,242,238,.6);margin-bottom:30px}
-.bride-text h2{font-weight:200;font-size:clamp(44px,5.6vw,92px);line-height:.98;letter-spacing:-.035em}
-.bride-text h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:#a9bcff}
+.bride-text h2{font-family:var(--serif);font-weight:300;text-transform:uppercase;letter-spacing:.055em;line-height:1.04;font-size:clamp(38px,5vw,84px)}
+.bride-text h2 em{font-style:italic;font-weight:300;text-transform:none;letter-spacing:.005em;color:#a9bcff}
 .bride-text>p{margin-top:30px;font-size:15px;line-height:1.7;color:rgba(244,242,238,.72);max-width:470px}
 .bride-steps{list-style:none;margin-top:36px;border-top:1px solid var(--line-inv);max-width:470px}
 .bride-steps li{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line-inv);font-size:14px;opacity:.3;transition:opacity .5s}
@@ -438,7 +440,7 @@ section{position:relative}
 .show{height:var(--show-h,420vh);background:var(--paper)}
 .show-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:40px}
 .show-head{display:flex;justify-content:space-between;align-items:end;gap:30px;padding:0 var(--pad);margin-bottom:30px}
-.show-head .display{font-size:clamp(40px,5.2vw,84px)}
+.show-head .display{font-size:clamp(34px,4.8vw,76px)}
 .show-count{font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;white-space:nowrap}
 .show-track{display:flex;gap:clamp(14px,1.6vw,26px);padding:0 var(--pad);width:max-content;will-change:transform}
 .card{position:relative;flex:none;height:min(58svh,620px);overflow:hidden;color:#fff}
@@ -459,8 +461,8 @@ section{position:relative}
 .reels{background:var(--sky);color:var(--ink);padding:clamp(100px,12vw,180px) 0 clamp(120px,12vw,190px);overflow:hidden}
 .reels-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:clamp(44px,5vw,80px)}
 .reels-head .eyebrow{margin-bottom:26px}
-.reels h2{font-weight:200;font-size:clamp(34px,6vw,96px);line-height:.98;letter-spacing:-.035em}
-.reels h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--blue)}
+.reels h2{font-family:var(--serif);font-weight:300;text-transform:uppercase;letter-spacing:.055em;line-height:1.04;font-size:clamp(30px,5.4vw,88px)}
+.reels h2 em{font-style:italic;font-weight:300;text-transform:none;letter-spacing:.005em;color:var(--blue)}
 .reels-note{color:var(--ink-2);font-size:15px;line-height:1.7;max-width:390px}
 .reels-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,56px);justify-items:center;align-items:start}
 .phone{position:relative;width:100%;max-width:340px;aspect-ratio:9/16;border-radius:34px;overflow:hidden;border:6px solid #fff;box-shadow:0 40px 80px -30px rgba(11,16,38,.55);background:#111}
@@ -545,8 +547,8 @@ body::after{content:"";position:fixed;inset:-50%;z-index:95;pointer-events:none;
 .reel3-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .reel3-head{position:absolute;left:0;right:0;top:clamp(90px,13svh,130px);text-align:center;z-index:2;opacity:calc(1 - var(--p,0) * 2.4);translate:0 calc(var(--p,0) * -60px);pointer-events:none}
 .reel3-head .eyebrow{justify-content:center;margin-bottom:18px}
-.reel3-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(44px,5.6vw,96px);line-height:.98;letter-spacing:-.01em}
-.reel3-head h2 em{font-style:italic;color:var(--blue)}
+.reel3-head h2{font-family:var(--serif);font-weight:300;text-transform:uppercase;letter-spacing:.055em;line-height:1.04;font-size:clamp(38px,5vw,88px)}
+.reel3-head h2 em{font-style:italic;font-weight:300;text-transform:none;letter-spacing:.005em;color:var(--blue)}
 .r3{position:absolute;top:50%;left:50%;overflow:hidden;background:#dfe6f8;will-change:width,height,transform,border-radius;box-shadow:0 40px 90px -40px rgba(11,16,38,.55)}
 .r3 video{width:100%;height:100%;object-fit:cover;display:block}
 .reel3-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:34px;z-index:3;display:flex;justify-content:space-between;align-items:end;color:#fff;opacity:calc((var(--p,0) - .72) * 4);pointer-events:none}
@@ -631,9 +633,9 @@ section.wrap{padding-left:var(--pad);padding-right:var(--pad)}
   .diff-oval{grid-column:1/-1;grid-row:1;max-width:300px;justify-self:center;margin-top:-4vw}
 }
 @media (max-width:700px){
-  .display{font-size:clamp(30px,8.6vw,52px);letter-spacing:-.025em}
-  .contact .display{font-size:clamp(34px,9.6vw,58px)}
-  .reels h2{font-size:clamp(30px,8.6vw,52px)}
+  .display{font-size:clamp(27px,7.8vw,48px);letter-spacing:.04em}
+  .contact .display{font-size:clamp(30px,8.6vw,52px)}
+  .reels h2{font-size:clamp(26px,7.4vw,46px);letter-spacing:.04em}
   .city-names{font-size:clamp(27px,7.6vw,44px)}
   .stat b{font-size:clamp(34px,9.4vw,54px)}
   .ev-card-cap b{font-size:clamp(23px,6.2vw,34px)}
@@ -1282,7 +1284,7 @@ html.lit .bar{height:0}
 @keyframes firGlow{0%,100%{opacity:1}50%{opacity:.4}}
 @media (prefers-reduced-motion:reduce){.ny-fir .f-b circle,.ny-fir .f-st{animation:none}}
 .ny .eyebrow{color:#e0c48a}
-.ny .display{color:#f4f6ff;font-size:clamp(32px,5.2vw,74px)}
+.ny .display{color:#f4f6ff;font-size:clamp(30px,5vw,70px)}
 .ny .display em{color:#e0c48a}
 .ny-lead{margin-top:clamp(18px,2vw,26px);max-width:54ch;font-size:clamp(15px,1.5vw,17px);
   line-height:1.72;color:rgba(238,241,251,.8)}
@@ -1312,7 +1314,8 @@ html.lit .bar{height:0}
 .ny-grid li{background:#080d20;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:9px;
   min-width:0;transition:background .45s}
 .ny-grid li:hover{background:#0c1430}
-.ny-grid b{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.7vw,21px);line-height:1.22;color:#f4f6ff}
+.ny-grid b{font-family:var(--serif);font-weight:500;font-size:clamp(14px,1.35vw,16.5px);line-height:1.3;
+  text-transform:uppercase;letter-spacing:.13em;color:#f4f6ff}
 .ny-grid span{font-size:13.5px;line-height:1.64;color:rgba(238,241,251,.7)}
 
 .ny-foot{display:flex;flex-wrap:wrap;gap:20px 34px;align-items:center;justify-content:space-between}
