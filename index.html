@@ -1192,9 +1192,74 @@ html.lit .bar{height:0}
 @media (prefers-reduced-motion:reduce){
   .promise::before{transition:none;opacity:1;transform:none}
 }
+
+/* ============ НОВОРІЧНИЙ КОРПОРАТИВ ============
+   Ніч і шампань у сайта вже є — новорічність даємо гірляндою вгорі,
+   теплим золотом в акцентах і дрібними вогниками, що повільно падають. */
+.ny{position:relative;isolation:isolate;overflow:hidden;background:#070b1c;color:#eef1fb;
+  padding-block:clamp(72px,8vw,120px) clamp(64px,7vw,104px)}
+.ny::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(62% 48% at 80% 8%,rgba(217,178,106,.17),transparent 68%),
+    radial-gradient(52% 44% at 12% 92%,rgba(74,109,223,.20),transparent 72%),
+    linear-gradient(180deg,#070b1c 0%,#0b1230 52%,#060a18 100%)}
+.ny-snow{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.75}
+/* гірлянда: нитка з вогниками вздовж верхнього краю */
+.ny-garland{position:absolute;left:0;right:0;top:0;height:3px;z-index:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(217,178,106,.95) 0 7px, rgba(217,178,106,0) 7px 46px),
+    linear-gradient(90deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  filter:drop-shadow(0 0 7px rgba(217,178,106,.75));
+  animation:garland 3.6s ease-in-out infinite}
+@keyframes garland{0%,100%{opacity:.6}50%{opacity:1}}
+.ny-in{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(34px,4vw,54px)}
+
+.ny-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,56px);align-items:start}
+.ny .eyebrow{color:#e0c48a}
+.ny .display{color:#f4f6ff;font-size:clamp(32px,5.2vw,74px)}
+.ny .display em{color:#e0c48a}
+.ny-lead{margin-top:clamp(18px,2vw,26px);max-width:54ch;font-size:clamp(15px,1.5vw,17px);
+  line-height:1.72;color:rgba(238,241,251,.8)}
+
+.ny-count{display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:clamp(16px,2vw,24px) clamp(20px,2.4vw,32px);
+  border:1px solid rgba(217,178,106,.42);border-radius:4px;
+  background:rgba(217,178,106,.07);white-space:nowrap}
+.ny-count-lbl{font:600 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#cdb482}
+.ny-count b{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.4vw,76px);line-height:1.04;
+  color:#f0dcb0;font-variant-numeric:tabular-nums}
+.ny-count-sub{font:500 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#cdb482}
+
+.ny-grid{list-style:none;margin:0;padding:0;display:grid;gap:1px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+.ny-grid li{background:#080d20;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:9px;
+  min-width:0;transition:background .45s}
+.ny-grid li:hover{background:#0c1430}
+.ny-grid b{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.7vw,21px);line-height:1.22;color:#f4f6ff}
+.ny-grid span{font-size:13.5px;line-height:1.64;color:rgba(238,241,251,.7)}
+
+.ny-foot{display:flex;flex-wrap:wrap;gap:20px 34px;align-items:center;justify-content:space-between}
+.ny-dates{display:flex;align-items:flex-start;gap:11px;max-width:58ch;
+  font-size:14.5px;line-height:1.65;color:rgba(238,241,251,.82)}
+.ny-dates i{width:7px;height:7px;border-radius:50%;flex:0 0 auto;margin-top:7px;background:#e0c48a;
+  box-shadow:0 0 11px rgba(224,196,138,.9);animation:garland 2.4s ease-in-out infinite}
+.ny-cta{flex:0 0 auto}
+
+@media(max-width:1000px){.ny-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){
+  .ny-head{grid-template-columns:1fr}
+  .ny-count{align-self:flex-start;flex-direction:row;align-items:baseline;gap:10px}
+  .ny-count b{font-size:40px}
+}
+@media(max-width:560px){.ny-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  .ny-garland,.ny-dates i{animation:none}
+  .ny-snow{display:none}
+}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%234a6ddf' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M43.6 24.2A15 15 0 1 0 43.6 43.8H47.4V34.6H37.6'/%3E%3Cellipse cx='32' cy='34' rx='28.5' ry='10.5' transform='rotate(-21 32 34)' stroke-width='2.4'/%3E%3C/g%3E%3Ccircle cx='58.4' cy='23.6' r='3.4' fill='%234a6ddf'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="canonical" href="https://ouranus4.github.io/gravity-moments/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
@@ -1228,7 +1293,7 @@ html.lit .bar{height:0}
   <nav class="nav-links">
     <a href="#show">Свята</a>
     <a href="#stars">Зірки</a>
-    <a href="#showreel">Відео</a>
+    <a href="#ny">Корпоративи</a>
     <a href="#how">Як працюємо</a>
     <a href="#about">Про Марину</a>
     <a href="#contact">Контакти</a>
@@ -1269,16 +1334,16 @@ html.lit .bar{height:0}
   <span class="bar bar-t" aria-hidden="true"></span>
   <span class="bar bar-b" aria-hidden="true"></span>
   <div class="hero-center">
-    <p class="hero-eyebrow"><i></i>Gravity Moments · Київ і вся Україна</p>
+    <p class="hero-eyebrow"><i></i>Новорічні корпоративи 2026/27 · Київ і вся Україна</p>
     <h1><span class="line"><span>Створюємо моменти,</span></span><span class="line"><span><em>які памʼятають усе життя</em></span></span></h1>
-    <p class="hero-lead">Весілля, новорічні корпоративи, ювілеї та приватні вечірки під ключ. Прямі контакти з артистами й підрядниками — тому зірка на вашому святі реальніша, ніж здається.</p>
+    <p class="hero-lead">Новорічні корпоративи під ключ: площадка, кейтеринг, програма, артисти й усі документи для бухгалтерії. Весілля, ювілеї та приватні вечірки — теж ми.</p>
     <div class="hero-cta">
       <button type="button" class="btn-primary" data-book><svg class="btn-ic" aria-hidden="true"><use href="#gi-cal"/></svg>Забронювати дату <span>→</span></button>
       <a href="#contact" class="btn-ghost">Безкоштовна консультація</a>
     </div>
     <p class="hero-sign"><b>Марина Філіпенко</b><span>засновниця Gravity Moments · MedOrion Awards · Business GRAVITY</span></p>
   </div>
-  <div class="hero-foot"><span>Весілля · Новорічні корпоративи · Ювілеї · Відкриття</span><span class="scroll-hint">Гортайте <i></i></span></div>
+  <div class="hero-foot"><span>Новорічні корпоративи · Весілля · Ювілеї · Відкриття</span><span class="scroll-hint">Гортайте <i></i></span></div>
 </section>
 <button type="button" class="fab" id="fab" data-book><svg class="fab-ic" aria-hidden="true"><use href="#gi-cal"/></svg>Забронювати дату заходу</button>
 
@@ -1293,18 +1358,53 @@ html.lit .bar{height:0}
     <p class="dlg-sub">Кілька деталей — і Марина повернеться з планом під ваш формат. Відповідаємо того ж дня.</p>
     <form class="dlg-form" id="book">
       <label><span>Подія</span>
-        <select name="type"><option>Весілля</option><option>Корпоратив</option><option>Ювілей</option><option>День народження</option><option>Заручини</option><option>Гендер-паті</option><option>Відкриття бутика</option><option>Приватна вечірка</option></select></label>
+        <select name="type"><option>Новорічний корпоратив</option><option>Корпоратив</option><option>Весілля</option><option>Ювілей</option><option>День народження</option><option>Заручини</option><option>Гендер-паті</option><option>Відкриття бутика</option><option>Приватна вечірка</option></select></label>
       <label><span>Дата</span><input type="date" name="date"></label>
       <label><span>Гостей</span>
-        <select name="guests"><option>до 30</option><option selected>30–80</option><option>80–150</option><option>150+</option></select></label>
+        <select name="guests"><option>до 30</option><option selected>30–80</option><option>80–150</option><option>150–300</option><option>300+</option></select></label>
       <label><span>Послуга</span>
         <select name="svc"><option>Повна організація під ключ</option><option>Координація дня</option><option>Тільки підрядники й координація</option><option>Ще не знаю</option></select></label>
+      <label><span>Компанія</span><input type="text" name="company" placeholder="Назва або «приватна подія»"></label>
       <label class="full"><span>Ваше ім’я</span><input type="text" name="name" autocomplete="given-name" placeholder="Як до вас звертатися"></label>
       <button type="submit">Надіслати заявку <span>→</span></button>
     </form>
     <p class="dlg-alt">Або напишіть напряму: <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener">@marina_philipenko</a> · <a href="tel:+380674097350">+38 (067) 409-73-50</a></p>
   </div>
 </dialog>
+
+<!-- НОВОРІЧНІ КОРПОРАТИВИ -->
+<section class="ny" id="ny">
+  <canvas class="ny-snow" id="nySnow" aria-hidden="true"></canvas>
+  <span class="ny-garland" aria-hidden="true"></span>
+  <div class="wrap ny-in">
+    <div class="ny-head">
+      <div>
+        <p class="eyebrow reveal">Сезон 2026/27</p>
+        <h2 class="display reveal">Новорічний корпоратив<br><em>під ключ</em></h2>
+        <p class="ny-lead reveal">Ви надсилаєте кількість людей і бюджет — ми повертаємось із площадкою, програмою та кошторисом, який прийме бухгалтерія. Решту закриваємо самі.</p>
+      </div>
+      <div class="ny-count reveal" id="nyCount">
+        <span class="ny-count-lbl">До Нового року</span>
+        <b><span id="nyDays">—</span></b>
+        <span class="ny-count-sub" id="nyDaysWord">днів</span>
+      </div>
+    </div>
+
+    <ul class="ny-grid">
+      <li class="reveal"><b>Площадка на вашу кількість</b><span>Ресторан, лофт або заміський комплекс під 30, 150 чи 400 людей. Перевіряємо звук, підʼїзд і що саме входить в оренду.</span></li>
+      <li class="reveal"><b>Документи й безготівка</b><span>Договір, рахунок, акт. Працюємо з ФОП і ТОВ. Кошторис по рядках — у вигляді, який не доведеться переписувати для бухгалтерії.</span></li>
+      <li class="reveal"><b>Програма під компанію</b><span>Ведучий говорить про вашу команду, а не загальні тости. Нагородження співробітників, підсумки року, інтерактив замість конкурсів.</span></li>
+      <li class="reveal"><b>Артисти й шоу</b><span>Від кавер-гурту до хедлайнера. Гонорар платите артисту напряму, без нашої націнки — ми домовляємось і закриваємо райдер.</span></li>
+      <li class="reveal"><b>Таймінг робочого дня</b><span>Коли люди виходять з офісу, коли фуршет, коли офіційна частина, коли трансфер додому. Розписано по годинах заздалегідь.</span></li>
+      <li class="reveal"><b>Координація на місці</b><span>Весь вечір поруч людина, яка вирішує питання. Керівництву не треба нічого контролювати — воно теж гість.</span></li>
+    </ul>
+
+    <div class="ny-foot reveal">
+      <p class="ny-dates"><i aria-hidden="true"></i>На грудень лишились окремі будні дати. Корпоративи на січень–лютий беремо спокійно — і це помітно дешевше.</p>
+      <button type="button" class="btn-primary ny-cta" data-book>Порахувати корпоратив <span>&rarr;</span></button>
+    </div>
+  </div>
+</section>
 
 <!-- PROMISE -->
 <section class="promise wrap" id="how">
@@ -1442,20 +1542,6 @@ html.lit .bar{height:0}
 <!-- GALLERY: photos + events -->
 
 <!-- REELS -->
-<section class="reels wrap" id="reels">
-  <div class="reels-head">
-    <div class="reveal">
-      <p class="eyebrow">Артисти на подіях</p>
-      <h2>Ті, кого ми<br><em>виводимо на сцену</em></h2>
-    </div>
-    <p class="reels-note reveal">Гонорар ви платите артисту напряму, без нашої націнки. Наша частина — домовитись, закрити райдер і вивести його на сцену вчасно. Увімкніть звук 🔊</p>
-  </div>
-  <div class="reels-row">
-    <div class="phone reveal"><span class="lbl">Vlad Darwin</span><video src="video/darwin.mp4" poster="video/darwin.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
-    <div class="phone low reveal"><span class="lbl">Оля Полякова</span><video src="video/polyakova.mp4" poster="video/polyakova.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
-    <div class="phone reveal"><span class="lbl">Шоу-програма</span><video src="video/soloha2.mp4" poster="video/soloha2.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
-  </div>
-</section>
 
 <!-- SERVICES -->
 <!-- constructor removed -->
@@ -1624,6 +1710,15 @@ document.querySelectorAll('#mobileMenu a').forEach(a=>a.onclick=()=>document.bod
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Спостерігач пропускав частину елементів — зокрема всі фото в овалах,
+// і вони лишались невидимі назавжди. Дублюємо перевіркою рамки.
+(()=>{const sel='.reveal:not(.in),.wipe:not(.in)';
+  const sweep=()=>{const vh=innerHeight;
+    document.querySelectorAll(sel).forEach(el=>{const r=el.getBoundingClientRect();
+      if(r.height&&r.top<vh*.92&&r.bottom>0)el.classList.add('in')})};
+  addEventListener('scroll',sweep,{passive:true});addEventListener('resize',sweep,{passive:true});
+  const tick=()=>{sweep();if(document.querySelector(sel))requestAnimationFrame(tick)};
+  requestAnimationFrame(tick);})();
 
 // city names <-> map dots
 (()=>{
@@ -1795,7 +1890,7 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
     const date=d.value?new Date(d.value+'T12:00').toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'}):'ще не визначена';
     const name=f.querySelector('[name=name]').value.trim();
     const msg=`Вітаю, Марино!${name?' Мене звати '+name+'.':''} Хочу порахувати подію.
-Подія: ${f.type.value}
+Подія: ${f.type.value}\nКомпанія: ${f.company.value.trim()||'—'}
 Дата: ${date}
 Гостей: ${f.guests.value}
 Формат роботи: ${f.svc.value}`;
@@ -1877,6 +1972,48 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
     if(r.top<innerHeight*.8&&r.bottom>0){sec.classList.add('shown');return}
     requestAnimationFrame(tick)};
   requestAnimationFrame(tick);
+})();
+
+// ── новорічний блок: лічильник днів і вогники, що падають ──
+(()=>{
+  const el=document.getElementById('nyDays'),word=document.getElementById('nyDaysWord');
+  if(el){
+    const now=new Date();
+    // найближче 1 січня
+    const ny=new Date(now.getFullYear()+(now.getMonth()===11&&now.getDate()>31?1:0),11,31,23,59,59);
+    const target=now>ny?new Date(now.getFullYear()+1,11,31,23,59,59):ny;
+    const d=Math.max(0,Math.ceil((target-now)/86400000));
+    el.textContent=d;
+    const t=d%100, o=d%10;
+    word.textContent=(t>=11&&t<=14)?'днів':(o===1?'день':(o>=2&&o<=4?'дні':'днів'));
+  }
+  const c=document.getElementById('nySnow');
+  if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const ctx=c.getContext('2d');let w=0,h=0,parts=[],raf=0,live=false;
+  const make=()=>{const n=Math.round(Math.min(70,w/22));
+    parts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,
+      r:Math.random()*1.7+.5,s:Math.random()*.22+.06,d:Math.random()*Math.PI*2,
+      a:Math.random()*.5+.25}))};
+  const size=()=>{const r=c.getBoundingClientRect();if(!r.width||!r.height)return false;
+    const dpr=Math.min(devicePixelRatio||1,1.5);
+    w=r.width;h=r.height;c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);make();return true};
+  const draw=()=>{raf=requestAnimationFrame(draw);
+    if(!w&&!size())return;
+    ctx.clearRect(0,0,w,h);
+    for(const p of parts){
+      p.y+=p.s;p.d+=.006;p.x+=Math.sin(p.d)*.22;
+      if(p.y>h+4){p.y=-4;p.x=Math.random()*w}
+      ctx.globalAlpha=p.a;ctx.fillStyle='#e8d3a4';
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();
+    }
+    ctx.globalAlpha=1};
+  const play=()=>{if(!raf&&live&&!document.hidden)draw()};
+  const stop=()=>{if(raf){cancelAnimationFrame(raf);raf=0}};
+  size();
+  new IntersectionObserver(([e])=>{live=e.isIntersecting;live?play():stop()},{threshold:0}).observe(c);
+  document.addEventListener('visibilitychange',()=>document.hidden?stop():play());
+  addEventListener('resize',()=>{w=0});
 })();
 </script>
 </body>
