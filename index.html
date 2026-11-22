@@ -1004,7 +1004,7 @@ body.is-loading{overflow:hidden}
   transition:opacity .95s cubic-bezier(.4,0,.2,1),visibility .95s}
 .intro.gone{opacity:0;visibility:hidden;pointer-events:none}
 .intro .intro-stage{position:absolute;inset:0;opacity:.38;clip-path:none}
-.intro .intro-stage video{width:100%;height:100%;object-fit:cover;display:block;
+.intro .intro-stage video,.intro .intro-stage img{width:100%;height:100%;object-fit:cover;display:block;
   transform:scale(1.14);animation:introPush 7s cubic-bezier(.22,.6,.3,1) forwards}
 @keyframes introPush{to{transform:scale(1)}}
 .intro::after{content:"";position:absolute;inset:0;pointer-events:none;
@@ -1050,7 +1050,7 @@ html.lit .bar{height:0}
 @keyframes heroDrift{to{transform:scale(1)}}
 
 @media (prefers-reduced-motion:reduce){
-  .intro .intro-stage video,.intro-name,.intro-rule,.intro-mark small,.grain,.hero-bg video{animation:none}
+  .intro .intro-stage video,.intro .intro-stage img,.intro-name,.intro-rule,.intro-mark small,.grain,.hero-bg video{animation:none}
   .intro-name{opacity:1;filter:none;transform:none}
   .intro-rule{width:min(300px,58vw)}
   .intro-mark small{opacity:1}
@@ -1145,7 +1145,7 @@ html.lit .bar{height:0}
 .promise{position:relative;isolation:isolate;overflow:hidden;color:#eef1fb;background:#080c1e}
 .promise::before{
   content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
-  background:url("img/glass.jpg") no-repeat right -2% center/auto 100%;
+  background:url("img/glass.webp") no-repeat right -2% center/auto 100%;
   opacity:0;transform:scale(1.06);
   transition:opacity 2s cubic-bezier(.16,1,.3,1) .15s,transform 2.4s cubic-bezier(.16,1,.3,1) .15s}
 .promise.shown::before{opacity:1;transform:none}
@@ -1267,7 +1267,7 @@ html.lit .bar{height:0}
 <meta property="og:title" content="Gravity Moments — організація подій під ключ">
 <meta property="og:description" content="Організація весіль, корпоративів, ювілеїв і приватних подій під ключ. Прямі контакти з артистами, площадками й підрядниками. Київ і вся Україна.">
 <meta property="og:url" content="https://ouranus4.github.io/gravity-moments/">
-<meta property="og:image" content="https://ouranus4.github.io/gravity-moments/img/s/px_lw_23.jpg">
+<meta property="og:image" content="https://ouranus4.github.io/gravity-moments/img/s/px_lw_23.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#4e8ece">
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
@@ -1277,7 +1277,7 @@ html.lit .bar{height:0}
 <div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"><span>Дивитись</span></div>
 
 <div class="intro" id="loader" aria-hidden="true">
-  <div class="intro-stage"><video src="video/hero.mp4" poster="video/hero.jpg" muted loop playsinline autoplay preload="auto"></video></div>
+  <div class="intro-stage"><img src="video/hero.webp" alt="" fetchpriority="high"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="intro-mark">
     <svg class="intro-logo" role="img" aria-label="Gravity Moments"><use href="#gi-gm"/></svg>
@@ -1327,7 +1327,7 @@ html.lit .bar{height:0}
 <symbol id="gi-host" viewBox="0 0 24 24"><path d="M12 2.8l2.7 5.6 6.2.8-4.5 4.3 1.1 6.1L12 16.8 6.5 19.6l1.1-6.1L3.1 9.2l6.2-.8z"/></symbol>
 </defs></svg>
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><video src="video/hero.mp4" poster="video/hero.jpg" muted loop playsinline autoplay preload="auto"></video></div>
+  <div class="hero-bg" aria-hidden="true"><video src="video/hero.mp4" poster="video/hero.webp" muted loop playsinline autoplay preload="auto"></video></div>
   <div class="hero-veil"></div>
   <span class="grain" aria-hidden="true"></span>
   <span class="vig" aria-hidden="true"></span>
@@ -1350,7 +1350,7 @@ html.lit .bar{height:0}
 <div class="lb" id="lb" aria-hidden="true"><img alt=""><button class="lb-x" aria-label="Закрити">×</button><button class="lb-p" aria-label="Попереднє">←</button><button class="lb-n" aria-label="Наступне">→</button><div class="lb-count"></div></div>
 
 <dialog class="dlg" id="bookDlg" aria-labelledby="dlgTitle">
-  <div class="dlg-img"><img src="img/s/table_06.jpg" alt="" loading="lazy"></div>
+  <div class="dlg-img"><img src="img/s/table_06.webp" alt="" loading="lazy"></div>
   <div class="dlg-body">
     <button type="button" class="dlg-close" data-close aria-label="Закрити">×</button>
     <p class="eyebrow">Заявка</p>
@@ -1433,8 +1433,8 @@ html.lit .bar{height:0}
     <p class="reels-note reveal">Зняте на реальних подіях. Натисніть на кадр, щоб зупинити, або на динамік — щоб почути зал.</p>
   </div>
   <div class="reels-row two">
-    <div class="phone reveal"><span class="lbl">Гала-вечеря</span><video src="video/gala.mp4" poster="video/gala.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
-    <div class="phone low reveal"><span class="lbl">Артист і зал</span><video src="video/gravity.mp4" poster="video/gravity.jpg" muted loop playsinline preload="metadata"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone reveal"><span class="lbl">Гала-вечеря</span><video src="video/gala.mp4" poster="video/gala.webp" muted loop playsinline preload="none"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
+    <div class="phone low reveal"><span class="lbl">Артист і зал</span><video src="video/gravity.mp4" poster="video/gravity.webp" muted loop playsinline preload="none"></video><button class="snd" aria-label="Увімкнути звук">🔇</button></div>
   </div>
 </section>
 
@@ -1447,7 +1447,7 @@ html.lit .bar{height:0}
 
   <div class="about-grid">
     <div>
-      <div class="oval about-oval reveal"><img src="img/marina-half.jpg" alt="Марина Філіпенко" loading="lazy"></div>
+      <div class="oval about-oval reveal"><img src="img/marina-half.webp" alt="Марина Філіпенко" loading="lazy"></div>
       <div class="sign"><span>Founder<br>&amp; event producer</span><span>Марина Філіпенко</span></div>
     </div>
     <div class="about-text reveal">
@@ -1456,7 +1456,7 @@ html.lit .bar{height:0}
       <p>І чому ми кажемо прямо, що вийде, а що ні: коли плануєш повертатись до цих підрядників наступного року, обіцяти неможливе немає жодного сенсу.</p>
       <p class="principle">«Я беру на себе все, що між ідеєю і першим тостом. Вам лишається прийти красивою і святкувати».</p>
     </div>
-    <div class="oval about-small reveal"><img src="img/marina3.jpg" alt="Марина Філіпенко з нагородою Business GRAVITY Awards" loading="lazy"></div>
+    <div class="oval about-small reveal"><img src="img/marina3.webp" alt="Марина Філіпенко з нагородою Business GRAVITY Awards" loading="lazy"></div>
   </div>
 
 </section>
@@ -1465,7 +1465,7 @@ html.lit .bar{height:0}
 <section class="bride" id="budget">
   <div class="bride-stick">
     <div class="bride-media">
-      <video src="video/turnkey.mp4" poster="video/turnkey.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Підготовка залу до події"></video>
+      <video data-src="video/turnkey.mp4" poster="video/turnkey.webp" muted loop playsinline autoplay preload="none" aria-label="Підготовка залу до події"></video>
       <span class="stamp">Під ключ</span>
     </div>
     <div class="bride-text">
@@ -1491,22 +1491,18 @@ html.lit .bar{height:0}
   <div class="show-stick">
     <div class="show-head">
       <h2 class="display">Як це<br><em>виглядає</em></h2>
-      <span class="show-count"><span id="showNum">01</span> / 13</span>
+      <span class="show-count"><span id="showNum">01</span> / <span id="showTot">09</span></span>
     </div>
     <div class="show-track" id="showTrack">
-      <figure class="card t wipe"><img data-lb src="img/s/lux_14.jpg" alt="Люстри й свічки" loading="lazy"><figcaption><span>Локація</span><b>Люстри й свічки</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_lw_19.jpg" alt="Золоті канделябри" loading="lazy"><figcaption><span>Декор</span><b>Золоті канделябри</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/conf_17.webp" alt="Золоте конфеті над залом" loading="lazy"><figcaption><span>Фінал</span><b>Золоте конфеті</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/lux_14.webp" alt="Люстри й свічки" loading="lazy"><figcaption><span>Локація</span><b>Люстри й свічки</b></figcaption></figure>
       <figure class="card quote-card"><p>Найкраще свято — те, на якому господар <em>жодного разу</em> не подивився на годинник.</p><small>Gravity Moments</small></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_wd_11.jpg" alt="Красива сервіровка" loading="lazy"><figcaption><span>Сервіровка</span><b>Красива сервіровка</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_lw_23.jpg" alt="Зала у квітах" loading="lazy"><figcaption><span>Зал</span><b>Зала у квітах</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_wd_17.jpg" alt="Квітуче дерево над столами" loading="lazy"><figcaption><span>Флористика</span><b>Квітуче дерево над столами</b></figcaption></figure>
-      <figure class="card w wipe"><img data-lb src="img/s/px_lw_17.jpg" alt="Довгий стіл під квітами" loading="lazy"><figcaption><span>Банкет</span><b>Довгий стіл під квітами</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_gr_14.jpg" alt="Рожевий дим" loading="lazy"><figcaption><span>Гендер-паті</span><b>Рожевий дим</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/conf_17.jpg" alt="Золоте конфеті" loading="lazy"><figcaption><span>Фінал</span><b>Золоте конфеті</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_gr_24.jpg" alt="Арка з кульок" loading="lazy"><figcaption><span>Гендер-паті</span><b>Арка з кульок</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_lw_26.jpg" alt="Велика флористика" loading="lazy"><figcaption><span>Декор</span><b>Велика флористика</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_ny_12.jpg" alt="Святкова сервіровка" loading="lazy"><figcaption><span>Новий рік</span><b>Святкова сервіровка</b></figcaption></figure>
-      <figure class="card t wipe"><img data-lb src="img/s/px_wd_13.jpg" alt="Бальна зала" loading="lazy"><figcaption><span>Локація</span><b>Бальна зала</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/stage_11.webp" alt="Сцена у світлі" loading="lazy"><figcaption><span>Сцена</span><b>Світло і звук</b></figcaption></figure>
+      <figure class="card w wipe"><img data-lb src="img/s/px_lw_17.webp" alt="Довгий банкетний стіл" loading="lazy"><figcaption><span>Банкет</span><b>Довгий стіл на всю компанію</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_ny_12.webp" alt="Новорічна сервіровка" loading="lazy"><figcaption><span>Новий рік</span><b>Святкова сервіровка</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_wd_11.webp" alt="Сервіровка столу" loading="lazy"><figcaption><span>Деталі</span><b>Сервіровка до дрібниці</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_lw_19.webp" alt="Золоті канделябри" loading="lazy"><figcaption><span>Декор</span><b>Золоті канделябри</b></figcaption></figure>
+      <figure class="card t wipe"><img data-lb src="img/s/px_wd_13.webp" alt="Бальна зала" loading="lazy"><figcaption><span>Локація</span><b>Бальна зала</b></figcaption></figure>
     </div>
     <div class="show-bar"><i id="showBar"></i></div>
   </div>
@@ -1524,7 +1520,7 @@ html.lit .bar{height:0}
       <p style="margin-top:16px">Ми спілкуємось з артистами та їхнім менеджментом напряму. Без ланцюга посередників, кожен із яких хоче свою частку. Тому зірка на вашому святі — питання не стільки грошей, скільки правильних контактів і вчасно заброньованої дати.</p>
       <a href="#stars" class="btn btn-light">Подивитись, кого можемо запросити <span>→</span></a>
     </div>
-    <div class="oval diff-oval reveal"><img src="img/s/stage_11.jpg" alt="Виступ артиста на сцені" loading="lazy"></div>
+    <div class="oval diff-oval reveal"><img src="img/s/stage_11.webp" alt="Виступ артиста на сцені" loading="lazy"></div>
     <div class="reveal">
       <span class="tag">Як ми працюємо</span>
       <h2>Напряму — з площадками, декором і артистами</h2>
@@ -1582,15 +1578,15 @@ html.lit .bar{height:0}
     <p class="stars-note reveal">Прямі контакти з артистами та їхнім менеджментом. Ми домовляємось, закриваємо райдер і виводимо на сцену вчасно — вам лишається слухати. Нижче — напрями, з якими працюємо найчастіше.</p>
   </div>
 
-  <div class="gm-band wipe" aria-hidden="true"><img src="img/s/conf_17.jpg" alt="" loading="lazy"></div>
+  <div class="gm-band wipe" aria-hidden="true"><img src="img/s/conf_17.webp" alt="" loading="lazy"></div>
 
   <div class="gm-circles">
       <article class="gc reveal">
-        <span class="gc-pic"><img src="img/star_polyakova.jpg" alt="Оля Полякова" loading="lazy"><i aria-hidden="true">ОП</i></span>
+        <span class="gc-pic"><img src="img/star_polyakova.webp" alt="Оля Полякова" loading="lazy"><i aria-hidden="true">ОП</i></span>
         <b>Оля Полякова</b><span class="gc-tag">Хедлайнер</span>
       </article>
       <article class="gc reveal">
-        <span class="gc-pic"><img src="img/star_darwin.jpg" alt="Vlad Darwin" loading="lazy"><i aria-hidden="true">VD</i></span>
+        <span class="gc-pic"><img src="img/star_darwin.webp" alt="Vlad Darwin" loading="lazy"><i aria-hidden="true">VD</i></span>
         <b>Vlad Darwin</b><span class="gc-tag">Зірковий виконавець</span>
       </article>
       <article class="gc reveal">
@@ -1660,7 +1656,7 @@ html.lit .bar{height:0}
         <p class="contact-sub">Марина відповість у Telegram або подзвонить. Спершу коротка розмова, далі — план під ваш формат протягом трьох днів. Відповідаємо того ж дня.</p>
         <p style="margin-top:34px"><button type="button" class="btn btn-light" data-book>Залишити заявку <span>→</span></button></p>
       </div>
-      <div class="oval contact-oval reveal"><img src="img/marina-new.jpg" alt="Марина Філіпенко, засновниця Gravity Moments" loading="lazy"></div>
+      <div class="oval contact-oval reveal"><img src="img/marina-new.webp" alt="Марина Філіпенко, засновниця Gravity Moments" loading="lazy"></div>
     </div>
     <div class="links">
       <a href="https://t.me/marina_philipenko" target="_blank" rel="noopener"><span>Telegram</span><b>@marina_philipenko</b></a>
@@ -1748,9 +1744,9 @@ document.querySelectorAll('.ev').forEach(ev=>{
 });
 
 // photo strip (duplicated for seamless loop)
-const photos=['table_01','arch_19','gala_06','candle_11','reception_17','dance_18','champ_16','ball_07','table_09','arch_02','stage_04','table_05','reception_07','birthday_13'];
+const photos=['conf_17','table_01','stage_04','gala_06','px_ny_12','arch_19','champ_16','ball_07','table_09','stage_11','candle_11','table_05','reception_07','lux_14'];
 const strip=document.getElementById('strip');
-strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" alt="" loading="lazy"></figure>`).join('');
+strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/t_${p}.webp" alt="" loading="lazy"></figure>`).join('');
 
 
 
@@ -1771,6 +1767,8 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
   const show=document.getElementById('show'),track=document.getElementById('showTrack'),bar=document.getElementById('showBar'),num=document.getElementById('showNum');
   const wide=()=>innerWidth>820;
   const clamp=v=>Math.min(1,Math.max(0,v));
+  const nCards=track.children.length;
+  {const tot=document.getElementById('showTot');if(tot)tot.textContent=String(nCards).padStart(2,'0');}
   const sizeShow=()=>{show.style.setProperty('--show-h',wide()?(innerHeight+track.scrollWidth-innerWidth)+'px':'auto')};
 
   function onScroll(){
@@ -1788,7 +1786,7 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
       const sr=show.getBoundingClientRect(),d=track.scrollWidth-innerWidth,sp=clamp(-sr.top/(sr.height-vh));
       track.style.transform=`translate3d(${-sp*d}px,0,0)`;
       bar.style.width=sp*100+'%';
-      num.textContent=String(Math.min(13,1+Math.floor(sp*13))).padStart(2,'0');
+      num.textContent=String(Math.min(nCards,1+Math.floor(sp*nCards))).padStart(2,'0');
     }
   }
   addEventListener('resize',()=>{sizeShow();onScroll()});
@@ -1910,6 +1908,17 @@ strip.innerHTML=[...photos,...photos].map(p=>`<figure><img src="img/s/${p}.jpg" 
   ['touchstart','pointerdown','scroll','keydown'].forEach(ev=>addEventListener(ev,wake,{once:true,passive:true}));
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)vids.forEach(kick)});
   document.querySelectorAll('.phone video').forEach(v=>{v.setAttribute('muted','');v.addEventListener('click',()=>v.paused?v.play():v.pause())});
+
+  // videos below the fold: file is requested only when the block comes close
+  const lazyVids=[...document.querySelectorAll('video[data-src]')];
+  if(lazyVids.length){
+    const vio=new IntersectionObserver(es=>es.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const v=e.target;vio.unobserve(v);
+      v.src=v.dataset.src;delete v.dataset.src;v.load();kick(v);
+    }),{rootMargin:'600px 0px'});
+    lazyVids.forEach(v=>vio.observe(v));
+  }
 })();
 
 // ---------- showreel triptych, wipe reveals, lightbox ----------
