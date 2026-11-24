@@ -1811,15 +1811,6 @@ html.lit .bar{height:0}
 // intro: real loading progress, then the arch opens into the hero
 (()=>{
   const L=document.getElementById('loader');if(!L)return;
-  // другий раз за сеанс заставку не показуємо — людина вже її бачила
-  let seen=false;
-  try{seen=sessionStorage.getItem('gm_intro')==='1';sessionStorage.setItem('gm_intro','1')}catch(e){}
-  if(seen){
-    L.remove();document.body.classList.remove('is-loading');
-    document.documentElement.classList.add('lit');
-    requestAnimationFrame(()=>document.querySelectorAll('.bar').forEach(b=>b.style.height='0px'));
-    return;
-  }
   const mark=L.querySelector('.intro-mark');
   const root=document.documentElement;
   // напис тримається на екрані рівно стільки, щоб його встигли прочитати,
@@ -1864,7 +1855,12 @@ html.lit .bar{height:0}
     },FADE*.65);
     setTimeout(()=>L.remove(),FADE+900);
   };
-  // підстраховка: якщо відео не запустилось або зависло — не тримаємо людину
+  // якщо відео заблоковане (режим енергозбереження) — не тримаємо людину
+  // перед застиглим кадром, виходимо раніше
+  setTimeout(()=>{
+    if(fired||!vid)return;
+    if(vid.paused&&vid.currentTime<0.15)run();
+  },1900);
   const start=()=>setTimeout(run,Math.max(0,HOLD-(performance.now()-t0)));
   if(document.readyState==='complete')start();else addEventListener('load',start);
   setTimeout(run,7000);
