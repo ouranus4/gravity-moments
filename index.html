@@ -310,6 +310,8 @@ section{position:relative}
 .stars{padding:clamp(70px,8vw,120px) 0 clamp(20px,3vw,40px)}
 .stars-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,54px)}
 .stars-note{max-width:360px;font-size:14px;color:var(--ink-2)}
+.stars-more{margin:clamp(28px,3vw,44px) auto 0;max-width:62ch;text-align:center;
+  font-size:14px;line-height:1.7;color:var(--muted)}
 .stars-list{list-style:none;columns:3;column-gap:clamp(24px,4vw,70px)}
 .stars-list li{break-inside:avoid;display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.1vw,30px);line-height:1.2;transition:color .3s,padding-left .3s}
 .stars-list li:hover{color:var(--blue);padding-left:8px}
@@ -1670,50 +1672,42 @@ html.lit .bar{height:0}
 <section class="stars wrap" id="stars">
   <div class="stars-head">
     <div class="reveal">
-      <p class="eyebrow">Зірки на ваше свято</p>
-      <h2 class="display">Кого ми можемо<br><em>вивести на сцену</em></h2>
+      <p class="eyebrow">Артисти</p>
+      <h2 class="display">З ким ми<br><em>вже працювали</em></h2>
     </div>
-    <p class="stars-note reveal">Прямі контакти з артистами та їхнім менеджментом. Ми домовляємось, закриваємо райдер і виводимо на сцену вчасно — вам лишається слухати. Нижче — напрями, з якими працюємо найчастіше.</p>
+    <p class="stars-note reveal">Це не каталог — це люди, які вже виходили на наші майданчики. Домовляємось напряму з артистом і його менеджментом, закриваємо райдер і виводимо на сцену вчасно. Гонорар ви платите артисту, без нашої націнки.</p>
   </div>
 
   <div class="gm-band wipe" aria-hidden="true"><img src="img/s/conf_17.webp" alt="" loading="lazy"></div>
 
   <div class="gm-circles">
       <article class="gc reveal">
-        <span class="gc-pic"><img src="img/star_polyakova.webp" alt="Оля Полякова" loading="lazy"><i aria-hidden="true">ОП</i></span>
+        <span class="gc-pic"><img src="img/st/polyakova.webp" alt="Оля Полякова" loading="lazy"><i aria-hidden="true">ОП</i></span>
         <b>Оля Полякова</b><span class="gc-tag">Хедлайнер</span>
       </article>
       <article class="gc reveal">
-        <span class="gc-pic"><img src="img/star_darwin.webp" alt="Vlad Darwin" loading="lazy"><i aria-hidden="true">VD</i></span>
+        <span class="gc-pic"><img src="img/st/horbunov.webp" alt="Юрій Горбунов" loading="lazy"><i aria-hidden="true">ЮГ</i></span>
+        <b>Юрій Горбунов</b><span class="gc-tag">Ведучий</span>
+      </article>
+      <article class="gc reveal">
+        <span class="gc-pic"><img src="img/st/sumska.webp" alt="Ольга Сумська" loading="lazy"><i aria-hidden="true">ОС</i></span>
+        <b>Ольга Сумська</b><span class="gc-tag">Акторка</span>
+      </article>
+      <article class="gc reveal">
+        <span class="gc-pic"><img src="img/st/darwin.webp" alt="Vlad Darwin" loading="lazy"><i aria-hidden="true">VD</i></span>
         <b>Vlad Darwin</b><span class="gc-tag">Зірковий виконавець</span>
       </article>
       <article class="gc reveal">
-        <span class="gc-pic"><i aria-hidden="true">СХ</i></span>
+        <span class="gc-pic"><img src="img/st/solokha.webp" alt="СолоХа" loading="lazy"><i aria-hidden="true">С</i></span>
         <b>СолоХа</b><span class="gc-tag">Гурт</span>
       </article>
       <article class="gc reveal">
-        <span class="gc-pic"><i aria-hidden="true">ВД</i></span>
-        <b>Ведучі</b><span class="gc-tag">Церемонія і вечір</span>
-      </article>
-      <article class="gc reveal">
-        <span class="gc-pic"><i aria-hidden="true">КГ</i></span>
-        <b>Кавер-гурти</b><span class="gc-tag">Живий звук</span>
-      </article>
-      <article class="gc reveal">
-        <span class="gc-pic"><i aria-hidden="true">DJ</i></span>
-        <b>DJ</b><span class="gc-tag">Танцювальна частина</span>
-      </article>
-      <article class="gc reveal">
-        <span class="gc-pic"><i aria-hidden="true">ШБ</i></span>
-        <b>Шоу-балет</b><span class="gc-tag">Номери і фінал</span>
-      </article>
-      <article class="gc reveal">
-        <span class="gc-pic"><i aria-hidden="true">БР</i></span>
-        <b>Барабанщики</b><span class="gc-tag">Вихід і кульмінація</span>
+        <span class="gc-pic"><img src="img/st/dobrydnieva.webp" alt="Добриднєва" loading="lazy"><i aria-hidden="true">Д</i></span>
+        <b>Добриднєва</b><span class="gc-tag">Співачка</span>
       </article>
   </div>
 
-  <p class="gm-credit">Фото артистів: Stefan Brending / 2eight (CC BY-SA 3.0 DE), JTs (CC BY-SA 4.0), Вікісховище.</p>
+  <p class="stars-more reveal">А ще під формат вечора добираємо ведучих, кавер-гурти, DJ, шоу-балет і барабанщиків — з тих, з ким працюємо постійно.</p>
 
   <div class="gm-ask reveal">
     <p>Напишіть, про кого саме йдеться — скажемо, чи вільна дата й що реально зробити під ваш вечір.</p>
