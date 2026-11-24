@@ -901,8 +901,8 @@ body{font-weight:300;letter-spacing:.005em}
   .hero-bg{position:relative;width:100%;height:74svh;min-height:440px;translate:none;
     -webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
   .hero-veil{position:absolute;top:0;width:100%;height:74svh;min-height:440px}
-  .hero-center{position:relative;top:auto;translate:none;width:auto;left:auto;right:auto;
-    padding:10px var(--pad) 0;text-align:left;align-items:flex-start;opacity:1}
+  .hero-center{position:relative;z-index:3;top:auto;translate:none;width:auto;left:auto;right:auto;
+    margin-top:-11svh;padding:10px var(--pad) 0;text-align:left;align-items:flex-start;opacity:1}
   .hero-cta{align-items:stretch;flex-direction:column;width:100%;max-width:360px}
   .hero-foot{position:relative;left:auto;right:auto;bottom:auto;padding:24px var(--pad) 0;justify-content:space-between}
   .hero-foot span:first-child{display:none}
@@ -1105,7 +1105,7 @@ body.is-loading{overflow:hidden}
 /* ---- знак на першому екрані, поверх келиха ---- */
 .hero-crest{position:absolute;inset:0;z-index:2;display:none;flex-direction:column;
   align-items:center;justify-content:center;gap:clamp(10px,2.4vw,16px);
-  pointer-events:none;text-align:center;padding:0 24px 13%}
+  pointer-events:none;text-align:center;padding:9% 24px 0}
 @media(max-width:820px){.hero-crest{display:flex}}
 .hero-crest .hero-crest-logo{width:clamp(54px,15vw,74px);height:auto;aspect-ratio:1;object-fit:contain;
   filter:drop-shadow(0 14px 34px rgba(0,0,0,.65));opacity:0;animation:none}
@@ -1472,7 +1472,7 @@ html.lit .bar{height:0}
   <span class="bar bar-t" aria-hidden="true"></span>
   <span class="bar bar-b" aria-hidden="true"></span>
   <div class="hero-center">
-    <p class="hero-eyebrow"><i></i>Новорічні корпоративи 2026/27 · Київ і вся Україна</p>
+    <p class="hero-eyebrow"><i></i>Новорічні корпоративи 2026/27 · Київ</p>
     <h1><span class="line"><span>Створюємо моменти,</span></span><span class="line"><span><em>які памʼятають усе життя</em></span></span></h1>
     <p class="hero-lead">Новорічні корпоративи під ключ: площадка, кейтеринг, програма, артисти й усі документи для бухгалтерії. Весілля, ювілеї та приватні вечірки — теж ми.</p>
     <div class="hero-cta">
