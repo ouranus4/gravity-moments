@@ -1019,17 +1019,21 @@ body.is-loading{overflow:hidden}
 }
 
 /* ============ КІНОШНИЙ ВХІД ============ */
-.intro{position:fixed;inset:0;z-index:100;background:#04060e;display:grid;place-items:center;overflow:hidden;
+.intro{position:fixed;inset:0;z-index:100;background:#04060e;display:grid;place-items:end center;overflow:hidden;
   transition:opacity .95s cubic-bezier(.4,0,.2,1),visibility .95s}
 .intro.gone{opacity:0;visibility:hidden;pointer-events:none}
-.intro .intro-stage{position:absolute;inset:0;opacity:.38;clip-path:none}
-.intro .intro-stage video,.intro .intro-stage img{width:100%;height:100%;object-fit:cover;display:block;
+.intro .intro-stage{position:absolute;inset:0;opacity:1;clip-path:none}
+.intro .intro-stage img{width:100%;height:100%;object-fit:cover;display:block;
   transform:scale(1.14);animation:introPush 7s cubic-bezier(.22,.6,.3,1) forwards}
 @keyframes introPush{to{transform:scale(1)}}
+.intro .intro-stage video{width:100%;height:100%;object-fit:cover;display:block;
+  transform:none;animation:none}
+@media (orientation:landscape){.intro .intro-stage video{object-fit:contain}}
 .intro::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 46%,transparent 28%,rgba(4,6,14,.78) 96%)}
+  background:linear-gradient(180deg,rgba(4,6,14,.35) 0%,transparent 22%,transparent 46%,rgba(4,6,14,.72) 82%,rgba(4,6,14,.95) 100%)}
 
-.intro-mark{position:relative;z-index:2;text-align:center;color:#fff;padding:0 24px}
+.intro-mark{position:relative;z-index:2;text-align:center;color:#fff;
+  padding:0 24px clamp(34px,7vh,78px)}
 .intro-name{display:block;opacity:0;filter:blur(9px);transform:translateY(16px);
   animation:markIn 1.9s cubic-bezier(.16,1,.3,1) .35s forwards}
 .intro-name b{font-family:var(--serif);font-weight:400;font-size:clamp(40px,8.4vw,112px);
@@ -1177,7 +1181,7 @@ html.lit .bar{height:0}
 .logo-mark{width:clamp(36px,3.4vw,46px);height:auto;flex:0 0 auto;
   transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .logo:hover .logo-mark{transform:rotate(-6deg) scale(1.05)}
-.intro-logo{display:block;width:clamp(78px,8.4vw,124px);height:auto;
+.intro-logo{display:block;width:clamp(60px,6.4vw,92px);height:auto;
   margin:0 auto clamp(20px,2.6vw,34px)}
 
 /* ---- келих видно й на телефоні ---- */
@@ -1357,11 +1361,10 @@ html.lit .bar{height:0}
 <div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"><span>Дивитись</span></div>
 
 <div class="intro" id="loader" aria-hidden="true">
-  <div class="intro-stage"><img src="video/glass.webp" alt="" fetchpriority="high"></div>
+  <div class="intro-stage"><video id="introVid" src="video/tree.mp4" poster="video/tree.webp" muted playsinline preload="auto" aria-hidden="true"></video></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="intro-snow" id="introSnow" aria-hidden="true"></div>
   <div class="intro-mark">
-    <svg class="ny-tree" viewBox="0 0 120 152" aria-hidden="true"><g class="lines"><path pathLength="1" d="M60 12 L38 56 L82 56 Z"/><path pathLength="1" d="M60 40 L28 94 L92 94 Z"/><path pathLength="1" d="M60 74 L18 128 L102 128 Z"/><path pathLength="1" d="M54 128 L54 139 L66 139 L66 128"/><path pathLength="1" d="M36 143 L84 143"/></g><g class="swags"><path pathLength="1" d="M40 60 Q60 73 80 60"/><path pathLength="1" d="M28 100 Q60 116 92 100"/></g><g class="b" style="--i:0"><circle class="gl" cx="52.3" cy="107.5" r="5.6"/><circle class="dot" cx="52.3" cy="107.5" r="2.2"/></g><g class="b" style="--i:1"><circle class="gl" cx="67.7" cy="107.5" r="5.6"/><circle class="dot" cx="67.7" cy="107.5" r="2.2"/></g><g class="b" style="--i:2"><circle class="gl" cx="35.7" cy="103.4" r="5.6"/><circle class="dot" cx="35.7" cy="103.4" r="2.2"/></g><g class="b" style="--i:3"><circle class="gl" cx="84.3" cy="103.4" r="5.6"/><circle class="dot" cx="84.3" cy="103.4" r="2.2"/></g><g class="b" style="--i:4"><circle class="gl" cx="55.2" cy="66.1" r="5.6"/><circle class="dot" cx="55.2" cy="66.1" r="2.2"/></g><g class="b" style="--i:5"><circle class="gl" cx="64.8" cy="66.1" r="5.6"/><circle class="dot" cx="64.8" cy="66.1" r="2.2"/></g><g class="b" style="--i:6"><circle class="gl" cx="44.8" cy="62.7" r="5.6"/><circle class="dot" cx="44.8" cy="62.7" r="2.2"/></g><g class="b" style="--i:7"><circle class="gl" cx="75.2" cy="62.7" r="5.6"/><circle class="dot" cx="75.2" cy="62.7" r="2.2"/></g><g class="b star" style="--i:8"><circle class="gl" cx="60" cy="12" r="11"/><path class="dot" d="M60 1.5 L63.1 8.9 L70.5 12 L63.1 15.1 L60 22.5 L56.9 15.1 L49.5 12 L56.9 8.9 Z"/></g></svg>
     <img class="intro-logo" src="img/logo.webp" alt="Gravity Moments" width="512" height="512">
     <span class="intro-name"><b>Gravity</b><i>Moments</i></span>
     <span class="intro-rule"></span>
@@ -1766,11 +1769,20 @@ html.lit .bar{height:0}
 // intro: real loading progress, then the arch opens into the hero
 (()=>{
   const L=document.getElementById('loader');if(!L)return;
+  // другий раз за сеанс заставку не показуємо — людина вже її бачила
+  let seen=false;
+  try{seen=sessionStorage.getItem('gm_intro')==='1';sessionStorage.setItem('gm_intro','1')}catch(e){}
+  if(seen){
+    L.remove();document.body.classList.remove('is-loading');
+    document.documentElement.classList.add('lit');
+    requestAnimationFrame(()=>document.querySelectorAll('.bar').forEach(b=>b.style.height='0px'));
+    return;
+  }
   const mark=L.querySelector('.intro-mark');
   const root=document.documentElement;
   // напис тримається на екрані рівно стільки, щоб його встигли прочитати,
   // далі гасне — і аж тоді відкривається перший екран
-  const HOLD=2900, FADE=900;
+  const HOLD=5200, FADE=900;
   let fired=false;
   const t0=performance.now();
 
@@ -1786,22 +1798,21 @@ html.lit .bar{height:0}
     snow.innerHTML=h;
   }
 
-  // ялинка загоряється рівно настільки, наскільки завантажилась сторінка
-  // гірлянда загоряється за таймером, а зірка — коли сторінка справді готова
-  const bulbs=[...L.querySelectorAll('.ny-tree .b')];
-  const RAMP=1250;
-  let lit=0,tL=0;
-  const light=n=>{while(lit<Math.min(n,bulbs.length))bulbs[lit++].classList.add('on')};
-  const step=()=>{
-    light(Math.round(Math.min(1,(performance.now()-tL)/RAMP)*(bulbs.length-1)));
-    if(lit<bulbs.length-1&&!fired)requestAnimationFrame(step);
-  };
-  setTimeout(()=>{tL=performance.now();requestAnimationFrame(step)},750);
-  const star=()=>light(bulbs.length);
-  if(document.readyState==='complete')setTimeout(star,2050);else addEventListener('load',star);
+  // ялинка догоряє до зірки — і аж тоді відкривається перший екран
+  const vid=document.getElementById('introVid');
+  if(vid){
+    vid.muted=true;vid.defaultMuted=true;vid.playsInline=true;
+    vid.setAttribute('muted','');vid.setAttribute('playsinline','');
+    const kick=()=>{if(fired||vid.ended||!vid.paused)return;const p=vid.play();p&&p.catch(()=>{})};
+    kick();
+    ['loadeddata','canplay','canplaythrough','stalled','pause'].forEach(e=>vid.addEventListener(e,kick));
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)kick()});
+    ['touchstart','pointerdown','keydown'].forEach(e=>addEventListener(e,kick,{once:true,passive:true}));
+    const nudge=setInterval(()=>{if(fired||vid.ended){clearInterval(nudge);return}kick()},400);
+    vid.addEventListener('ended',()=>{clearInterval(nudge);run()},{once:true});
+  }
   const run=()=>{
     if(fired)return;fired=true;
-    light(bulbs.length);
     mark.classList.add('out');
     setTimeout(()=>{
       L.classList.add('gone');
@@ -1811,9 +1822,10 @@ html.lit .bar{height:0}
     },FADE*.65);
     setTimeout(()=>L.remove(),FADE+900);
   };
+  // підстраховка: якщо відео не запустилось або зависло — не тримаємо людину
   const start=()=>setTimeout(run,Math.max(0,HOLD-(performance.now()-t0)));
   if(document.readyState==='complete')start();else addEventListener('load',start);
-  setTimeout(run,6000);               // страховка, якщо щось не довантажилось
+  setTimeout(run,7000);
 })();
 
 // nav state
