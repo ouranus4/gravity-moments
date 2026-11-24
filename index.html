@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gravity Moments — організація подій під ключ</title>
 <meta name="description" content="Gravity Moments — організація весіль, корпоративів, ювілеїв і приватних подій під ключ. Прямі контакти з артистами, площадками й підрядниками. Київ і вся Україна.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -1031,9 +1034,9 @@ body.is-loading{overflow:hidden}
 .intro .intro-stage img{width:100%;height:100%;object-fit:cover;display:block;
   transform:scale(1.14);animation:introPush 7s cubic-bezier(.22,.6,.3,1) forwards}
 @keyframes introPush{to{transform:scale(1)}}
-.intro .intro-stage video{width:100%;height:100%;object-fit:cover;display:block;
+.intro .intro-stage #introVid{width:100%;height:100%;object-fit:cover;display:block;
   transform:none;animation:none}
-@media (orientation:landscape){.intro .intro-stage video{object-fit:contain}}
+@media (orientation:landscape){.intro .intro-stage #introVid{object-fit:contain}}
 .intro::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:
     radial-gradient(ellipse 78% 34% at 50% 52%,rgba(4,6,14,.82) 0%,rgba(4,6,14,.5) 55%,transparent 100%),
@@ -1228,8 +1231,9 @@ html.lit .bar{height:0}
 @media (prefers-reduced-motion:reduce){.bride-glass{transition:none}}
 
 /* ---- знак як SVG: колір успадковується, нічого не вантажиться ---- */
-.logo-mark,.intro-logo{border-radius:0;aspect-ratio:1}
-.logo-mark{width:clamp(36px,3.4vw,46px);height:auto;flex:0 0 auto;
+.intro-logo{border-radius:0;aspect-ratio:1}
+.logo-mark{border-radius:0;aspect-ratio:402/262}
+.logo-mark{width:clamp(40px,4vw,54px);height:auto;flex:0 0 auto;object-fit:contain;
   transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .logo:hover .logo-mark{transform:rotate(-6deg) scale(1.05)}
 .intro-logo{display:block;width:clamp(60px,6.4vw,92px);height:auto;
@@ -1417,7 +1421,7 @@ html.lit .bar{height:0}
 <div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"><span>Дивитись</span></div>
 
 <div class="intro" id="loader" aria-hidden="true">
-  <div class="intro-stage"><video id="introVid" src="video/tree.mp4" poster="video/tree.webp" muted autoplay playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-hidden="true"></video></div>
+  <div class="intro-stage"><img id="introVid" src="video/tree-anim.webp" alt="" fetchpriority="high" width="440" height="782"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="intro-snow" id="introSnow" aria-hidden="true"></div>
   <div class="intro-mark">
@@ -1430,7 +1434,7 @@ html.lit .bar{height:0}
 
 <!-- NAV -->
 <header class="nav" id="nav">
-  <a href="#top" class="logo"><img class="logo-mark" src="img/logo.webp" alt="" width="512" height="512"><span class="logo-type"><b>Gravity</b><i>Moments</i><small>організація подій</small></span></a>
+  <a href="#top" class="logo"><img class="logo-mark" src="img/logo-mark.webp" alt="" width="402" height="262"><span class="logo-type"><b>Gravity</b><i>Moments</i><small>організація подій</small></span></a>
   <nav class="nav-links">
     <a href="#ny">Корпоративи</a>
     <a href="#stars">Зірки</a>
@@ -1568,7 +1572,6 @@ html.lit .bar{height:0}
 
 <!-- PROMISE -->
 <section class="promise wrap" id="how">
-  <video class="promise-vid" data-src="video/glass.mp4" poster="video/glass.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
   <p class="eyebrow">Як ми працюємо</p>
   <p class="manifesto" id="manifesto">Ми беремо подію під ключ — <em>щоб ви просто святкували.</em></p>
 
@@ -1784,7 +1787,7 @@ html.lit .bar{height:0}
   const root=document.documentElement;
   // напис тримається на екрані рівно стільки, щоб його встигли прочитати,
   // далі гасне — і аж тоді відкривається перший екран
-  const HOLD=5200, FADE=900;
+  const HOLD=6200, FADE=900;
   let fired=false;
   const t0=performance.now();
 
@@ -1801,17 +1804,15 @@ html.lit .bar{height:0}
   }
 
   // ялинка догоряє до зірки — і аж тоді відкривається перший екран
+  // ялинка — анімована картинка, а не відео: її не блокує ні режим
+  // енергозбереження, ні політики автозапуску
   const vid=document.getElementById('introVid');
+  const ANIM=5100;
+  const startWhenReady=()=>setTimeout(()=>run(),ANIM);
   if(vid){
-    vid.muted=true;vid.defaultMuted=true;vid.playsInline=true;
-    vid.setAttribute('muted','');vid.setAttribute('playsinline','');
-    const kick=()=>{if(fired||vid.ended||!vid.paused)return;const p=vid.play();p&&p.catch(()=>{})};
-    kick();
-    ['loadeddata','canplay','canplaythrough','stalled','pause'].forEach(e=>vid.addEventListener(e,kick));
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)kick()});
-    ['touchstart','pointerdown','keydown'].forEach(e=>addEventListener(e,kick,{once:true,passive:true}));
-    const nudge=setInterval(()=>{if(fired||vid.ended){clearInterval(nudge);return}kick()},400);
-    vid.addEventListener('ended',()=>{clearInterval(nudge);run()},{once:true});
+    if(vid.complete)startWhenReady();
+    else{vid.addEventListener('load',startWhenReady,{once:true});
+         vid.addEventListener('error',()=>run(),{once:true});}
   }
   const run=()=>{
     if(fired)return;fired=true;
@@ -1824,12 +1825,6 @@ html.lit .bar{height:0}
     },FADE*.65);
     setTimeout(()=>L.remove(),FADE+900);
   };
-  // якщо відео заблоковане (режим енергозбереження) — не тримаємо людину
-  // перед застиглим кадром, виходимо раніше
-  setTimeout(()=>{
-    if(fired||!vid)return;
-    if(vid.paused&&vid.currentTime<0.15)run();
-  },1900);
   const start=()=>setTimeout(run,Math.max(0,HOLD-(performance.now()-t0)));
   if(document.readyState==='complete')start();else addEventListener('load',start);
   setTimeout(run,7000);
